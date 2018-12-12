@@ -16,10 +16,10 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage   });
 
 
-router.get('/sexhobby',(req,res,next)=>{
+router.post('/sexhobby',(req,res,next)=>{
   var obj = {
-    uid:req.query.uid,
-    usex:req.query.usex
+    uid:req.body.uid,
+    usex:req.body.usex
   }
   user.updateSex(obj,(err,result)=>{
     if(err){
@@ -29,8 +29,8 @@ router.get('/sexhobby',(req,res,next)=>{
       res.send('ok');
     }
   });
-  req.query.topic.forEach((e)=>{
-    user.insertHobby(req.uid,e,(err,result)=>{
+  req.body.topic.forEach((e)=>{
+    user.insertHobby(req.body.uid,e,(err,result)=>{
       if(err){
         res.statusCode = 500;
         res.send('error');
@@ -118,15 +118,15 @@ router.post('/reg',(req,res,next)=>{
     }
     var uid = JSON.parse(JSON.stringify(result))[0].c;
     obj.uid = uid;
+    if(obj.uid){
+      user.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+        }
+        res.send('已成功');
+      });
+    }
   });
-  if(obj.uid){
-    user.insertItem(obj,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-      }
-      res.send('已成功');// 字符串
-    });
-  }
 });
 
 router.post('/login',(req,res,next)=>{
