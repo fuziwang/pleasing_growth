@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 果实管理 <span class="c-gray en">&gt;</span> 果实列表 
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" >
+			<i class="Hui-iconfont">&#xe68f;</i>
+		</a>
+	</nav>
+
+	<div class="page-container">
+	  <div class="text-c">
+	  	<form action="/fruit" method="post">
+	  		<input type="text" class="input-text" style="width:250px" placeholder="输入果实名字" id="" name="fname">
+	    	<button type="submit" class="btn btn-success"><i class="Hui-iconfont">&#xe665;</i> 搜果实</button>
+	  	</form>
+	  </div>
+	  <div class="cl pd-5 bg-1 bk-gray mt-20">
+	  	<span class="l">
+	  		<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+	  		<a href="javascript:;" onclick="admin_add('添加果实','/fruitadd','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加果实</a>
+	  	</span>
+	  	<span class="r" style="position: relative;right:5px;top:5px;">共有数据：<strong><%- obj.length -%></strong> 条</span>
+	  </div>
+	  <table class="table table-border table-bordered table-bg">
+	    <thead>
+	      <tr>
+	        <th scope="col" colspan="6">果实列表</th>
+	      </tr>
+	      <tr class="text-c">
+	        <th width="25"><input type="checkbox" name="" value=""/></th>
+	        <th width="40">ID</th>
+	        <th width="90">果实名字</th>
+	        <th width="90">果实添加时间</th>
+	        <th width="100">是否已启用</th>
+	        <th width="100">操作</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	<% for(var item in obj){ %>
+	    		<tr class="text-c" id="<%= obj[item].fid %>">
+					<td><input type="checkbox" value="" name="" class="check"/></td>
+        			<td><%= obj[item].fid %></td>
+					<td><%= obj[item].fname %></td>
+        			<td><%= obj[item].ftime %></td>
+        			<td class="td-status"><%= (obj[item].fstatus==1?'已启用':'已停用') %></td>
+        			<td class="td-manage">
+        				<a style="text-decoration:none" onClick="<%= obj[item].fstatus==1?'admin_stop(this)':'admin_start(this)' %>" href="javascript:;" title="<%= (obj[item].fstatus==1?'停用':'启用') %>">
+        					<% if(obj[item].fstatus == 1){ %>
+        						<i class="Hui-iconfont">&#xe631;</i>
+        					<% } else {%>
+        						<i class="Hui-iconfont">&#xe615;</i>
+        					<% }%>
+        				</a>
+        				<a title="编辑" href="javascript:;" onclick="admin_edit('编辑果实','/fruitadd','<%= obj[item].fid %>',800,500)" class="ml-5" style="text-decoration:none">
+        					<i class="Hui-iconfont">&#xe6df;</i>
+        				</a>
+        				<a title="删除" href="javascript:;" onclick="admin_del('<%= obj[item].fid %>')" class="ml-5" style="text-decoration:none">
+        					<i class="Hui-iconfont">&#xe6e2;</i>
+        				</a>
+        			</td>
+	    		</tr>
+	    	<% } %>
+	    </tbody>
+	  </table>
+	</div>
+	<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+	<script type="text/javascript" src="static1/h-ui/js/H-ui.min.js"></script> 
+	<script type="text/javascript" src="static1/h-ui.admin/js/H-ui.admin.js"></script> 
+
+	<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+	<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+	<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript">
+		function datadel(){
+			var data = [],j = 0;
+			var check = document.getElementsByClassName('check');
+			for(var i = 0;i<check.length;i++){
+				if(check[i].checked == true){
+					data[j] = i+1;
+					j++;
+				}
+			}
+			layer.confirm('确认要删除吗？',function(index){
+			    var xhr = new XMLHttpRequest();
+			    var num = document.querySelector('strong');
+			    console.log(data);
+				xhr.onreadystatechange = function () {
+				    if (xhr.readyState == 4) {
+				        if (xhr.status == 200) {
+				            var message = xhr.responseText;
+				            console.log(data);
+				            data.forEach((e)=>{document.getElementById(e).parentNode.removeChild(document.getElementById(e))});
+				            num.textContent-=data.length;
+				            layer.msg(message,{icon: 5,time:1000});
+				        }
+				    }
+				};
+				xhr.open("get", "/fruit?data=" + data, true);
+				xhr.send();
+		  	});
+		}
+		function admin_add(title,url,w,h){
+		  layer_show(title,url,w,h);
+		}
+
+		function admin_del(id){
+		  layer.confirm('确认要删除吗？',function(index){
+		  	var tr = document.getElementById(id);
+		  	var num = document.querySelector('strong');
+		    var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+			    if (xhr.readyState == 4) {
+			        if (xhr.status == 200) {
+			            var message = xhr.responseText;
+			           	tr.parentNode.removeChild(tr);
+			           	num.textContent-=1;
+			            layer.msg(message,{icon: 5,time:1000});
+			        }
+			    }
+			};
+			xhr.open("get", "/fruit?id=" + id, true);
+			xhr.send();
+		  });
+		}
+
+		function admin_edit(title,url,id,w,h){
+		  layer_show(title,url,w,h);
+		}
+
+		function admin_stop(obj){
+			var id = $(obj).parents("tr").attr("id");
+		  	layer.confirm('确认要停用吗？',function(index){
+		    	var xhr = new XMLHttpRequest();
+		    	var ts = document.querySelector('.td-status');
+				xhr.onreadystatechange = function () {
+				    if (xhr.readyState == 4) {
+				        if (xhr.status == 200) {
+				            var message = xhr.responseText;
+				           	$(obj).parents("tr").find(".td-manage").prepend('<a onClick="admin_start(this)" href="javascript:;" title="启用" style="text-decoration:none"><i class="Hui-iconfont">&#xe615;</i></a>');
+				            $(obj).remove();
+				            ts.textContent = message;
+				            layer.msg(message,{icon: 5,time:1000});
+				        }
+				    }
+				};
+				xhr.open("get", "/fruit?status=2&id=" + id, true);
+				xhr.send();
+		  	});
+		}
+
+		function admin_start(obj){
+			var id = $(obj).parents("tr").attr("id");
+		  	layer.confirm('确认要启用吗？',function(index){
+		  		var ts = document.querySelector('.td-status');   
+		     	var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+				    if (xhr.readyState == 4) {
+				        if (xhr.status == 200) {
+				            var message = xhr.responseText;
+				            $(obj).parents("tr").find(".td-manage").prepend('<a onClick="admin_stop(this)" href="javascript:;" title="停用" style="text-decoration:none"><i class="Hui-iconfont">&#xe631;</i></a>');
+							$(obj).remove();
+							ts.textContent = message;
+				            layer.msg(message,{icon: 6,time:1000});
+				        }
+				    }
+				};
+				xhr.open("get", "/fruit?status=1&id=" + id, true);
+				xhr.send();
+		  	});
+		}
+	</script>
+</body>
+</html>

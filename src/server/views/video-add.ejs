@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="css/H-ui.css"/>
+  <link type="text/css" rel="stylesheet" href="css/H-ui.admin.css"/>
+  <link type="text/css" rel="stylesheet" href="font/font-awesome.min.css"/>
+</head>
+<body>
+<div class="pd-20">
+  <div class="Huiform">
+    <form action="/videoadd" method="post" enctype="multipart/form-data">
+      <table class="table table-bg">
+        <tbody>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 视频ID：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="vid"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 发布用户ID：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="uid"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 视频文件：</th>
+            <td><input type="file" class="" name="video" multiple></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><button class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 确定</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+</html>

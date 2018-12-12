@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="css/H-ui.css"/>
+	<link type="text/css" rel="stylesheet" href="css/H-ui.admin.css"/>
+	<link type="text/css" rel="stylesheet" href="font/font-awesome.min.css"/>
+</head>
+<body>
+<div class="pd-20">
+  <div class="Huiform">
+    <form action="/usersadd" method="post" enctype="multipart/form-data">
+      <table class="table table-bg">
+        <tbody>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 用户ID：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="uid"></td>
+          </tr>
+          <tr>
+            <th width="100" class="text-r"><span class="c-red">*</span> 用户名：</th>
+            <td><input type="text" style="width:200px" class="input-text" value="" placeholder="" id="user-name" name="uname" datatype="*2-16" nullmsg="用户名不能为空"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 性别：</th>
+            <td><label>
+                <input name="usex" type="radio" id="six_1" value="男" checked>
+                男</label>
+              <label>
+                <input type="radio" name="usex" value="女" id="six_0">
+                女</label></td>
+          </tr>
+          <tr>
+            <th class="text-r">年龄：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="uage"></td>
+          </tr>
+          <tr>
+            <th class="text-r">所在地：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="uwhere"></td>
+          </tr>
+          <tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 手机：</th>
+            <td><input type="text" style="width:300px" class="input-text" value="" placeholder="" id="user-tel" name="utel"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 密码：</th>
+            <td><input type="password" style="width:300px" class="input-text" value="" placeholder="" id="user-email" name="upass"></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 头像：</th>
+            <td><input type="file" class="" name="uimage" multiple></td>
+          </tr>
+          <tr>
+            <th class="text-r"><span class="c-red">*</span> 感兴趣话题：</th>
+            <td>
+              <label><input name="topic" type="checkbox" value="打球" />  打球&nbsp;&nbsp;&nbsp;</label> 
+              <label><input name="topic" type="checkbox" value="喝水" />  喝水&nbsp;&nbsp;&nbsp;</label> 
+              <label><input name="topic" type="checkbox" value="睡觉" />  睡觉&nbsp;&nbsp;&nbsp;</label> 
+              <label><input name="topic" type="checkbox" value="吃饭" />  吃饭&nbsp;&nbsp;&nbsp;</label> 
+            </td>
+          </tr>
+            <th></th>
+            <td><button class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 确定</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+</html>
