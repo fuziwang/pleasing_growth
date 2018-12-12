@@ -1,0 +1,95 @@
+page-community {
+    ion-content{
+        span{
+            margin-left: 5px;
+        }
+        .search{
+            margin:-20px;
+            margin-left: -13px;
+            width: 350px; 
+            // color:#F2F2F2;
+            // border-radius:10px;
+            border-top:1px solid black; 
+        }
+        .out{
+            margin-left:-8px;
+            margin-top: 15px;
+            width: 360px;
+            height:235px;
+            border-bottom: 1px solid #DDDDDD;
+            .inside1{
+                float: left;
+                margin-left:20px;
+                margin-top:15px;
+                .com1{
+                    width:50px;
+                    height: 50px;
+                    background-color:#F2F2F2;
+                    border-radius:50%;
+                    float: left;
+                }
+                .com2{
+                    height: auto;
+                    width: auto;
+                    margin-left:10px;
+                    margin-top:5px;
+                    float: left;
+                    overflow:hidden;
+                }
+                
+            }
+            .inside2{
+                float: left;
+                margin-left:80px;
+                margin-top:10px; 
+                .com3{
+                    width:260px;
+                    height:auto;
+                }
+                .com4{
+                    margin-top:5px; 
+                    width:135px;
+                    height:85px;
+                    background-color:#F2F2F2;
+                }
+            }
+            .inside3{
+                float: left;
+                margin-left:30px;
+                margin-top:23px;
+             
+                .com5{
+                    margin-right:15px;
+                    width: 60px;
+                    height: 30px;
+                    float: left;
+                    color: #000;
+                }
+                ion-icon:hover{
+                    color:#2FBD7A;
+                }
+
+
+                .com6{
+                    margin-right:15px;
+                    width: 60px;
+                    height: 30px;
+                    float: left;
+                }
+                .com7{
+                    margin-right:15px;
+                    width: 60px;
+                    height: 30px;
+                    float: left;
+                }
+                .com8{
+                    margin-right:15px;
+                    width: 60px;
+                    height: 30px;
+                    float: left;
+                }
+            }
+        }
+
+    }
+}

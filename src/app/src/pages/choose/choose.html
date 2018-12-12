@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="gre">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="ios-arrow-round-back"></ion-icon>
+    </button>
+    <ion-title >
+      选择相册
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only >
+        <ion-icon name=""></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <button ion-item  *ngFor='let item of arr;let idx=index'>
+    <img class="imgs" src="../../assets/imgs/xiangce.jpg">
+    <div class="out">
+      <span class="item1">相册1</span>
+      <span class="item2">查看详情 ></span>
+    </div>
+  </button>
+</ion-list>
+
+</ion-content>

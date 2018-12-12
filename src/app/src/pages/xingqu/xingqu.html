@@ -1,0 +1,56 @@
+<!--
+  Generated template for the XingquPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+
+<ion-content>
+    <div class="top">
+        <div class="left" (click)='last()'>
+          <i class="iconfont icon-2fanhui "></i>
+          <span>返回</span></div>
+        <div class="right" (click)='tiaoguo()'>跳过</div>
+      </div>
+<div>
+  <div class="text">
+    <p class="p1">选择你喜欢的，让我更懂你</p>
+    <p class="p2">我们将努力推荐你更你可能感兴趣的话题哒</p>
+  </div>
+  <div class="img">
+    <div (click)="change_boy()" >
+      <img src="../../assets/imgs/boy_01.png" >
+      <img src="../../assets/imgs/boy_02.png" class="color" [ngStyle]="{'display': (is&&num)=== 1  ? 'block' : 'none'}" >
+    </div>
+    <div (click)="change_girl()" >
+      <img src="../../assets/imgs/girl_01.png" >
+      <img src="../../assets/imgs/girl_02.png" class="color" [ngStyle]="{'display': is&&num===0 ? 'block' : 'none'}" >
+    </div>
+  </div>
+  <div class="anniu">
+      <div class="left">
+        <span><p>益智游戏</p><input type="checkbox"></span>
+        <span><p>心理健康</p><input type="checkbox"></span>
+        <span><p>体育运动</p><input type="checkbox"></span>
+        <span><p>出国留学</p><input type="checkbox"></span>
+        <span><p>升学入学</p><input type="checkbox"></span>
+        <span><p>出行旅游</p><input type="checkbox"></span>
+      </div>
+      <div class="right">
+          <span><p>情感专家</p><input type="checkbox"></span>
+          <span><p>校园班级</p><input type="checkbox"></span>
+          <span><p>漫画动漫</p><input type="checkbox"></span>
+          <span><p>医学健康</p><input type="checkbox"></span>
+          <span><p>娱乐明星</p><input type="checkbox"></span>
+          <span><p>美食餐饮</p><input type="checkbox"></span>
+      </div>
+    </div>
+    <div>
+      <button (click)="shouye()"  [ngStyle]="{'background': is===1 ? '#2ebd7a' : '#999292'}" >开启成长之旅</button>
+    </div>
+</div>
+
+</ion-content>

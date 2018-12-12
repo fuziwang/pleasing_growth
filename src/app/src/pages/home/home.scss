@@ -1,0 +1,121 @@
+page-home {
+    ion-header{
+        font-size: 20px!important;
+       .title{
+       font-size: 14px!important;
+       }
+        background: #ffdb2c!important;
+    }
+    .navList{
+        background-color: rgb(252, 252, 252);
+        padding-left: 0px!important;
+        margin:0px!important;
+        height:44px;
+        .first{
+            border-bottom:2px solid #ffdb2c;
+        }
+        li{
+            height:44px;
+            text-align: center;
+            float: left;
+            //display:inline-block;
+            width:50%;
+            font-size: 16px;
+            line-height: 44px;
+        }
+    }
+    .tiezi{
+        margin: 0px;
+             padding: 0px;
+        
+         li{
+             background-color: rgb(250, 248, 248);
+             border-bottom: solid 1px rgb(235, 213, 213);
+             margin-bottom: 5px;
+             .all{
+                 width: 100%;
+                 height: 130px;
+             }
+            div{
+                   //border: 1px solid red;
+                   .text{
+                       float: left;
+                       width: 60%;
+                       height: 130px;
+                       #uname{
+                           margin-left: 10%;
+                           
+                           margin-top: -15px;
+                       }
+                       #title{
+                           height: 50px;
+                           margin-top: 15px;
+                           margin-left: 5px;
+                           margin-bottom: 20px;
+                           font-size: 18px;
+                           font-weight: 500;
+                           text-align: left;
+                          
+                       }
+                       #pinglun{
+                           height: 20px;
+                           position: relative;
+                           top:10px;
+                           ul{
+                               padding: 0px;
+                               li{
+                                   border-bottom: none;
+                                   float: left;
+                                   margin-right: 10px;
+                                   margin-left: 5px;
+                                   span{
+                                       padding-left: 3px;
+                                   }
+                                   ion-icon{
+                                       color: rgb(131, 138, 145);
+                                       margin-top: 3px;
+                                   }
+                               }
+                           }
+                       }
+                   }
+                   .img{
+                       float: left;
+                       width: 40%;
+                       height: 130px;
+                       margin-top: 5px;
+                       img{
+                        height: 120px;
+                        width: 100%;
+                       }
+                   }
+              }
+           
+        }
+    }
+    .sli{
+        height: auto;
+        img{
+            width:100%;
+            height: 200px;
+        }
+    }
+    .subtitle{
+        letter-spacing:5px;
+    }
+    .three{
+        padding:0px;
+        img{
+            width:100%;
+        }
+        li{
+            position: relative;
+            width:27%;
+            float:left;
+            margin:5px 0 15px 5%;
+        }
+    }
+    .subtitle{
+        letter-spacing:5px;
+    }
+}

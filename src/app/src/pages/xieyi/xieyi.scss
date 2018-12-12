@@ -1,0 +1,61 @@
+page-xieyi {
+    
+    // opacity: 0.5;
+    ion-content{
+        background: url(../../assets/imgs/title1.png) no-repeat;
+        background-position: 50% 50% ;
+        
+        
+        h5{
+            font-size: 17px!important;
+            font-weight: 1000;
+            text-align: center;
+            margin-top: 6px;
+            margin-bottom: 3px;
+            opacity: 1!important;
+        }
+        h6{
+            font-size: 16px!important;
+            font-weight: 1000;
+            text-align: center;
+            margin-top: -5px;
+            opacity: 1;
+        }
+        .p{
+            font-size: 16px!important;
+            font-weight: 1000;
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 2px;
+            opacity: 1;
+        }
+        p{
+            margin: 3px;
+            opacity: 1;
+        }
+    }
+    ion-header{
+
+        ion-navbar{
+            .toolbar-background{
+                background-color: #fff!important;
+            }
+            min-height: 13px!important;
+            padding: 0!important;
+           
+            button{
+                width: 40px!important;
+                height: 20px!important;
+                margin:0!important ;
+                padding-left: 0!important;
+                border-radius: 0!important;
+                min-width: 65px!important;
+                color: #2ebd7a!important;
+                font-size: 16px!important;
+                line-height: 16px!important;
+               
+            }
+        }
+    }
+
+}

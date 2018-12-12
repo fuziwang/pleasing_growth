@@ -1,0 +1,21 @@
+page-setup {
+    ion-header{
+        ion-title{
+            position: absolute;
+            top: 16px;
+            left: 140px;
+        }
+    }
+    ion-content{
+        img{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 12px;
+            left: 0px;
+        }
+        .item2{
+            color: darkgray;
+        }
+    }
+}

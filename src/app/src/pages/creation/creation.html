@@ -1,0 +1,36 @@
+<ion-header text-center no-border>
+  <ion-navbar color="zhuti">
+    <ion-title>我的创作</ion-title>
+  </ion-navbar> 
+</ion-header>
+  
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+<!-- 导航栏 -->
+<ul class="navList">
+  <!-- 如果数组比较多，需要请求过来的时候就要用循环 -->
+  <!-- <li *ngFor="let item of arr;let idx=index" (click)="isClick(idx)" [class.first]="isActive==idx">推荐<>     -->
+  <li (click)="isClick(1)" [class.first]="isActive==1">说说</li>
+  <li (click)="isClick(0)" [class.first]="isActive==0">文章</li>
+</ul>
+<div [ngSwitch]="isActive">
+  <div *ngSwitchCase="1">
+    <div class="ss" *ngFor='let item of arr;let idx=index'>
+      <img class="img1">
+      <div><p><span class="name">yonghuming</span></p></div>
+      <div><p><span class="time">shijian</span></p></div>
+      <div><p class="text"><span>neirongneirongneirongneirongneirongneirongneirongneirongneirong</span></p></div>
+    </div>
+  </div>
+  <div *ngSwitchCase="0">
+    <div class="wz" *ngFor='let item of arr;let idx=index'>
+      <img class="img1">
+      <div><p><span class="name">yonghuming</span></p></div>
+      <div><p><span class="time">shijian</span></p></div>
+      <div><p class="text"><span>neirong</span></p></div>
+    </div>
+  </div>
+</div>
+</ion-content>

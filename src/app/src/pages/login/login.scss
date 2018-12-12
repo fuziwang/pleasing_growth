@@ -1,0 +1,92 @@
+page-login {
+    ion-content{
+        img{
+            width: 170px;
+            height: 80px;
+            margin-left: 80px;
+            margin-top: 90px;
+        }
+        .box1{
+            margin-top: 40px!important;
+        }
+        .box{
+           margin-top: -20px;
+            width: 200px;
+            position: relative;
+        }
+        .box{
+            input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+                color:#2ebd7a; 
+                padding-left: 10px;
+                } 
+                input:-moz-placeholder, textarea:-moz-placeholder { 
+                color: #2ebd7a; 
+                } 
+            span{
+                margin-left: 25px;
+                display:inline-block;
+                color: #2ebd7a;
+            }
+           
+            .icon1{
+                background: url(../assets/imgs/shouji.png) no-repeat;
+                background-size: 23px 23px;;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 34px;
+                left: 60px;
+               
+    
+            }
+            
+            .icon2{
+                background: url(../assets/imgs/yaoshi1.png) no-repeat;
+                background-size: 23px 23px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 49px;
+                left: 60px;
+    
+            }
+        }
+        .box .username{
+            padding-left: 30px;
+            height: 50px;
+        }
+        input{
+            border-radius:40px!important;
+            height: 40px;
+            width: 250px;
+            color:  #2ebd7a;
+            margin-top: 20px;
+            margin-left: 50px;
+            border: 1px solid #2ebd7a;    
+            padding-left:40px;        
+            
+        }
+        #button{
+            margin-top: 80px;
+            width: 250px;
+            margin-left: 20px;
+        }
+        .buttom{
+            span{
+                p{
+                    color: #2ebd7a;
+                    font-size: 13px;
+                }
+                display: block;
+                float: left;
+                margin-left: 30px;
+                margin-top: 40px;
+              
+            }
+           .left{
+               margin-right: 20px;
+               margin-left: 190px;
+           }
+        }
+    }
+}

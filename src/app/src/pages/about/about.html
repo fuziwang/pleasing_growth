@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar color="zhuti">
+      <ion-title>
+        成长树
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="add()">
+          <ion-icon  class="add">+</ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+   
+  </ion-header>
+  <ion-content>
+    <div class="top">
+      <img src="../../assets/imgs/boy_02.png">
+      <span>{{num}}颗果子</span>
+    </div>
+    <div class="apple">
+      <ul>
+        <li *ngFor='let item of arr;let idx=index' ><p>{{item}}</p></li>
+      </ul>
+    </div>
+    <div class="buttom">
+      <ul>
+        <li>
+            <div class="tubiao">
+                <button ion-botton block (click)="goVidio()" style="background-color:transparent">
+                    <ion-icon name="ios-videocam-outline"></ion-icon>
+                </button>
+              </div>
+              <span class="c1">视频</span>
+        </li>
+        <li>
+            <div class="tubiao">
+            <button ion-botton block (click)="goPicture()" style="background-color:transparent">
+                <ion-icon name="ios-images-outline"></ion-icon>
+            </button>
+          </div>
+          <span class="c1">图片</span>
+        </li>
+      </ul>
+    </div>
+    <footer [ngStyle]="{'display': isCheck== 1  ? 'block' : 'none'}">
+       <p>你想为成长树添加的果实名称是：</p>
+       <input type="text" placeholder="果实名称（最多4个字）" [(ngModel)]="text">
+       <span (click)="addArr()">确定</span><span (click)="quxiao()">取消</span>
+    </footer>
+  
+  </ion-content>

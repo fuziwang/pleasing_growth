@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="gre" hideBackButton="true">
+    <ion-title>最近相册</ion-title><span class="shipin" (click)="goChoose()">相册</span><span class="qx" (click)="edit()">取消</span>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+<div class="out" *ngFor='let item of arr;let idx=index'>
+  <div class="came">
+      <img class="img1" src="../../assets/imgs/hot02.png">
+  </div>
+  <div class="came">
+      <img class="img1" src="../../assets/imgs/hot02.png">
+  </div>
+  <div class="came">
+      <img class="img1" src="../../assets/imgs/hot02.png">
+  </div>
+</div>
+<ion-list>
+<ion-item>
+    <ion-label>Pepperoni</ion-label>
+    <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer class="foo" >
+<button class="button button-positive"  (click)="chengGong()"><span>确定</span></button> 
+</ion-footer>

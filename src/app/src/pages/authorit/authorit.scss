@@ -1,0 +1,36 @@
+page-authorit {
+    background-color:#FEFEFE;
+    ion-navbar{
+        $navbar-ios-height: 28px;
+        color:#2FBD7A;
+        ion-icon{
+            color:#fff;
+        }
+        ion-title{
+            text-align: center;
+            color:#fff;
+            font-weight:200;
+        }
+    }
+    ion-content{
+        p{
+            margin: 4px;
+            margin-left:10px;
+            color:  #BABABA;
+            font-size: 14px;
+        }
+        .tu{
+            float: left;
+            height: 20px;
+            width: 40px;
+            ion-icon{
+                margin: 10px;
+                color:#2FBD7A;
+            }
+        }
+        .tu1{
+            float: left;
+        }
+    }
+        
+}

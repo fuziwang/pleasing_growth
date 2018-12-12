@@ -1,0 +1,49 @@
+page-feedback {
+    ion-title{
+        position: absolute;
+        top: 16px;
+        left: 130px;
+    }
+    ion-content{
+        .list1{
+            text-align: center;
+            textarea{
+                position: absolute;
+                top: 15px;
+                left: 14px;
+                width:332px;
+                height:150px;
+            }
+        }
+        .list2{
+            img{
+                position: absolute;
+                top: 178px;
+                left: 24px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+        .list3{
+            text-align: center;
+            input{
+                position: absolute;
+                top: 230px;
+                left: 14px;
+                width:332px;
+                height:35px;
+            }
+        }
+        .list4{
+            text-align: center;
+            button{
+                background-color: #2FBC7B;
+                position: absolute;
+                top: 290px;
+                left: 14px;
+                width:326px;
+                height:35px;
+            }
+        }
+    }
+}

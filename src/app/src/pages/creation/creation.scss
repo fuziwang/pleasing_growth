@@ -1,0 +1,93 @@
+page-creation{
+    ion-header{
+        ion-title{
+            position: absolute;
+            top: 16px;
+            left: 125px;
+        }
+    }
+    ion-content{
+        .navList{
+            padding-left: 0px!important;
+            margin:0px!important;
+            height:44px;
+            .first{
+                border-bottom:2px solid #2FBD7B;
+            }
+            li{
+                height:44px;
+                text-align: center;
+                float: left;
+                //display:inline-block;
+                width:50%;
+                font-size: 16px;
+                line-height: 44px;
+                list-style: none;
+            }
+        }
+        .ss{
+            width: 360px;
+            height: 110px;
+            border: darkgray 1px solid;
+            .img1{
+                width: 85px;
+                height: 85px;
+                position: relative;
+                top: 10px;
+                left: 10px;
+            }
+            .name{ 
+                position: relative;
+                top: -82px;
+                left: 110px;
+            }
+            .time{
+                color: darkgray;
+                position: relative;
+                top: -90px;
+                left: 110px;
+            }
+            .text{
+                width: 200px;
+                position: relative;
+                top: -90px;
+                left: 110px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        .wz{
+            width: 360px;
+            height: 110px;
+            border: darkgray 1px solid;
+            .img1{
+                width: 85px;
+                height: 85px;
+                position: relative;
+                top: 10px;
+                left: 10px;
+            }
+            .name{ 
+                position: relative;
+                top: -82px;
+                left: 110px;
+            }
+            .time{
+                color: darkgray;
+                position: relative;
+                top: -90px;
+                left: 110px;
+            }
+            .text{
+                width: 200px;
+                position: relative;
+                top: -90px;
+                left: 110px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }  
+}

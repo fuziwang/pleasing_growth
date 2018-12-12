@@ -1,0 +1,127 @@
+page-edit {
+    textarea{
+        background-color:#FEFEFE;
+        border-color:#FEFEFE;
+    }
+    ion-header{
+        ion-title{
+            position: absolute;
+            top: 16px;
+            left: 145px;
+        }
+    }
+    ion-content{
+        .text1{
+            color: #2FBC7B;
+            position: absolute;
+            top:20px;
+            left: 30px;
+        }
+        .img1{
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 38px;
+            left: 99px;
+            border-radius:50%; 
+        }
+        .text2{
+            color: #2FBC7B;
+            position: absolute;
+            top: 200px;
+            left: 30px;
+        }
+        .text3{
+            .con1{
+                p{
+                    float: left;
+                    font-size: 14px;
+                }
+                position: absolute;
+                top: 225px;
+                left: 30px;
+                textarea{
+                    margin-top: 11px;
+                    margin-left:30px;
+                    float: left;
+                    position: absolute;
+                    width:250px;
+                    height:50px;
+                }
+            }
+            .con2{
+                p{
+                    float: left;
+                    font-size: 14px;
+                }
+                position: absolute;
+                top: 255px;
+                left: 30px;
+                textarea{
+                    margin-top: 11px;
+                    margin-left:30px;
+                    float: left;
+                    position: absolute;
+                    width:250px;
+                    height:50px;
+                }
+            }
+            .con3{
+                p{
+                    float: left;
+                    font-size: 14px;
+                }
+                position: absolute;
+                top: 285px;
+                left: 30px;
+                textarea{
+                    margin-top: 11px;
+                    margin-left:30px;
+                    float: left;
+                    position: absolute;
+                    width:250px;
+                    height:50px;
+                }
+            }
+        }
+        .text4{
+            color: #2FBC7B;
+            position: absolute;
+            top: 360px;
+            left: 30px;
+            
+        }
+        .text5{
+            position: absolute;
+            top: 383px;
+            left: 30px;
+            .con4{
+                margin-left: -5px;
+                position: absolute;
+                textarea{
+                    float: left;
+                    position: absolute;
+                    width:300px;
+                    height:100px;
+                }
+            }
+        }
+        .text6{
+            position: absolute;
+            top: 420px;
+            left: 30px;
+            p{
+                float: left;
+                font-size: 14px;
+            }
+            textarea{
+                margin-top: 12px;
+                margin-left:30px;
+                float: left;
+                position: absolute;
+                width:260px;
+                height:50px;
+            }
+        }
+    }
+}

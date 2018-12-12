@@ -1,0 +1,45 @@
+<ion-content>
+    <div class="al">
+        <div class="img">
+          <img id="img" src="{{'http://192.168.140.144:8080/content/'+list[0]?.aimage}}">
+          <i class="iconfont icon-2fanhui" color="primary" (click)="last()"></i>
+          <i class="iconfont icon-fenxiang" color="primary" (click)="fenxiang()"></i>
+        </div>
+        <div class="content">
+          <ul>
+            <li class="atitle">{{list[0]?.atitle}}</li>
+            <li>{{list[0]?.uname}}</li>
+            <li class="atime">{{list[0]?.atime}}</li>
+            <li id="neirong"><pre>{{content}}</pre></li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <div class="pl">所有评论</div>
+            <ul class="tiezi">
+                <li *ngFor='let item1 of commont;let idx=index' class="one">
+                  <div>
+                      <ul class="pinlun">
+                        <li class="img"><img  src="{{'http://192.168.140.144:8080/user/'+item1?.uimage}}"></li>
+                        <li class="name">{{item1?.uname}}</li>
+                        <li class="time">{{item1?.actime}}</li>
+                        <li class="icon"><ion-icon name="md-eye"><span>12</span></ion-icon></li>
+                        <li class="icon"><ion-icon name="md-eye"><span>12</span></ion-icon></li>
+                      </ul>
+                  </div>
+                  <div class="content">
+                    {{item1?.accontent}}
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <div class="fenxiang" [ngStyle]="{'display': isCheck== 1  ? 'block' : 'none'}">
+          <p>分享到...</p>
+          <ul>
+            <li ><i class="iconfont icon-pengyouquan1 first"></i><span>朋友圈</span></li>
+            <li><i class="iconfont icon-weixin-copy"></i><span>微 信</span></li>
+            <li><i class="iconfont icon-kongjian"></i><span>空 间</span></li>
+            <li><i class="iconfont icon-qq"></i><span> Q Q</span></li>
+          </ul>
+        </div>
+      </div>
+    </ion-content>

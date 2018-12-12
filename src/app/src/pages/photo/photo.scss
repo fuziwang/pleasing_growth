@@ -1,0 +1,33 @@
+page-photo {
+    ion-header{
+        ion-title{
+            position: absolute;
+            top: 16px;
+            left: 130px;
+        }
+    }
+    ion-content{ 
+        button{
+            position: absolute;
+            top: 25px;
+            left: 80px;
+            width: 200px!important;
+            border-color: #2FBD7B!important;
+            span{
+                color: #2FBD7B;
+            }
+        }
+        ion-grid{
+            position: absolute;
+            top: 80px;
+            left: 2px;
+            img{
+                width: 115px;
+                height: 100px;
+            }
+            p{
+                text-align: left;
+            }
+        }
+    }
+}

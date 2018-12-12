@@ -1,0 +1,88 @@
+<ion-header text-center no-border>
+    <ion-navbar color="zhuti">
+        
+        
+      
+     
+      <ion-title class="title">首页</ion-title>
+     
+    </ion-navbar>
+    
+  </ion-header>
+  
+  <ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+   
+    <!-- 导航栏 -->
+    <ul class="navList">
+      <!-- 如果数组比较多，需要请求过来的时候就要用循环 -->
+      <!-- <li *ngFor="let item of arr;let idx=index" (click)="isClick(idx)" [class.first]="isActive==idx">推荐</li>     -->
+      <li (click)="isClick(1)" [class.first]="isActive==1">推荐</li>
+      <li (click)="isClick(0)" [class.first]="isActive==0">最新</li>
+    </ul>
+    <div [ngSwitch]="isActive">
+        <div *ngSwitchCase="1">
+          <!-- 轮播图 -->
+          <ion-slides pager="true" autoplay="1000" loop="true" class="sli">
+          <ion-slide>
+            <img src="../../assets/imgs/lunbo1.jpg" alt="">
+          </ion-slide>
+          <ion-slide>
+            <img src="../../assets/imgs/lunbo2.jpg" alt="">
+          </ion-slide>
+          <ion-slide>
+            <img src="../../assets/imgs/lunbo3.jpg" alt="">
+          </ion-slide>
+          </ion-slides>
+          <div>
+            <ul class="tiezi">
+              <li *ngFor='let item of list;let idx=index'  (click)="next(item.aid)">
+                <div class="all">
+                  <div class="text">
+                    <div id="title">{{item?.atitle}}</div>
+                    <div id="uname">{{item?.uname}}</div>
+                    <div id="pinglun">
+                      <ul>
+                        <li><ion-icon name="md-eye"></ion-icon><span>12</span></li>
+                        <li><ion-icon name="md-text"></ion-icon><span>12</span></li>
+                        <li><ion-icon name="md-heart-outline"></ion-icon><span>12</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="img"><img src="{{'http://192.168.140.144:8080/content/'+item?.aimage}}"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div *ngSwitchCase="0">
+          
+          <div>
+            <ul class="tiezi">
+              <li *ngFor='let item of list;let idx=index' (click)="next(item?.aid)">
+                <div class="all" >
+                  <div class="text">
+                    <div id="title">{{item?.atitle}}</div>
+                    <div id="uname">{{item?.uname}}</div>
+                    <div id="pinglun">
+                      <ul>
+                        <li><ion-icon name="md-eye"></ion-icon><span>12</span></li>
+                        <li><ion-icon name="md-text"></ion-icon><span>12</span></li>
+                        <li><ion-icon name="md-heart-outline"></ion-icon><span>12</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="img"><img src="{{'http://192.168.140.144:8080/content/'+item?.aimage}}"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+   
+  </ion-content>
+  

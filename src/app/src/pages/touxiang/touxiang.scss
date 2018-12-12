@@ -1,0 +1,39 @@
+page-touxiang {
+    text-align: center;
+    .touxiang{
+        div{
+            border: 1px solid red;
+        }
+        .yuan{
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            margin-top: 35% ;
+            margin-left: 31%;
+            border: 1px solid #2ebd7a;
+            position: relative;
+            input{
+                opacity:0;
+                filter:alpha(opacity=0);
+                height: 95px;
+                width: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 9;
+            }
+        }
+        height: 50%;
+        p{
+            text-align: center;
+            margin-top: 10%;
+            letter-spacing: 2px;
+            font-size: 15px
+        }
+    }
+    .img{
+       
+         text-align: center;
+       
+    }
+}

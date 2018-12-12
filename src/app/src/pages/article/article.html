@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="gre">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="ios-arrow-round-back"></ion-icon>
+    </button>
+
+    <ion-title>
+      发布
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <div class="ion"><ion-icon name="ios-send-outline"></ion-icon></div>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+<div class="list1">
+  <label class="item item-input">
+    <textarea placeholder="写篇文章吧"></textarea>
+  </label>
+</div>
+<div class="list2">
+    <button ion-botton block (click)="goCamera()" style="background-color:transparent">
+        <img src="../../assets/imgs/camera.jpg">
+    </button>
+</div>
+<div class="list3">
+ <div class="inside" (click)="goAuthority()"> <!-- 权限 -->
+   <ion-icon name="md-ionitron" color="gre"></ion-icon> <!-- ios-ionitron-outline -->
+   <span>私密</span>
+  </div>
+</div>
+</ion-content>
+
+
+
+ 

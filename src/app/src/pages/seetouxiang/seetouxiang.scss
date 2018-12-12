@@ -1,0 +1,34 @@
+page-seetouxiang {
+    .all{
+        background: #000!important;
+        height: 640px;
+        width: 100%;
+    }
+    .ion-page{
+        background: #000!important;
+    }
+    .set{
+        border-radius: 10px;
+        border: 1px solid #fff;
+        margin-top: 200px;
+        margin-left: 18px;
+        width: 90%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        
+    }
+    .img{
+        padding-top: 100px;
+        height: 360px;
+        display: block;
+        width: 100%;
+        img{
+            height: 360px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+page-choose {
+    background-color:#FEFEFE;
+    ion-navbar{
+        $navbar-ios-height: 28px;
+        color:#2FBD7A;
+        ion-icon{
+            color:#fff;
+        }
+        ion-title{
+            text-align: center;
+            color:#fff;
+            font-weight:200;
+        }  
+    }
+    ion-list{
+        border: darkgrey 0.1px solid;
+        button{
+            height: 60px;
+            .imgs{
+                margin: -3px;
+                position: relative;
+                width: 40px;
+                overflow: hidden;
+                float: left;
+            }
+            .out{
+                float: left;
+                margin:10px; 
+                .item2{
+                    font-size:14px;
+                    margin-left:120px;
+                    color: darkgrey;
+                }
+            }
+           
+        }
+    }
+}

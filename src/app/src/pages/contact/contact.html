@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="zhuti" hideBackButton="true">
+    <ion-title>
+      记录成长足迹
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <ion-content>
+    <div class="container">
+      <ul class="mar">
+        <li>
+          <div class="tubiao main">
+            <button ion-botton block (click)="goSub()" style="background-color:transparent">
+              <ion-icon name="ios-card-outline"></ion-icon>
+            </button>
+          </div>
+          <span class="c1">发布说说</span>
+        </li>
+        <li>
+          <div class="tubiao">
+            <button ion-botton block (click)="goVidio()" style="background-color:transparent">
+                <ion-icon name="ios-videocam-outline"></ion-icon>
+            </button>
+          </div>
+          <span class="c1">上传视频</span>
+        </li>
+        <li>
+          <div class="tubiao">
+            <button ion-botton block (click)="goPicture()" style="background-color:transparent">
+                <ion-icon name="ios-images-outline"></ion-icon>
+            </button>
+          </div>
+          <span class="c1">上传图片</span>
+        </li>
+        <li>
+          <div class="tubiao">
+            <button ion-botton block (click)="goArticle()" style="background-color:transparent">
+                <ion-icon name="ios-paper-outline"></ion-icon>
+            </button>
+            
+          </div>
+          <span class="c1">发表文章</span>
+        </li>
+      </ul>
+    </div>
+  
+  
+  </ion-content>
+  
+  <ion-footer no-border text-center>
+    <ion-icon (click)="close()" name="md-close" color="light" style="padding-bottom:30px"></ion-icon>
+  </ion-footer>
+  
+  

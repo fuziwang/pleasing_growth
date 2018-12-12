@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="zhuti">
+    <ion-title style="text-align:center">正文</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="out" >
+      <div class="inside1" >
+          <div class="com1" ><img class="img1" src="../../assets/imgs/girl_02.png" alt="" style="width:60px;
+              height: 50px;"></div> <!-- img-->
+          <div class="com2">
+            <span style="font-size:18px">用户名</span><br>
+            <span style="font-size:12px;color:#BFBFBF">今天12:00</span>
+          </div>
+      </div>
+      <div class="inside2" >
+          <div class="com3">今天宝宝一周岁啦</div>
+          <div class="com4"><img class="img1" src="../../assets/imgs/baby.jpg" alt="" style="overflow:hidden"></div>
+      </div>
+    </div>
+     
+</ion-content>
+<ion-footer class="foo" >
+  <div class="inside3">
+      <div class="com5"><a><ion-icon name="ios-heart-outline"></ion-icon></a><span>赞同</span></div>
+      <div class="com6"><ion-icon name="ios-chatboxes-outline"></ion-icon><span>评论</span></div>
+      <div class="com7"><ion-icon name="ios-create-outline"></ion-icon><span>转发</span></div>
+      <div class="com8" (click)="goShare()"> <ion-icon ios="ios-share" md="md-share"></ion-icon><span>分享</span></div>
+  </div>
+</ion-footer>

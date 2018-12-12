@@ -1,0 +1,187 @@
+page-tiezi {
+    // overflow-y:auto;
+   
+       padding: 0px!important;
+       margin: 0px!important;
+    .al{
+        .img{
+            #img{
+                height: 200px;
+                width: 100%;
+            }
+        }
+        .fenxiang{
+            position: absolute;
+            top:450px;
+            left: 0px;
+            background-color: rgb(251, 253, 255);
+            
+            p{
+                font-size: 20px;
+                margin-top: 0px;
+            }
+            border: 1px solid rgb(255, 255, 255);
+            height: 200px;
+            width: 100%;
+            ul{
+                margin-top: 0px;
+                padding: 0px;
+                li{
+                   
+                    .first{
+                        margin-left: 35px!important;
+                        
+                    }
+                    float: left;
+                    i{
+                        
+                        font-size: 52px;
+                        height: 36px;
+                        margin-left: -10px;
+                        text-align: center;
+                       
+                    }
+                    span{
+                        position: relative;;
+                        top: 40px;
+                        left: -43px;
+                        font-size: 15px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        //border: 1px solid red;
+        .img{
+            width: 100%;
+            height: 200px;
+            img{
+                height: 200px;
+                width: 100%;
+            }
+            .my-icon{
+                i{
+                    font-size: 32px;
+                    height: 36px;
+                    margin:10px;
+                }
+            }
+            
+            .icon-2fanhui{
+                position: absolute;
+                top: 8px;
+                left: 10px;
+            }
+            .icon-fenxiang{
+                position: absolute;
+                top: 8px;
+                left: 340px;
+            }
+            img{
+                width: 100%;
+                height: 150px;
+            }
+        }
+        .bottom{
+            margin-top: 20px;
+            .pl{
+                color: rgb(202, 192, 192);
+                margin-bottom: 10px;
+            }
+            .tiezi{
+                .one{
+                    //border-bottom: solid 1px rgb(194, 184, 184);
+                    margin-top: 15px;
+                }
+                .content{
+                    //border: 1px solid yellow;
+                    margin-top: 5px;
+                    text-align: left;
+                    width: auto;
+                    margin-left: 30px;
+                    height: auto;
+                }
+                .pinlun{
+                    .icon{
+                        span{
+                            clear: both;
+                        }
+                        width: auto;
+                        margin-right: 5px;
+                        float: right;
+
+                    }
+                    .time{
+                        width: auto;
+
+                    }
+                    .name{
+                        width: auto;
+                        margin-right: 20px;
+                    }
+                    .img{
+                        img{
+                            width: 22px;
+                        height: 22px;
+                        border-radius: 50%
+                        }
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+                padding: 0px!important;
+                margin: 0px;
+                ul{
+                    height: 20px;
+                    padding: 0px!important;
+                    margin: 0px;
+                    li{
+                        //border: 1px solid red;
+                        padding: 0px!important;
+                        float: left;
+                        width: 70px;
+                       
+                    }
+            }
+           
+            }
+        }
+        .content{
+            
+            width: 100%;
+            height: auto;
+            text-align: center;
+            ul{
+                padding: 0px!important;
+                margin: 0px;
+                .atime{
+                    color: rgb(196, 189, 189);
+                }
+                .atitle{
+                    font-size: 18px;
+                    height: 50px;
+                    margin-top: 15px;
+                }
+                #neirong{
+                    pre{
+                        white-space:pre-wrap;
+                        word-wrap:break-word;
+                       
+                    }
+                    height: auto;
+                    text-align: left;
+                    text-indent: 2rem;
+                    //border: 3px solid rgb(8, 8, 8);
+                }
+                li{
+                   // border: 1px solid red;
+                    height: 20px;
+                }
+            }
+        }
+       
+    }
+   
+}

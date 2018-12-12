@@ -1,0 +1,112 @@
+page-content {
+    ion-title{
+        margin-left: -30px;
+    }
+    ion-content{
+        margin-top:-30px;
+        span{
+            margin-left: 5px;
+        }
+        .out{
+            margin-left:-8px;
+            margin-top: 15px;
+            width: 360px;
+            height: auto;
+            min-height:235px;
+            .inside1{
+                float: left;
+                margin-left:20px;
+                margin-top:15px;
+                .com1{
+                    width:50px;
+                    height: 50px;
+                    background-color:#F2F2F2;
+                    border-radius:50%;
+                    float: left;
+                }
+                .com2{
+                    height: auto;
+                    width: auto;
+                    margin-left:10px;
+                    margin-top:5px;
+                    float: left;
+                    overflow:hidden;
+                }
+                
+            }
+            .inside2{
+                float: left;
+                margin-left:20px;
+                margin-top:10px; 
+                .com3{
+                    width:260px;
+                    height:auto;
+                }
+                .com4{
+                    max-width: 90%;
+                    margin-top:5px; 
+                    min-width:100px;
+                    height:400px;
+                    max-height:400px;
+                    overflow:hidden;
+                    background-color:#F2F2F2;
+                }
+            }
+            .inside3{
+                float: left;
+                padding-left:30px;
+                margin-top:23px;
+                border-bottom: 1px solid #DDDDDD;
+                width: 95%;
+                
+            }
+        }
+    }
+    ion-footer{
+        height: 50px;
+        background-color: #F9F9F9;
+        .inside3{
+            float: left;
+            margin-left:30px;
+            margin-top:6px;
+            span{
+                font-size:14px;
+                margin-left:5px;
+            }
+            ion-icon{
+                padding-top:5px;
+                font-size:22px;
+            }
+            .com5{
+                margin-right:15px;
+                width: 60px;
+                height: 30px;
+                float: left;
+                color: #000;
+                
+                ion-icon:hover{
+                color:#2FBD7A;
+                }
+            }
+            .com6{
+                margin-right:15px;
+                width: 60px;
+                height: 30px;
+                float: left;
+            }
+            .com7{
+                margin-right:15px;
+                width: 60px;
+                height: 30px;
+                float: left;
+            }
+            .com8{
+                margin-right:15px;
+                width: 60px;
+                height: 30px;
+                float: left;
+            }
+        }
+    }
+
+}

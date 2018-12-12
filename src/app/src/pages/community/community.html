@@ -1,0 +1,31 @@
+<ion-content padding>
+  <ion-searchbar
+     [(ngModel)]="myInput"
+     [showCancelButton]="shouldShowCancel"
+     (ionInput)="onInput($event)"
+     (ionCancel)="onCancel($event)" class="search">
+   </ion-searchbar>
+ 
+   <div class="out"  *ngFor='let item of arr;let idx=index'>
+     <div class="inside1">
+         <div class="com1"></div> <!-- img-->
+         <div class="com2">
+           <span style="font-size:18px">用户名</span><br>
+           <span style="font-size:12px;color:#BFBFBF">今天12:00</span>
+         </div>
+     </div>
+     <div class="inside2">
+         <div class="com3">文本图片视频</div>
+         <div class="com4"></div>
+     </div>
+     <div class="inside3">
+         <div class="com5"><a><ion-icon name="ios-heart-outline"></ion-icon></a><span>赞同</span></div>
+         <div class="com6"><ion-icon name="ios-chatboxes-outline"></ion-icon><span>评论</span></div>
+         <div class="com7"><ion-icon name="ios-create-outline"></ion-icon><span>转发</span></div>
+         <div class="com8" (click)="goShare()"> <ion-icon ios="ios-share" md="md-share"></ion-icon><span>分享</span></div>
+     </div>
+   </div>
+ 
+ 
+ </ion-content>
+ 

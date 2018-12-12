@@ -1,0 +1,125 @@
+page-zhuce {
+    ion-content{
+        img{
+            width: 170px;
+            height: 80px;
+            margin-left: 80px;
+            margin-top: 70px;
+        }
+        .box1{
+            margin-top: 20px!important;
+        }
+        .box{
+           margin-top: -30px;
+            width: 200px;
+            position: relative;
+        }
+        #yanzheng{
+            position: relative;
+            left: 180px;
+            top: -98px;
+            height: 35px;
+            width: 110px;
+            background-color: #2ebd7a;
+            color: #fff;
+            border-radius:40px!important;
+            line-height: 30px;
+        }
+        .box{
+            
+            input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+                color:#2ebd7a; 
+                padding-left: 10px;
+                } 
+                input:-moz-placeholder, textarea:-moz-placeholder { 
+                color: #2ebd7a; 
+                } 
+            .icon1{
+                background: url(../assets/imgs/shouji.png) no-repeat;
+                background-size: 23px 23px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 33px;
+                left: 57px;
+    
+            }
+            .icon3{
+                background: url(../assets/imgs/suo.png) no-repeat;
+                background-size: 23px 23px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 48px;
+                left: 57px;
+               
+    
+            }
+            .icon2{
+                background: url(../assets/imgs/yaoshi1.png) no-repeat;
+                background-size: 23px 23px;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 49px;
+                left: 57px;
+    
+            }
+        }
+        .box .username{
+            padding-left: 30px;
+            height: 50px;
+        }
+        #btn{
+            width: 70px;
+            height: 30px;
+            border-radius: 16px;
+            background-color:#2ebd7a ;
+            position: absolute;
+            top:50px;
+            left: 220px;
+            color: #fff;
+        }
+        input{
+            border-radius:40px!important;
+            height: 40px;
+            width: 250px;
+            color:  #2ebd7a;
+            margin-top: 20px;
+            margin-left: 50px;
+            border: 1px solid #2ebd7a;            
+            
+        }
+        #button{
+            margin-top: 50px;
+            width: 250px;
+            margin-left: 20px;
+        }
+        #r{
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 42px;
+            left: -20px;
+            text-align: center;
+        }
+        .buttom{
+           
+            span{
+                p{
+                    color: #2ebd7a;
+                    font-size: 13px;
+                }
+                display: block;
+                float: left;
+                margin-left: 50px;
+                margin-top: 10px;
+              
+            }
+           .left{
+               margin-right: 20px;
+               margin-left: 120px;
+           }
+        }
+    }
+}

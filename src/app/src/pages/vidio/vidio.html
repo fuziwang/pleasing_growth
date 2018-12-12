@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="gre" hideBackButton="true">
+      <ion-title>最近视频</ion-title><span class="shipin" (click)="goChoose()">相册</span><span class="qx" (click)="edit()">取消</span>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content padding>
+  <div class="out" *ngFor='let item of arr;let idx=index'>
+      <div class="came">
+          <img class="img1" src="../../assets/imgs/hot04.png" alt="" style="overflow:hidden">
+      </div>
+      <div class="came">
+          <img class="img1" src="../../assets/imgs/hot03.png" alt="" style="overflow:hidden">
+      </div>
+      <div class="came">
+          <img class="img1" src="../../assets/imgs/hot06.png" alt="" style="overflow:hidden">
+      </div>
+      
+  </div>
+  <ion-list>
+  
+  <ion-footer class="foo" >
+  <button class="button button-positive"  (click)="chengGong()"><span>确定</span></button> 
+  </ion-footer>
+  
