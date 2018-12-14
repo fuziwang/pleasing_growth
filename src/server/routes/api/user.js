@@ -6,7 +6,7 @@ var User = require('../../modules/api/user.js');
 var user = new User();
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/staticimage/apiuser');          
+    cb(null, 'public/static/user');          
   },
   filename: function (req, file, cb) {
       cb(null, req.body.utel + "-" + file.originalname);        

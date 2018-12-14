@@ -3,7 +3,7 @@ const db = require('../database.js');
 var Article = function(){};
 
 Article.prototype.selectAid = function(cb){
-    const sql = 'select min(aid+1) c from User c where not exists (select aid from Article where aid = c.aid+1);';
+    const sql = 'select min(aid+1) c from Article c where not exists (select aid from Article where aid = c.aid+1);';
     db.query(sql,(err,result)=>{
       if(err){
         cb(true);
