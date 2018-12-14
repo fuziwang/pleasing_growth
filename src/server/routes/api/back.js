@@ -43,18 +43,20 @@ router.post('/',upload.single('rimage'),(req,res,next)=>{
       res.statusCode = 500;        
     }
     var rid = JSON.parse(JSON.stringify(result))[0].c;
-    obj.rid = rid;              
-  });
-  obj.rimage = req.file.filename;
-  obj.uid = req.body.uid;
-  obj.rcontent = req.body.rcontent;
-  obj.rtel = req.body.rtel;
-  back.insertItem(obj,(err,result)=>{
-    if(err){
-      res.statusCode = 500;
-      res.send('error');
-    }else{
-      res.send('ok');
+    obj.rid = rid;
+    if(obj.rid){
+      obj.rimage = req.file.filename;
+      obj.uid = req.body.uid;
+      obj.rcontent = req.body.rcontent;
+      obj.rtel = req.body.rtel;
+      back.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        }else{
+          res.send('ok');
+        }
+      });
     }
   });
 });
