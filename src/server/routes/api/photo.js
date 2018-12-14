@@ -16,7 +16,7 @@ router.get('/',(req,res,next)=>{
   });
 });
 
-router.get('/:pid',(req,res,next)=>{
+router.get('/:xid',(req,res,next)=>{
   var obj = req.params;
   console.log(obj);
   photo.getPhoto(obj,(err,result)=>{

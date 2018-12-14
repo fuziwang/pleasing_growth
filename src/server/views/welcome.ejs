@@ -1,51 +1,178 @@
-<!-- 头部开始 -->
-<!-- title为传进去的标题，也可以传其他参数进去 -->
-<%- include('templet/_blank_header', {title: "空白页"}) %>
-<!-- 头部结束 -->
-
-<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-  </head>
-  <body>
-    <link rel="stylesheet" type="text/css" href="/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <div  id="container">
-      <div id="users">
-        <img src="/images/hou/hou3.png" alt="" id="imgs">
-      </div>
-      <div id="says">
-        <img src="/images/hou/hou4.png" alt="" id="imgs">
-      </div>
-      <div id="articles">
-        <img src="/images/hou/hou5.png" alt="" id="imgs">
-      </div>
-    </div>
-    <div id="container">
-      <div id="container1">
-        <div id="article">
-          <img src="/images/hou/hou6.png" alt="" >
-        </div>
-        <div id="say">
-          <img src="/images/hou/hou7.png" alt="" >
-        </div>
-      </div>
-      <div id="user">
-          <img src="/images/hou/hou8.png" alt="">
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="//cdn.bootcss.com/Chart.js/2.1.6/Chart.bundle.js"></script>
+<style type="text/css">
+	.title{
+		font-size:20px;
+		font-weight: bold;
+		letter-spacing: 1.1px;
+		padding-left:25px;
+	}
+	ul,li{
+		list-style:none;
+	}
+	.head{
+		display: flex;
+	}
+	.head li{
+		width:30%;
+		height: 100px;
+		padding:10px;
+		display: flex;
+		color:#fff;
+	}
+	.head li .left p{
+		letter-spacing: 1.1px;
+		margin-top:18px;
+	}
+	.head li .right p{
+		letter-spacing: 1.1px;
+		margin-top:12px;
+		font-weight:bold;
+		font-family: "Consolas";
+	}
+	.head li h3{
+		font-size: 22px;
+		margin-top:15px;
+	}
+	.head li .left{
+		width:65%;
+		padding-left:50px;
+	}
+	.head li .right{
+		width:35%;
+		text-align: center;
+	}
+	.head li .right img{
+		display: block;
+		width:37px;
+		height: 37px;
+		margin:13px auto;
+	}
+	.head li:nth-child(1) .left{
+		background-color: rgb(96,184,246);
+	}
+	.head li:nth-child(1) .right{
+		background-color: rgb(91,175,233);
+	}
+	.head li:nth-child(2) .left{
+		background-color: rgb(206,132,222);
+	}
+	.head li:nth-child(2) .right{
+		background-color: rgb(195,125,211);
+	}
+	.head li:nth-child(3) .left{
+		background-color: rgb(25,169,123);
+	}
+	.head li:nth-child(3) .right{
+		background-color: rgb(24,160,117);
+	}
+	.chart{
+		display: flex;
+	}
+</style>
+<title>我的桌面</title>
+</head>
+<body>
+	<h3 class="title">欢迎使用悦成长后台管理系统</h3>
+	<ul class="head">
+		<li>
+			<div class="left">
+				<p>悦成长用户总量</p>
+				<h3>1,234,567</h3>
+			</div>
+			<div class="right">
+				<img src="images/diqiu.png">
+				<p>+33.3%</p>
+			</div>
+		</li>
+		<li>
+			<div class="left">
+				<p>悦成长说说发布总量</p>
+				<h3>1,234,567</h3>
+			</div>
+			<div class="right">
+				<img src="images/say.png">
+				<p>+33.3%</p>
+			</div>
+		</li>
+		<li>
+			<div class="left">
+				<p>悦成长文章发布总量</p>
+				<h3>1,234,567</h3>
+			</div>
+			<div class="right">
+				<img src="images/wenzhang.png">
+				<p>+33.3%</p>
+			</div>
+		</li>
+	</ul>
+	<!-- 展示canvas -->
+	<div class="chart">
+		<div style="width: 500px;padding-left:18px;">
+			<canvas id="myChart" style="width:400px; height:800px;"></canvas>
+		</div>
+		<div style="width: 500px;padding-left:18px;">
+			<canvas id="canvas" height="450" width="600"></canvas>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		 // 设置参数
+		 var data = {
+		    labels: [
+		        "20岁-30岁",
+		        "30岁-45岁",
+		        "45岁-60岁",
+		        "60岁以上"
+		    ],
+		    datasets: [{
+		        data: [350, 150, 100,50],
+		        backgroundColor: [
+		            "#FF6384",
+		            "#36A2EB",
+		            "#FFCE56",
+		            "#19A978"
+		        ],
+		        hoverBackgroundColor: [
+		            "#FF6384",
+		            "#36A2EB",
+		            "#FFCE56",
+		            "#19A978"
+		        ]
+		    }]
+		};
+		var lineChartData = {
+			labels : ["January","February","March","April","May","June","July","July","July","July","July","July"],
+			datasets : [
+				{
+					fillColor : "rgba(220,220,220,0.5)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					data : [65,59,90,81,56,55,40,40,40,40,40,40]
+				},
+				{
+					fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : [28,48,40,19,96,27,100,40,40,40,40,40]
+				}
+			]
+			
+		}
+	    var ctx = document.getElementById("myChart").getContext("2d");
+	    var myBarChart = new Chart(ctx, {type: 'pie',data: data});
+	    var myLine = new Chart(document.getElementById("canvas").getContext("2d"), { type:'line', data: lineChartData});
+	</script>
+</body>
 </html>
-
-<!-- <div class="pd-20">
-  //这是一个空白页,如果想添加页面，可以直接考走这个文件，替换掉这里的文代码
-  <img src="/images/11.jpg">
-</div> -->
-
-<!-- 尾部开始 -->
-<%- include templet/_blank_footer %>
-<!-- 尾部结束 -->
