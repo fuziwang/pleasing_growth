@@ -145,4 +145,37 @@ User.prototype.insertHobby = function(uid,topic,cb){
   });
 }
 
+User.prototype.deleteUser = function(uid,cb){
+  const sql = 'delete from User where uid = ?';
+  db.query(sql,[uid],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  });
+}
+
+User.prototype.insertUser = function(obj,cb){
+  const sql = 'insert into User values(?,?,?,?,?,?,?,?,?,?,?,?)';
+  db.query(sql,[obj.uid,obj.uname,obj.uimage,obj.usex,obj.uage,obj.uwhere,obj.utel,obj.upass,obj.ufans,obj.uconcern,obj.udescribe,1],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  });
+}
+
+User.prototype.deleteHobby = function(uid,cb){
+  const sql = 'delete from UserHobby where uid = ?';
+  db.query(sql,[uid],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  });
+}
+
 module.exports = User;
