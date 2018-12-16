@@ -167,4 +167,66 @@ router.post('/image',upload.single('uimage'),(req,res,next)=>{
   });
 });
 
+router.post('/update',upload.single('uimage'),(req,res,next)=>{
+  var obj = {
+    uimage:req.file.filename,
+    uid:req.body.uid,
+    uname:req.body.uname,
+    usex:req.body.usex,
+    uage:req.body.uage,
+    uwhere:req.body.uwhere,
+    udescribe:req.body.udescribe,
+    topic:req.body.topic
+  };
+  user.getAll(obj,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+    } else {
+      var o = JSON.parse(JSON.stringify(result));
+      obj.ufans = o[0].ufans;
+      obj.uconcern = o[0].uconcern;
+      obj.utel = o[0].utel;
+      obj.upass = o[0].upass;
+      res.send('select OK!');
+    }
+  });
+  user.deleteUser(obj.uid,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+    } else {
+      res.send('delete OK!');
+    }
+  });
+  user.deleteHobby(obj.uid,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+    } else {
+      res.send('delete hobby ok!');
+    }
+  });
+  user.insertUser(obj,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+    } else {
+      res.send('insert ok!');
+    }
+  });
+  obj.topic.forEach((e)=>{
+    user.insertHobby(obj.uid,e,(err,result)=>{
+      if(err){
+        res.statusCode = 500;
+      } else {
+        res.send('insert hobby ok!');
+      }
+    });
+  });
+  user.getAll(obj.uid,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+    } else {
+      var json = JSON.parse(JSON.stringify(result));
+      res.json(json);
+    }
+  })
+});
 module.exports = router;

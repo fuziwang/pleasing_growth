@@ -68,9 +68,9 @@ router.get('/', function (req, res, next) {
       }else{
         var item = JSON.stringify(result);
         var obj = JSON.parse(item);
-        //console.log(obj);
+        console.log(obj);
         if(obj.length !==0 && obj[0].uid == null) obj = [];
-        //console.log(obj);
+        console.log(obj);
       }
       res.render('user-list',{obj:obj});
     });
