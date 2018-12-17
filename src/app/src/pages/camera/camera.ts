@@ -26,7 +26,7 @@ export class CameraPage {
     this.check=1;
   }
   edit(){
-    this.navCtrl.push(ContactPage);
+    this.navCtrl.pop();
   }
   goChoose(){
     this.navCtrl.push(ChoosePage);

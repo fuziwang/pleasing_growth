@@ -36,40 +36,45 @@ interface user{
 export class LoginPage {
  
   constructor(public navCtrl: NavController,private api:ApiProvider,private storage:StorageProvider) {
-    // this.getList();
+    
   }
-  id=16;
+  bo;
+  uid;
   tel=this.storage.getItem('tel');
   pwd=this.storage.getItem('pwd');
-  list:Array<user>=[];
-  // getList(){
-  //   //获取list用于显示
-  //   this.api.getMy().then(data=>{
-  //     //console.dir(data);
-  //     this.list=<any>data;
-  //     //console.dir(this.list);
-  //   });
-  //   console.log('电话是',this.tel);
-  //   console.log('密码是',this.pwd);
-  //   let data=JSON.stringify({
-  //     upass:this.pwd,
-  //     utel:this.tel,
+ 
+  getList(){
+//往后台传的数据
+    let data=JSON.stringify({
+      upass:this.pwd,
+      utel:this.tel,
+    });
+
+    this.api.postLogin(data).then(data=>{
+      console.log(data[0].uid)
+      console.dir(data);
+      this.storage.setItem('uid',data[0].uid);
+      this.bo =Array.isArray(data)&& data.length==0;
+      console.log(this.bo);
+      if(this.bo!==true){
+        this.navCtrl.push(TouxiangPage);
+      }
      
-  //   });
-  //   this.api.postLogin(data).then(data=>{
-  //     console.dir(data);
-  //   });
+    });
     
-  // }
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-   
-
   }
 
   logIn( ) {
-    this.navCtrl.push(TouxiangPage);
+    this.getList();
+    // console.log(this.bo);
+    // if(this.bo!==true){
+    //   this.navCtrl.push(TouxiangPage);
+    // }
+   
   }
 
   zhuce(){

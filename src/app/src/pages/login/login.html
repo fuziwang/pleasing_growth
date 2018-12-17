@@ -13,6 +13,7 @@
     <ion-icon name="phone"></ion-icon>
     <input type="password" class="username" placeholder="请输入密码" style="padding-left:40px;" [(ngModel)]="pwd" />
   </div>
+  
 
   <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
     <button id="button" ion-button block  color="zhuti"  round (click)="logIn()">
@@ -23,4 +24,5 @@
     <span><p (click)="zhuce()">注册新用户</p></span>
     <span class="left"><p (click)="set()">忘记密码</p></span>
   </div>
+  <span class="error" [ngStyle]="{'display': bo== true  ? 'block' : 'none'}"><p >密码错误，请重新输入。</p></span>
 </ion-content>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ResetPwdPage } from '../reset-pwd/reset-pwd';
-
+import { XieyiPage } from '../xieyi/xieyi';
+import { AboutusPage } from '../aboutus/aboutus';
 /**
  * Generated class for the SetupPage page.
  *
@@ -23,6 +24,9 @@ export class SetupPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SetupPage');
+  }
+  xieyi(){
+    this.navCtrl.push(AboutusPage);
   }
 
 }

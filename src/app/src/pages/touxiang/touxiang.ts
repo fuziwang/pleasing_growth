@@ -26,7 +26,8 @@ export class TouxiangPage {
     
   }
   seetouxiang(){
-    this.navCtrl.push(SeetouxiangPage);
+    var file=document.getElementById('file');
+   this.navCtrl.push(SeetouxiangPage);
   }
   xingqu(){
     this.navCtrl.push(XingquPage);

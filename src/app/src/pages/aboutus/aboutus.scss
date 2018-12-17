@@ -1,0 +1,38 @@
+page-aboutus {
+    ion-header{
+        ion-title{
+            position: absolute;
+            top: 16px;
+            left: 135px;
+        }
+    }
+    ion-content{
+        div{
+            img{
+                position: absolute;
+                top: 50px;
+                left: 143px;
+            }
+            p{
+                font-size: 16px ;
+                position: absolute;
+                top: 125px;
+                left: 135px;
+                color: darkgray;
+            }
+        }
+        ion-list{
+            position: absolute;
+            top: 205px;
+            .item1{
+                letter-spacing:1px;
+            }
+            .item2{
+                letter-spacing:1px;
+                color: darkgray;
+            }
+        }
+        
+    }
+    
+}

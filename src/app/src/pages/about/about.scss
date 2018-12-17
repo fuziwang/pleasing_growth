@@ -99,9 +99,18 @@ page-about {
             height: 200px;
             margin-left: 10%;
             ul{
-               
+                border: 1px solid rgb(199, 168, 168);
+                height: 250px;
+               .class0{
+                border: 1px solid rgb(169, 209, 60);
+               }
+               .class1{
+                border: 1px solid rgb(41, 31, 182);
+               }
                 li{
+
                     border-radius: 50%;
+                    //border: 1px solid black;
                     p{
                         //border:1px solid black;
                         margin-top: 15px;
@@ -112,11 +121,11 @@ page-about {
                         width: 35px;
                         margin-left: 10px;
                     }
-                    width: 55px;
-                    height: 55px;
+                    width: 53px;
+                    height: 53px;
                     background: url(../../assets/imgs/pingguo.png) no-repeat;
                     opacity: 0.8;
-                    background-size: 55px 55px;
+                    background-size: 53px 53px;
                    
                     float: left;
                     //border:solid 1px red;

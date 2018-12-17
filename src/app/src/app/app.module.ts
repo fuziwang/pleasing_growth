@@ -51,6 +51,9 @@ import { StorageProvider } from '../providers/storage/storage';
 import { SeetouxiangPage } from '../pages/seetouxiang/seetouxiang';
 import { PhotoPage } from '../pages/photo/photo';
 import { TransmitPage } from '../pages/transmit/transmit';
+import { AboutusPage } from '../pages/aboutus/aboutus';
+import { PhotoPageModule } from '../pages/photo/photo.module';
+
 
 
 @NgModule({
@@ -66,6 +69,8 @@ import { TransmitPage } from '../pages/transmit/transmit';
     MyPage,
     ShequPage,
     LoginPage,
+    AboutusPage,
+    EditPage,
     ZhucePage,
     FirstPage,
     SetPwdPage,
@@ -95,12 +100,13 @@ import { TransmitPage } from '../pages/transmit/transmit';
     CommunityPage,
     SeetouxiangPage,
     MessagePage,
-    PhotoPage,
+    //PhotoPageModule,
   ],
   imports: [
     BrowserModule,
    HttpModule,
    TieziPageModule,
+   PhotoPageModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: 'true',
       backButtonText: '',
@@ -124,6 +130,7 @@ import { TransmitPage } from '../pages/transmit/transmit';
     ZhucePage ,
     TransmitPage,
     FirstPage,
+    AboutusPage,
     SetPwdPage,
     ResetPwdPage,
     XieyiPage,

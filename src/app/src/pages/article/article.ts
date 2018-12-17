@@ -1,6 +1,21 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ShequPage } from '../shequ/shequ';
+import { ApiProvider } from '../../providers/api/api';
+
+interface Article{
+  aid:number;
+  atitle:string;
+  acontent:string;
+  atime:string;
+  acomment:number;
+  aimage:string;
+  astaus:number;
+  astatus:number;
+  aprivate:number;
+  uid:number;
+}
+
 
 /**
  * Generated class for the ArticlePage page.
@@ -16,11 +31,24 @@ import { ShequPage } from '../shequ/shequ';
 })
 export class ArticlePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  text;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private api:ApiProvider) {
+  }
+  getList(){
+    let data=JSON.stringify({
+      acontent:this.text,
+    });
+    this.api.postArticle(data).then(data=>{
+      console.dir(data);
+    });
   }
 
   openModal(){
-    this.navCtrl.push(ShequPage)
+    this.getList();
+    this.navCtrl.setRoot(ShequPage);
   }
-
+  goCamera(){
+    
+  }
 }
+
