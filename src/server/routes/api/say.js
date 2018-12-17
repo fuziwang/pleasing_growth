@@ -48,6 +48,9 @@ router.post('/',upload.single('simage'),(req,res,next)=>{
       }
       var sid = JSON.parse(JSON.stringify(result))[0].c;
       obj.sid = sid;
+      obj.simage = null;
+      obj.uid = req.body.uid;
+      obj.scontent = req.body.scontent;
       console.log(obj);
       say.insertItem(obj,(err,result)=>{
         if(err){
@@ -58,9 +61,6 @@ router.post('/',upload.single('simage'),(req,res,next)=>{
         }
       });
     });
-    obj.simage = req.file.filename;
-    obj.uid = req.body.uid;
-    obj.scontent = req.body.scontent;
 });
 
 module.exports = router;

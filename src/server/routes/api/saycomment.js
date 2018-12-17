@@ -49,7 +49,9 @@ router.post('/',(req,res,next)=>{
       }
       var scid = JSON.parse(JSON.stringify(result))[0].c;
       obj.scid = scid;
-
+      obj.uid = req.body.uid;
+      obj.sid = req.body.sid;
+      obj.sccontent = req.body.sccontent;
       saycomment.insertItem(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
@@ -59,9 +61,6 @@ router.post('/',(req,res,next)=>{
         }
       });
     });
-    obj.uid = req.body.uid;
-    obj.sid = req.body.sid;
-    obj.sccontent = req.body.sccontent;
 });
 
 module.exports = router;

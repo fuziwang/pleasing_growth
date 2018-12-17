@@ -48,6 +48,10 @@ router.post('/',upload.single('plocal'),(req,res,next)=>{
       }
       var pid = JSON.parse(JSON.stringify(result))[0].c;
       obj.pid = pid;
+      obj.plocal = req.file.filename;
+      obj.xid = req.body.xid;
+      obj.pname = req.body.pname;
+      obj.ptype = req.body.ptype;
       photo.insertItem(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
@@ -57,10 +61,6 @@ router.post('/',upload.single('plocal'),(req,res,next)=>{
         }
       });
     });
-    obj.plocal = req.file.filename;
-    obj.xid = req.body.xid;
-    obj.pname = req.body.pname;
-    obj.ptype = req.body.ptype;
 });
 
 module.exports = router;

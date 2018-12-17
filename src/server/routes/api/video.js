@@ -48,6 +48,10 @@ router.post('/',upload.single('vlocal'),(req,res,next)=>{
       }
       var vid = JSON.parse(JSON.stringify(result))[0].c;
       obj.vid = vid;
+      obj.vlocal = req.file.filename;
+      obj.uid = req.body.uid;
+      obj.vname = req.body.vname;
+      obj.vtype = req.body.vtype;
       video.insertItem(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
@@ -57,10 +61,6 @@ router.post('/',upload.single('vlocal'),(req,res,next)=>{
         }
       })
     });
-    obj.vlocal = req.file.filename;
-    obj.uid = req.body.uid;
-    obj.vname = req.body.vname;
-    obj.vtype = req.body.vtype;
 });
 
 module.exports = router;

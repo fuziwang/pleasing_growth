@@ -48,6 +48,12 @@ router.post('/',upload.single('aimage'),(req,res,next)=>{
       }
       var aid = JSON.parse(JSON.stringify(result))[0].c;
       obj.aid = aid;
+      obj.aimage = null;
+      obj.uid = req.body.uid;
+      obj.atitle = req.body.atitle;
+      obj.acomment = req.body.acomment;
+      obj.acontent = req.body.acontent;
+      obj.aprivate = req.body.aprivate;
       article.insertItem(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
@@ -57,12 +63,6 @@ router.post('/',upload.single('aimage'),(req,res,next)=>{
         }
       });
     });
-    obj.aimage = req.file.filename;
-    obj.uid = req.body.uid;
-    obj.atitle = req.body.atitle;
-    obj.acomment = req.body.acomment;
-    obj.acontent = req.body.acontent;
-    obj.aprivate = req.body.aprivate;
 });
 
 module.exports = router;
