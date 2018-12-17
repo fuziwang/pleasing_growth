@@ -9,10 +9,8 @@
 <script src="//cdn.bootcss.com/Chart.js/2.1.6/Chart.bundle.js"></script>
 <style type="text/css">
 	.title{
-		font-size:20px;
-		font-weight: bold;
-		letter-spacing: 1.1px;
-		padding-left:25px;
+		padding-left:35px;
+		margin-top:20px;
 	}
 	ul,li{
 		list-style:none;
@@ -76,16 +74,41 @@
 	.chart{
 		display: flex;
 	}
+	.charts{
+		text-align: center;
+	}
+	.age{
+		margin-top:35px;
+	}
+	footer{
+		width:100%;
+		color:#333;
+		font-size:14px;
+		padding-top:20px;
+		margin-bottom: 20px;
+	}
+	footer p{
+		margin-top:-5px;
+		text-align:center;
+	}
+	footer p a{
+		text-decoration:none;
+		color:#333;
+	}
+	footer p a:hover{
+		text-decoration: underline;
+		color:rgb(25,169,123);
+	}
 </style>
 <title>我的桌面</title>
 </head>
 <body>
-	<h3 class="title">欢迎使用悦成长后台管理系统</h3>
+	<img src="images/title.png" class="title">
 	<ul class="head">
 		<li>
 			<div class="left">
 				<p>悦成长用户总量</p>
-				<h3>1,234,567</h3>
+				<h3><%- obj.user -%></h3>
 			</div>
 			<div class="right">
 				<img src="images/diqiu.png">
@@ -95,7 +118,7 @@
 		<li>
 			<div class="left">
 				<p>悦成长说说发布总量</p>
-				<h3>1,234,567</h3>
+				<h3><%- obj.say -%></h3>
 			</div>
 			<div class="right">
 				<img src="images/say.png">
@@ -105,7 +128,7 @@
 		<li>
 			<div class="left">
 				<p>悦成长文章发布总量</p>
-				<h3>1,234,567</h3>
+				<h3><%- obj.article -%></h3>
 			</div>
 			<div class="right">
 				<img src="images/wenzhang.png">
@@ -115,22 +138,22 @@
 	</ul>
 	<!-- 展示canvas -->
 	<div class="chart">
-		<div style="width: 500px;padding-left:18px;">
+		<div style="width: 500px;padding-left:18px;" class="charts">
 			<canvas id="myChart" style="width:400px; height:800px;"></canvas>
+			<h4 class="age">悦成长用户年龄段分布图</h4>
 		</div>
 		<div style="width: 500px;padding-left:18px;">
 			<canvas id="canvas" height="450" width="600"></canvas>
 		</div>
 	</div>
-	<!-- <footer class="footer mt-20">
-		<div class="container">
-			<p>感谢jQuery、layer、chart.js、H-ui、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、bootstrap-Switch的技术支持<br>
-				Copyright &copy;2018-2019 pleasing_growth v1.0 All Rights Reserved.<br>
-				本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+	<footer>
+		<div>
+			<p>Copyright  &copy;2018-2019  pleasing_growth  v1.0  All Rights Reserved.</p><p>本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
 		</div>
-	</footer> -->
+	</footer>
 
 	<script type="text/javascript">
+		<%- obj.user -%>
 		 // 设置参数
 		 var data = {
 		    labels: [
@@ -140,18 +163,18 @@
 		        "60岁以上"
 		    ],
 		    datasets: [{
-		        data: [350, 150, 100,50],
+		        data: [<%- obj.oneage -%>,<%- obj.twoage -%>, <%- obj.threeage -%>,<%- obj.fourage -%>],
 		        backgroundColor: [
-		            "#FF6384",
-		            "#36A2EB",
-		            "#FFCE56",
-		            "#19A978"
+		            "#CCBBFF",
+		            "#FFEE99",
+		            "#CCEEFF",
+		            "#CCFF99"
 		        ],
 		        hoverBackgroundColor: [
-		            "#FF6384",
-		            "#36A2EB",
-		            "#FFCE56",
-		            "#19A978"
+		            "#CCBBFF",
+		            "#FFEE99",
+		            "#CCEEFF",
+		            "#CCFF99"
 		        ]
 		    }]
 		};
@@ -159,18 +182,28 @@
 			labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
 			datasets : [
 				{
-					fillColor : "rgba(220,220,220,0.5)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					data : [65,59,90,81,56,55,40,40,40,40,40,40]
+					label: '文章数量变化',
+					backgroundColor: "rgba(255,255,255,0)", //背景填充色
+                	borderColor: "rgba(25,169,123,1)", //路径颜色
+                	pointBackgroundColor: "rgba(25,169,123,1)", //数据点颜色
+                	pointBorderColor: "rgba(25,169,123,1)", //数据点边框颜色
+					data : [65,59,90,81,56,55,40,57,65,58,75,89]
 				},
 				{
-					fillColor : "rgba(151,187,205,0.5)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					data : [28,48,40,19,96,27,100,40,40,40,40,40]
+					label: '说说数量变化',
+					backgroundColor: "rgba(255,255,255,0)", //背景填充色
+                	borderColor: "rgba(206,132,222,1)", //路径颜色
+                	pointBackgroundColor: "rgba(206,132,222,1)", //数据点颜色
+                	pointBorderColor: "rgba(206,132,222,1)", //数据点边框颜色
+					data : [28,48,40,19,96,57,68,89,56,67,93,78]
+				},
+				{
+					label : '用户数量变化',
+					backgroundColor : "rgba(255,255,255,0)",
+					borderColor : "rgba(96,184,246,1)",
+					pointBackgroundColor : "rgba(96,184,246,1)",
+					pointBorderColor : "rgba(96,184,246,1)",
+					data : [34,36,41,29,47,38,36,54,49,47,52,78]
 				}
 			]
 			
