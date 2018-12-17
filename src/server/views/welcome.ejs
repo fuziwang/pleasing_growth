@@ -108,7 +108,7 @@
 		<li>
 			<div class="left">
 				<p>悦成长用户总量</p>
-				<h3>1,234,567</h3>
+				<h3><%- obj.user -%></h3>
 			</div>
 			<div class="right">
 				<img src="images/diqiu.png">
@@ -118,7 +118,7 @@
 		<li>
 			<div class="left">
 				<p>悦成长说说发布总量</p>
-				<h3>1,234,567</h3>
+				<h3><%- obj.say -%></h3>
 			</div>
 			<div class="right">
 				<img src="images/say.png">
@@ -128,7 +128,7 @@
 		<li>
 			<div class="left">
 				<p>悦成长文章发布总量</p>
-				<h3>1,234,567</h3>
+				<h3><%- obj.article -%></h3>
 			</div>
 			<div class="right">
 				<img src="images/wenzhang.png">
@@ -153,6 +153,7 @@
 	</footer>
 
 	<script type="text/javascript">
+		<%- obj.user -%>
 		 // 设置参数
 		 var data = {
 		    labels: [
@@ -162,7 +163,7 @@
 		        "60岁以上"
 		    ],
 		    datasets: [{
-		        data: [350, 150, 100,0],
+		        data: [<%- obj.oneage -%>,<%- obj.twoage -%>, <%- obj.threeage -%>,<%- obj.fourage -%>],
 		        backgroundColor: [
 		            "#CCBBFF",
 		            "#FFEE99",

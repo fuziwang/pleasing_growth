@@ -38,7 +38,7 @@ var upload = multer({ storage: storage   });
 
 router.post('/',upload.single('rimage'),(req,res,next)=>{
   var obj = {};
-  user.selectRid((err,result)=>{
+  back.selectRid((err,result)=>{
     if(err){
       res.statusCode = 500;        
     }
