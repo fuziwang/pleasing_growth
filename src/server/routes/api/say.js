@@ -48,6 +48,7 @@ router.post('/',upload.single('simage'),(req,res,next)=>{
       }
       var sid = JSON.parse(JSON.stringify(result))[0].c;
       obj.sid = sid;
+      console.log(obj);
       say.insertItem(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
