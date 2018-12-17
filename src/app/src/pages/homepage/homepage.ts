@@ -4,6 +4,7 @@ import { CreationPage } from '../creation/creation';
 import { FollowPage } from '../follow/follow';
 import { FansPage } from '../fans/fans';
 import { ApiProvider } from '../../providers/api/api';
+import { StorageProvider } from '../../providers/storage/storage';
 
 /**
  * Generated class for the HomepagePage page.
@@ -34,15 +35,16 @@ interface user{
 })
 export class HomepagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,private storage:StorageProvider) {
    
     this.getList();
     
   }
+  uid=this.storage.getItem('uid');
   list:Array<user>=[];
   getList(){
     //获取list用于显示
-    this.api.getMy().then(data=>{
+    this.api.getMy(this.uid).then(data=>{
       //console.dir(data);
       this.list=<any>data;
       console.dir(this.list);

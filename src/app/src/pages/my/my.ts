@@ -14,6 +14,7 @@ import { MessagePage } from '../message/message';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { StorageProvider } from '../../providers/storage/storage';
 // import { ModalPage } from './ModalPage';
 /**
  * Generated class for the MyPage page.
@@ -44,15 +45,16 @@ interface user{
 })
 export class MyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,private app:App) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,private app:App,private storage:StorageProvider) {
    
     this.getList();
     
   }
+  id=this.storage.getItem('uid');
   list:Array<user>=[];
   getList(){
     //获取list用于显示
-    this.api.getMy().then(data=>{
+    this.api.getMy(this.id).then(data=>{
       //console.dir(data);
       this.list=<any>data;
       //console.dir(this.list);

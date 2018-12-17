@@ -18,7 +18,7 @@
     </div>
     <div class="apple">
       <ul>
-        <li *ngFor='let item of arr;let idx=index' [ngClass]="{'class0': index==0,'class1': index==1}"><p>{{item}}</p></li>
+        <li *ngFor='let item of arr;let idx=index' [ngClass]="{'class0': index==0,'class1': index==1}" (click)="change(index)"><p>{{item}}</p></li>
       </ul>
     </div>
     <div class="buttom">
@@ -46,5 +46,10 @@
        <input type="text" placeholder="果实名称（最多4个字）" [(ngModel)]="text">
        <span (click)="addArr()">确定</span><span (click)="quxiao()">取消</span>
     </footer>
+    <footer [ngStyle]="{'display': isdel== 1  ? 'block' : 'none'}" class="footer">
+      <p>你想修改的果实名称是：</p>
+      <input type="text" placeholder="修改果实名称（最多4个字）" [(ngModel)]="change_text">
+      <span (click)="change_content()">确定</span><span (click)="quxiao()">取消</span><span (click)="del()">删除果实</span>
+   </footer>
   
   </ion-content>
