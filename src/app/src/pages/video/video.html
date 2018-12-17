@@ -5,22 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <button ion-button block outline><span>上传视频</span></button>
+    <button ion-button block outline><span>上传视频</span></button>
 <ion-grid>
-  <ion-row  *ngFor='let item of arr;let idx=index'>
-    <ion-col col-4>
-      <img class="st" src="../../assets/imgs/hot01.png">
-      <p>00:05</p>
-    </ion-col>
-    <ion-col col-4>
-      <img src="../../assets/imgs/hot02.png">
-      <p>00:05</p>
-    </ion-col>
-    <ion-col col-4>
-      <img src="../../assets/imgs/hot03.png" alt="">
-      <p>00:05</p>
+  <ion-row>
+    <ion-col col-6 *ngFor='let item of list;let idx=index'>
+      <video class="video" src="{{'http://192.168.140.144:8080/video/'+item?.vid+'-'+item?.vname}}" controls="controls"></video>
+      <p>{{item?.vname}}</p>
     </ion-col>
   </ion-row>
-  
 </ion-grid>
 </ion-content>

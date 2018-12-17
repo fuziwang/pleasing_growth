@@ -7,7 +7,7 @@
 <ion-content>
 <div class="list1">
   <label class="item item-input">
-    <textarea placeholder="请描述您的问题或建议，我们将不断改进~"></textarea>
+    <textarea id="jianyi" placeholder="请描述您的问题或建议，我们将不断改进~" [(ngModel)]="value"></textarea>
   </label>
 </div>
 <div class="list2">
@@ -15,10 +15,10 @@
 </div>
 <div class="list3">
   <label class="item item-input">
-    <input type="text" placeholder=" 留下您的手机号码">
+    <input type="text" placeholder=" 留下您的手机号码" [(ngModel)]="tel">
   </label>
 </div>
 <div class="list4">
-    <button ion-button round>提 交</button>
+    <button ion-button round (click)="baocun()">提 交</button>
 </div>
 </ion-content>

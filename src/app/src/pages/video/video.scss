@@ -20,13 +20,16 @@ page-video {
         ion-grid{
             position: absolute;
             top: 80px;
-            left: 2px;
-            img{
+            left: 1px;
+            .video{
                 width: 115px;
                 height: 100px;
+                margin-left: 20px;
+                
             }
             p{
                 text-align: left;
+                margin-left: 20px;
             }
         }
     }

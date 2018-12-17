@@ -9,6 +9,12 @@ page-edit {
             top: 16px;
             left: 145px;
         }
+        .save{
+            color: white;
+            position: absolute;
+            top:19px;
+            left: 310px;
+        }
     }
     ion-content{
         .text1{
@@ -83,17 +89,34 @@ page-edit {
                     height:50px;
                 }
             }
+            .con4{
+                p{
+                    float: left;
+                    font-size: 14px;
+                }
+                position: absolute;
+                top: 315px;
+                left: 30px;
+                textarea{
+                    margin-top: 11px;
+                    margin-left:30px;
+                    float: left;
+                    position: absolute;
+                    width:250px;
+                    height:50px;
+                }
+            }
         }
         .text4{
             color: #2FBC7B;
             position: absolute;
-            top: 360px;
+            top: 370px;
             left: 30px;
             
         }
         .text5{
             position: absolute;
-            top: 383px;
+            top: 393px;
             left: 30px;
             .con4{
                 margin-left: -5px;
@@ -108,9 +131,10 @@ page-edit {
         }
         .text6{
             position: absolute;
-            top: 420px;
+            top: 430px;
             left: 30px;
             p{
+                color: #2FBC7B;
                 float: left;
                 font-size: 14px;
             }
@@ -119,7 +143,7 @@ page-edit {
                 margin-left:30px;
                 float: left;
                 position: absolute;
-                width:260px;
+                width:300px;
                 height:50px;
             }
         }

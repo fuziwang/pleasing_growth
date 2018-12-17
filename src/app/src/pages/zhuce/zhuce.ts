@@ -33,31 +33,31 @@ interface user{
 export class ZhucePage {
 
   constructor(public navCtrl: NavController,private api:ApiProvider,private storage:StorageProvider) {
-     //this.getList();
+    
   }
   tel;
   pwd;
   userid;
   list:Array<user>=[];
   i;
-  // getList(){
-  //   //获取list用于显示
-  //   this.api.getMy().then(data=>{
-  //     //console.dir(data);
-  //     this.list=<any>data;
-  //     //console.dir(this.list);
-  //   });
+  getList(){
+    //获取list用于显示
+    // this.api.getMy().then(data=>{
+    //   //console.dir(data);
+    //   this.list=<any>data;
+    //   //console.dir(this.list);
+    // });
     
-  //   let data=JSON.stringify({
-  //     upass:this.pwd,
-  //     utel:this.tel
+    let data=JSON.stringify({
+      upass:this.pwd,
+      utel:this.tel
      
-  //   });
-  //   this.api.postZhuze(data).then(data=>{
-  //     console.dir(data);
-  //   });
+    });
+    this.api.postZhuze(data).then(data=>{
+      console.dir(data);
+    });
     
-  // }
+  }
   
   verifyCode: any = {
     verifyCodeTips: "获取验证码",
@@ -94,6 +94,7 @@ export class ZhucePage {
     console.log('电话是',this.tel);
     console.log('密码是',this.pwd);
     this.navCtrl.push(LoginPage);
+    this.getList();
   }
   xieyi(){
     this.navCtrl.push(XieyiPage);

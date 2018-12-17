@@ -10,8 +10,8 @@
     <ion-col col-6>
       <button ion-button block outline><span>新建相册</span></button>
     </ion-col>
-    <ion-col col-6 *ngFor="let item of list">
-      <img src="../../assets/imgs/hot02.png" (click)="photo()">
+    <ion-col col-6 *ngFor="let item of list;" >
+      <img src="../../assets/imgs/hot02.png" (click)="photo(item?.xid)"  >
       <p>{{item?.xname}} -- {{item?.xcount}}张</p>
     </ion-col>
   </ion-row>

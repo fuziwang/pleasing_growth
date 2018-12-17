@@ -24,8 +24,6 @@ export class AboutPage {
   }
   addArr(){
     this.arr.push(this.text);
-    localStorage.setItem("this.num","this.text");
-    console.log(localStorage.getItem("this.num"));
     console.log(this.arr);
     this.isCheck=0;
     this.num=this.arr.length;

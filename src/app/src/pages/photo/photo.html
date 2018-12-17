@@ -1,26 +1,17 @@
 <ion-header>
-  <ion-navbar color="gre" hideBackButton="true">
-    <ion-title>最近相册</ion-title><span class="shipin" (click)="goChoose()">相册</span><span class="qx" (click)="edit()">取消</span>
+  <ion-navbar color="zhuti">
+    <ion-title>我的照片</ion-title>
   </ion-navbar>
 </ion-header>
 
-
-
-<ion-content padding>
-<div class="out" *ngFor='let item of arr;let idx=index'>
-  <div class="came">
-      <img class="img1" src="../../assets/imgs/hot02.png">
-  </div>
-  <div class="came">
-      <img class="img1" src="../../assets/imgs/hot02.png">
-  </div>
-  <div class="came">
-      <img class="img1" src="../../assets/imgs/hot02.png">
-  </div>
-</div>
+<ion-content>
+  <button ion-button block outline><span>上传照片</span></button>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor='let item of list;let idx=index'>
+        <img class="st" src="{{'http://192.168.140.144:8080/photo/'+item?.pid+'-'+item?.pname}}">
+        <p>{{item?.pname}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
-<ion-footer class="foo" >
-<button class="button button-positive"  (click)="chengGong()"><span>确定</span></button> 
-</ion-footer>
- 

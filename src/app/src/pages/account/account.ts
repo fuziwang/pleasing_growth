@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditPage } from '../edit/edit';
 import { ApiProvider } from "../../providers/api/api";//引入服务
+import { StorageProvider } from '../../providers/storage/storage';
 /**
  * Generated class for the AccountPage page.
  *
@@ -30,15 +31,16 @@ interface user{
 })
 export class AccountPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,private storage:StorageProvider) {
    
     this.getList();
     
   }
   list:Array<user>=[];
+  uid=this.storage.getItem('uid');
   getList(){
     //获取list用于显示
-    this.api.getMy().then(data=>{
+    this.api.getMy(this.uid).then(data=>{
       console.dir(data);
       this.list=<any>data;
       console.dir(this.list);
