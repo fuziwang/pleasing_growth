@@ -1,2 +1,0 @@
-# pleasing_growth
-project
