@@ -47,19 +47,19 @@ router.post('/',upload.single('simage'),(req,res,next)=>{
         res.statusCode = 500;
       }
       var sid = JSON.parse(JSON.stringify(result))[0].c;
-      obj.sid = sid;            
+      obj.sid = sid;
+      say.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        } else {
+          res.send('ok');
+        }
+      });
     });
     obj.simage = req.file.filename;
     obj.uid = req.body.uid;
     obj.scontent = req.body.scontent;
-    say.insertItem(obj,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-        res.send('error');
-      }else{
-        res.send('ok');
-      }
-    });
 });
 
 module.exports = router;
