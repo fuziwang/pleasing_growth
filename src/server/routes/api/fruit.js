@@ -2,21 +2,15 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var Fruit = require('../../modules/api/fruit.js');
+var Tree = require('../../modules/api/tree.js');
 
 var fruit = new Fruit();
-router.get('/',(req,res,next)=>{
-  fruit.getAll((err,result)=>{
-    if(err){res.statusCode=500;}
-    else{
-      var obj=JSON.parse(JSON.stringify(result));
-      res.json(obj);
-    }
-  });
-});
+var tree = new Tree();
+
 router.get('/:tid',(req,res,next)=>{
   var obj=req.params;
   console.log(obj);
-  fruit.getFruit(obj,(err,result)=>{
+  fruit.getAll(obj,(err,result)=>{
     if(err){
       res.statusCode = 500;  
     } else {
@@ -25,18 +19,38 @@ router.get('/:tid',(req,res,next)=>{
     }
   })
 })
-/*
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/static/back');          
-  },
-  filename: function (req, file, cb) {
-      cb(null, req.body.rtel + "-" + file.originalname);        
-  }
-});
 
-var upload = multer({ storage: storage   });
-*/
+router.post('/delete',(req,res,next)=>{
+  var obj = req.body;
+  fruit.deleteItem(obj,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+      res.send('error');
+    } else {
+      tree.updateItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        } else {
+          res.send('ok');
+        }
+      });
+    }
+  });
+})
+
+router.post('/update',(req,res,next)=>{
+  var obj = req.body;
+  fruit.updateItem(obj,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+      res.send('error');
+    } else {
+      res.send('ok');
+    }
+  });
+})
+
 router.post('/',(req,res,next)=>{
   var obj = {};
   fruit.selectFid((err,result)=>{
@@ -53,7 +67,14 @@ router.post('/',(req,res,next)=>{
           res.statusCode = 500;
           res.send('error');
         }else{
-          res.send('ok');
+          tree.updateItem(obj,(err,result)=>{
+            if(err){
+              res.statusCode = 500;
+              res.send('error');
+            } else {
+              res.send('ok');
+            }
+          });
         }
       });
     }

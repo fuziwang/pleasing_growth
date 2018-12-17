@@ -12,9 +12,21 @@ Fruit.prototype.selectFid = function(cb){
     cb(false,result);
   });
 }
-Fruit.prototype.getAll = function(cb){
-  const sql='select fid,fname,Fruit.tid from Fruit,Tree where Fruit.tid = Tree.tid';
-  db.query(sql,(err,result)=>{
+
+Fruit.prototype.getAll = function(obj,cb){
+  const sql = 'select fid,fname from Fruit where tid = ?';
+  db.query(sql,[obj.tid],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  })
+}
+
+Fruit.prototype.deleteItem = function(obj,cb){
+  const sql = 'delete from Fruit where fid = ?';
+  db.query(sql,[obj.fid],(err,result)=>{
     if(err){
       cb(true);
       return;
@@ -22,9 +34,10 @@ Fruit.prototype.getAll = function(cb){
     cb(false,result);
   });
 }
-Fruit.prototype.getFruit = function(obj,cb){
-  const sql='select fid,fname,Fruit.tid from Fruit,Tree where Fruit.tid= ? and Fruit.tid = Tree.tid';
-  db.query(sql,[obj.tid],(err,result)=>{
+
+Fruit.prototype.updateItem = function(obj,cb){
+  const sql = 'update Fruit set fname = ? where fid = ?';
+  db.query(sql,[obj.fname,obj.fid],(err,result)=>{
     if(err){
       cb(true);
       return;

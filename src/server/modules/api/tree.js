@@ -8,12 +8,13 @@ Tree.prototype.selectTid = function(cb){
     if(err){
       cb(true);
       return;
-      }
+    }
     cb(false,result);
   });
 }
-Tree.prototype.getAll = function(cb){
-  const sql='select tid,tcount,uimage from Tree,User where Tree.uid = User.uid';
+
+Tree.prototype.updateItem = function(obj,cb){
+  const sql = 'update Tree set tcount = tcount + 1 where tid = ?';
   db.query(sql,(err,result)=>{
     if(err){
       cb(true);
@@ -22,16 +23,7 @@ Tree.prototype.getAll = function(cb){
     cb(false,result);
   });
 }
-Tree.prototype.getTree = function(obj,cb){
-  const sql='select tid,tcount,uimage from Tree,User where tid= ? and Tree.uid = User.uid';
-  db.query(sql,[obj.tid],(err,result)=>{
-    if(err){
-      cb(true);
-      return;
-    }
-    cb(false,result);
-  });
-}
+
 Tree.prototype.insertItem = function(cb){
   const sql='insert into Tree values(?,?,?,?,?)';
   db.query(sql,[obj.tid,obj.tcount,Date().slice(0,24),1,obj.uid],(err,result)=>{
