@@ -47,20 +47,20 @@ router.post('/',upload.single('plocal'),(req,res,next)=>{
         res.statusCode = 500;
       }
       var pid = JSON.parse(JSON.stringify(result))[0].c;
-      obj.pid = pid;            
+      obj.pid = pid;
+      photo.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        } else {
+          res.send('ok');
+        }
+      });
     });
     obj.plocal = req.file.filename;
     obj.xid = req.body.xid;
     obj.pname = req.body.pname;
     obj.ptype = req.body.ptype;
-    photo.insertItem(obj,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-        res.send('error');
-      }else{
-        res.send('ok');
-      }
-    });
 });
 
 module.exports = router;

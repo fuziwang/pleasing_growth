@@ -47,20 +47,20 @@ router.post('/',upload.single('xlocal'),(req,res,next)=>{
         res.statusCode = 500;
       }
       var xid = JSON.parse(JSON.stringify(result))[0].c;
-      obj.xid = xid;            
+      obj.xid = xid;
+      photos.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        }else{
+          res.send('ok');
+        }
+      });
     });
     obj.xlocal = req.file.filename;
     obj.uid = req.body.uid;
     obj.xname = req.body.xname;
     obj.xcount = req.body.xcount;
-    photos.insertItem(obj,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-        res.send('error');
-      }else{
-        res.send('ok');
-      }
-    });
 });
 
 module.exports = router;

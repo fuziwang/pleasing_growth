@@ -56,7 +56,7 @@
 					<td><input type="checkbox" value="" name="" class="check"/></td>
         			<td><%= obj[item].aid %></td>
 					<td><%= obj[item].atitle %></td>
-        			<td><%= obj[item].acontent %></td>
+        			<td><%= obj[item].acontent.slice(0,28) + '...'%></td>
         			<td><%= obj[item].acomment %></td>
         			<td><%= obj[item].aimage %></td>
         			<td><%= obj[item].atime %></td>

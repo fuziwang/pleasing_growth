@@ -48,19 +48,20 @@ router.post('/',(req,res,next)=>{
         res.statusCode = 500;
       }
       var scid = JSON.parse(JSON.stringify(result))[0].c;
-      obj.scid = scid;            
+      obj.scid = scid;
+
+      saycomment.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        }else{
+          res.send('ok');
+        }
+      });
     });
     obj.uid = req.body.uid;
     obj.sid = req.body.sid;
     obj.sccontent = req.body.sccontent;
-    saycomment.insertItem(obj,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-        res.send('error');
-      }else{
-        res.send('ok');
-      }
-    });
 });
 
 module.exports = router;

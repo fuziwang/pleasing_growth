@@ -48,19 +48,20 @@ router.post('/',(req,res,next)=>{
         res.statusCode = 500;
       }
       var acid = JSON.parse(JSON.stringify(result))[0].c;
-      obj.acid = acid;            
+      obj.acid = acid;
+
+      articlecomment.insertItem(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+          res.send('error');
+        }else{
+          res.send('ok');
+        }
+      });
     });
     obj.uid = req.body.uid;
     obj.aid = req.body.aid;
     obj.accontent = req.body.accontent;
-    articlecomment.insertItem(obj,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-        res.send('error');
-      }else{
-        res.send('ok');
-      }
-    });
 });
 
 module.exports = router;
