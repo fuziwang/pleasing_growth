@@ -91,7 +91,7 @@ User.prototype.selectUid = function(cb){
 }
 
 User.prototype.insertItem = function(obj,cb){
-  const sql = 'insert into User(uid,utel,upass) values(?,?,?)';
+  const sql = 'insert into User(uid,utel,upass,ustatus) values(?,?,?,1)';
   db.query(sql,[obj.uid,obj.utel,obj.upass],(err,result)=>{
     if(err){
       cb(true);
