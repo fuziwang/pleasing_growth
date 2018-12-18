@@ -15,7 +15,7 @@ Tree.prototype.selectTid = function(cb){
 
 Tree.prototype.updateItem = function(obj,cb){
   const sql = 'update Tree set tcount = tcount + 1 where tid = ?';
-  db.query(sql,(err,result)=>{
+  db.query(sql,[obj.tid],(err,result)=>{
     if(err){
       cb(true);
       return;
