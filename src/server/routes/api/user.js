@@ -26,18 +26,17 @@ router.post('/sexhobby',(req,res,next)=>{
       res.statusCode = 500;
       res.send('error');
     } else {
-      res.send('ok');
+      req.body.topic.forEach((e)=>{
+        user.insertHobby(req.body.uid,e,(err,result)=>{
+          if(err){
+            res.statusCode = 500;
+            res.send('error');
+          } else{
+            res.send('ok');
+          }
+        });
+      });
     }
-  });
-  req.body.topic.forEach((e)=>{
-    user.insertHobby(req.body.uid,e,(err,result)=>{
-      if(err){
-        res.statusCode = 500;
-        res.send('error');
-      } else{
-        res.send('ok');
-      }
-    });
   });
 });
 
