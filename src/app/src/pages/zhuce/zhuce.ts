@@ -69,9 +69,11 @@ export class ZhucePage {
     console.log('ionViewDidLoad ZhucePage');
   }
   getCode() {
-    //点击按钮后开始倒计时
+    //点击按钮后开始倒计时\
+
     if( this.verifyCode.disable){
       this.settime();
+      this.api.getduanxin();
       this.verifyCode.disable = false;
     }
    }
@@ -91,12 +93,13 @@ export class ZhucePage {
     }, 1000);
    }
   logIn(){
-    this.storage.setItem('tel',this.tel);
-    this.storage.setItem('pwd',this.pwd);
-    console.log('电话是',this.tel);
-    console.log('密码是',this.pwd);
-    this.navCtrl.push(LoginPage);
+    // this.storage.setItem('tel',this.tel);
+    // this.storage.setItem('pwd',this.pwd);
+    // console.log('电话是',this.tel);
+    // console.log('密码是',this.pwd);
+   
     this.getList();
+    this.navCtrl.push(LoginPage);
   }
   xieyi(){
     this.navCtrl.push(XieyiPage);
