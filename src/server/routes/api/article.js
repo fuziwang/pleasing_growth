@@ -57,9 +57,14 @@ router.post('/',upload.single('aimage'),(req,res,next)=>{
       article.insertItem(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
-          res.send('error');
         } else {
-          res.send('ok');
+          article.insertColumn(obj,(err,result)=>{
+            if(err){
+              res.statusCode = 500;
+            } else {
+              res.end('OK');
+            }
+          })
         }
       });
     });

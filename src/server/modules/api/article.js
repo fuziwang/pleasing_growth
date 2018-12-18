@@ -45,4 +45,14 @@ Article.prototype.insertItem =function(obj,cb){
   });
 }
 
+Article.prototype.insertColumn =function(obj,cb){
+  const sql = 'insert into ArticleColumn values(?,"学习")';
+  db.query(sql,[obj.aid],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  });
+}
 module.exports = Article;

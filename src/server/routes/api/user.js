@@ -21,6 +21,7 @@ router.post('/sexhobby',(req,res,next)=>{
     uid:req.body.uid,
     usex:req.body.usex
   }
+  console.log(req.body);
   user.updateSex(obj,(err,result)=>{
     if(err){
       res.statusCode = 500;
@@ -30,7 +31,7 @@ router.post('/sexhobby',(req,res,next)=>{
           if(err){
             res.statusCode = 500;
           } else{
-            res.send('ok');
+            res.end('ok');
           }
         });
       });

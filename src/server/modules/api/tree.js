@@ -35,7 +35,7 @@ Tree.prototype.updateTcount = function(obj,cb){
   });
 }
 
-Tree.prototype.insertItem = function(cb){
+Tree.prototype.insertItem = function(obj,cb){
   const sql='insert into Tree values(?,?,?,?,?)';
   db.query(sql,[obj.tid,obj.tcount,Date().slice(0,24),1,obj.uid],(err,result)=>{
     if(err){
