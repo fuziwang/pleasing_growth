@@ -1,7 +1,7 @@
 <ion-content>
     <div class="al">
         <div class="img">
-          <img id="img" src="{{'http://192.168.140.144:8080/content/'+list[0]?.aimage}}">
+          <img id="img" src="{{'http://192.168.80.144:8080/content/'+list[0]?.aimage}}">
           <i class="iconfont icon-2fanhui" color="primary" (click)="last()"></i>
           <i class="iconfont icon-fenxiang" color="primary" (click)="fenxiang()"></i>
         </div>
@@ -19,7 +19,7 @@
                 <li *ngFor='let item1 of commont;let idx=index' class="one">
                   <div>
                       <ul class="pinlun">
-                        <li class="img"><img  src="{{'http://192.168.140.144:8080/user/'+item1?.uimage}}"></li>
+                        <li class="img"><img  src="{{'http://192.168.80.144:8080/user/'+item1?.uimage}}"></li>
                         <li class="name">{{item1?.uname}}</li>
                         <li class="time">{{item1?.actime}}</li>
                         <li class="icon"><ion-icon name="md-eye"><span>12</span></ion-icon></li>

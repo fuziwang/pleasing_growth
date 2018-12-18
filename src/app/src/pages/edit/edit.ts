@@ -48,8 +48,8 @@ export class EditPage {
     
   }
   list:Array<user>=[];
- uid=this.storage.getItem('uid')
-;  getList(){
+ uid=this.storage.getItem('uid');  
+ getList(){
     //获取list用于显示
     
     let data=JSON.stringify({
@@ -59,7 +59,7 @@ export class EditPage {
       uage:this.age,
       uwhere:this.where,
       udescribe:this.describe,
-      topic:['学习'],
+      topic:['娱乐'],
     });
     this.api.postEdit(data).then(data=>{
       console.dir(data);

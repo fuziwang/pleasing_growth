@@ -90,6 +90,7 @@ export class ApiProvider {
       });
     });
   }
+  
 //实例get 每个用户 请求
   public getMy_next(id){
     return new Promise((resolve, reject) => {
@@ -176,6 +177,18 @@ public getArticleComment_next(id){
         .subscribe((res:Response)=>{
           resolve(res.json())
         },err=>{
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+  //实例post tree请求
+  public postTree(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'tree', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
           console.dir(err)
           reject()
         });

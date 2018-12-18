@@ -36,6 +36,7 @@ export class ZhucePage {
     
   }
   tel;
+  uid=this.storage.getItem('uid');
   pwd;
   userid;
   list:Array<user>=[];
@@ -92,14 +93,28 @@ export class ZhucePage {
       this.settime();
     }, 1000);
    }
+   
   logIn(){
-    // this.storage.setItem('tel',this.tel);
-    // this.storage.setItem('pwd',this.pwd);
-    // console.log('电话是',this.tel);
-    // console.log('密码是',this.pwd);
+    this.storage.setItem('tel',this.tel);
+    this.storage.setItem('pwd',this.pwd);
+    console.log('电话是',this.tel);
+    console.log('密码是',this.pwd);
    
     this.getList();
+    this.posttree();
     this.navCtrl.push(LoginPage);
+  }
+  posttree() {
+    //获取list用于显示
+
+    let data = JSON.stringify({
+      uid: this.uid,
+    });
+    this.api.postTree(data).then(data => {
+      console.dir(data);
+    });
+
+
   }
   xieyi(){
     this.navCtrl.push(XieyiPage);
