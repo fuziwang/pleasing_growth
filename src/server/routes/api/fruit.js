@@ -27,7 +27,7 @@ router.post('/delete',(req,res,next)=>{
       res.statusCode = 500;
       res.send('error');
     } else {
-      tree.updateItem(obj,(err,result)=>{
+      tree.updateTcount(obj,(err,result)=>{
         if(err){
           res.statusCode = 500;
           res.send('error');

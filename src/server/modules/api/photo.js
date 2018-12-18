@@ -14,7 +14,7 @@ Photo.prototype.selectPid = function(cb){
 }
 
 Photo.prototype.getAll = function(cb){
-  const sql = 'select pid,pname,ptype,ptime,xname,Photo.xid from Photo,Photos where Photo.xid = Photos.xid';
+  const sql = 'select pid,pname,ptype,ptime from Photo';
   db.query(sql,(err,result)=>{
     if(err){
       cb(true);
@@ -25,7 +25,7 @@ Photo.prototype.getAll = function(cb){
 }
 
 Photo.prototype.getPhoto = function(obj,cb){
-  const sql = 'select pid,pname,ptype,ptime,Photo.xid,xname from Photo,Photos where Photo.xid = Photos.xid and xid = ?';
+  const sql = 'select pid,pname,ptype,ptime from Photo where  xid = ?';
   db.query(sql,[obj.xid],(err,result)=>{
     if(err){
       cb(true);
