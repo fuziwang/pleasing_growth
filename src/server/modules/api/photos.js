@@ -2,7 +2,7 @@ const db = require('../database.js');
 
 var Photos = function(){};
 
-Photos.prototype.selectAid = function(cb){
+Photos.prototype.selectXid = function(cb){
     const sql = 'select min(xid+1) c from Photos c where not exists (select xid from Photos where xid = c.xid+1);';
     db.query(sql,(err,result)=>{
       if(err){
@@ -14,7 +14,7 @@ Photos.prototype.selectAid = function(cb){
 }
 
 Photos.prototype.getAll = function(cb){
-  const sql = 'select xid,xname,xcount,xtime,uname,Photos.uid from Photos,User where Photos.uid = User.uid';
+  const sql = 'select xid,xname,xcount,xtime,uid from Photos';
   db.query(sql,(err,result)=>{
     if(err){
       cb(true);
@@ -25,7 +25,7 @@ Photos.prototype.getAll = function(cb){
 }
 
 Photos.prototype.getPhotos = function(obj,cb){
-  const sql = 'select xid,xname,xcount,xtime,uname,Photos.uid from Photos,User where Photos.uid = User.uid and xid = ?';
+  const sql = 'select xid,xname,xcount,xtime,uid from Photos where xid = ?';
   db.query(sql,[obj.xid],(err,result)=>{
     if(err){
       cb(true);
@@ -44,5 +44,14 @@ Photos.prototype.insertItem =function(obj,cb){
     cb(false,result);
   });
 }
-
+Photos.prototype.updateItem = function(obj,cb){
+  const sql = 'update Photos set xcount = xcount+1 where xid= ?';
+  db.query(sql,[obj.xid],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  });
+}
 module.exports = Photos;

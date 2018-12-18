@@ -24,6 +24,17 @@ Tree.prototype.updateItem = function(obj,cb){
   });
 }
 
+Tree.prototype.updateTcount = function(obj,cb){
+  const sql= 'update Tree set tcount=tcount-1 where tid = ?';
+  db.query(sql,[obj.tid],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  });
+}
+
 Tree.prototype.insertItem = function(cb){
   const sql='insert into Tree values(?,?,?,?,?)';
   db.query(sql,[obj.tid,obj.tcount,Date().slice(0,24),1,obj.uid],(err,result)=>{

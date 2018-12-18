@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var Photo = require('../../modules/api/photo.js');
+var Photos = require('../../modules/api/photos.js');
 var multer = require('multer');
+
 var photo = new Photo();
+var photos = new Photos();
 
 router.get('/',(req,res,next)=>{
   photo.getAll((err,result)=>{
@@ -48,19 +51,28 @@ router.post('/',upload.single('plocal'),(req,res,next)=>{
       }
       var pid = JSON.parse(JSON.stringify(result))[0].c;
       obj.pid = pid;
-      obj.plocal = req.file.filename;
-      obj.xid = req.body.xid;
-      obj.pname = req.body.pname;
-      obj.ptype = req.body.ptype;
-      photo.insertItem(obj,(err,result)=>{
-        if(err){
-          res.statusCode = 500;
-          res.send('error');
-        } else {
-          res.send('ok');
-        }
-      });
-    });
+      if(obj.pid){
+        obj.pname = req.body.pname;
+        obj.plocal = req.file.filename;
+        obj.xid = req.body.xid;
+        obj.ptype = req.body.ptype;
+        photo.insertItem(obj,(err,result)=>{
+          if(err){
+            res.statusCode = 500;
+            res.send('error');
+          } else {
+            photos.updateItem(obj,(err,result)=>{
+              if(err){
+                res.statusCode = 500;
+                res.send('error');
+              } else {
+                res.send('OK');
+              }
+            });
+          }
+        });
+      }
+  });
 });
 
 module.exports = router;
