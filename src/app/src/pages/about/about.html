@@ -18,7 +18,7 @@
     </div>
     <div class="apple">
       <ul>
-        <li *ngFor='let item of arr;let idx=index' [ngClass]="{'class0': index==0,'class1': index==1}" (click)="change(index)"><p>{{item}}</p></li>
+        <li *ngFor='let item of arr;let idx=index' [ngClass]="{'class0': index==0,'class1': index==1}" (click)="change(item?.fid)"><p>{{item.fname}}</p></li>
       </ul>
     </div>
     <div class="buttom">

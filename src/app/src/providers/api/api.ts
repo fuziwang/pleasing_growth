@@ -77,6 +77,19 @@ export class ApiProvider {
       });
     });
   }
+  //实例get 用户 请求
+  public getApple(id){
+    return new Promise((resolve, reject) => {
+      
+      this.http.get(this.url+'fruit/'+id)
+        .subscribe((res:Response)=>{
+          resolve(res.json())
+        },err=>{
+          console.dir(err)
+          reject()
+      });
+    });
+  }
 //实例get 每个用户 请求
   public getMy_next(id){
     return new Promise((resolve, reject) => {
@@ -158,6 +171,43 @@ public getArticleComment_next(id){
   public postForget(data){
     return new Promise((resolve, reject) => {
       this.http.post(this.url+'user/forget',data,{headers:this.headers})
+        .subscribe((res:Response)=>{
+          console.log(res);
+        },err=>{
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+
+   //实例post 删除果实请求
+   public postDeleteApple(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url+'fruit/delete',data,{headers:this.headers})
+        .subscribe((res:Response)=>{
+          console.log(res);
+        },err=>{
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+   //实例post 添加果实请求
+   public postAddApple(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url+'fruit',data,{headers:this.headers})
+        .subscribe((res:Response)=>{
+          console.log(res);
+        },err=>{
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+  //实例post 修改果实请求
+  public postChangeApple(data){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url+'fruit/update',data,{headers:this.headers})
         .subscribe((res:Response)=>{
           console.log(res);
         },err=>{

@@ -70,8 +70,10 @@ export class ZhucePage {
   }
   getCode() {
     //点击按钮后开始倒计时
-    this.verifyCode.disable = false;
-    this.settime();
+    if( this.verifyCode.disable){
+      this.settime();
+      this.verifyCode.disable = false;
+    }
    }
    settime() {
     if (this.verifyCode.countdown == 1) {

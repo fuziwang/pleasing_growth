@@ -51,9 +51,15 @@ export class LoginPage {
     });
 
     this.api.postLogin(data).then(data=>{
-      console.log(data[0].uid)
-      console.dir(data);
-      this.storage.setItem('uid',data[0].uid);
+      if(data[0].uid){
+          // console.log(data[0].uid)
+          // console.dir(data);
+          this.storage.setItem('uid',data[0].uid);
+          this.storage.setItem('pwd',data[0].upwd);
+          this.storage.setItem('tel',data[0].utel);
+
+      }
+     
       this.bo =Array.isArray(data)&& data.length==0;
       console.log(this.bo);
       if(this.bo!==true){
@@ -66,14 +72,15 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+    console.log(this.pwd);
+    console.log(this.tel);
   }
 
   logIn( ) {
-    this.getList();
-    // console.log(this.bo);
-    // if(this.bo!==true){
-    //   this.navCtrl.push(TouxiangPage);
-    // }
+    if(this.tel!=''&&this.pwd!=''){
+      this.getList();
+    }
+  
    
   }
 
