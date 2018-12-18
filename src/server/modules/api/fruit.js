@@ -45,7 +45,7 @@ Fruit.prototype.updateItem = function(obj,cb){
     cb(false,result);
   });
 }
-Fruit.prototype.insertItem = function(cb){
+Fruit.prototype.insertItem = function(obj,cb){
   const sql='insert into Fruit values(?,?,?,?,?)';
   db.query(sql,[obj.fid,obj.fname,Date().slice(0,24),1,obj.tid],(err,result)=>{
     if(err){
