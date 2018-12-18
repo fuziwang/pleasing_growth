@@ -20,7 +20,7 @@ router.get('/:scid',(req,res,next)=>{
   //console.log(req.params);
   var obj =req.params;
   //console.log(obj);
-  saycomment.getArticleComment(obj,(err,result)=>{
+  saycomment.getSayComment(obj,(err,result)=>{
     if(err){
       res.statusCode = 500;
     } else {
