@@ -117,7 +117,7 @@ router.post('/reg',(req,res,next)=>{
       res.statusCode = 500;
     }
     var uid = JSON.parse(JSON.stringify(result))[0].c;
-    obj.uid = uidv;
+    obj.uid = uid;
     if(obj.uid){
       user.insertItem(obj,(err,result)=>{
         if(err){
