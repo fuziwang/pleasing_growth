@@ -26,7 +26,7 @@ Say.prototype.getAll = function(cb){
 
 Say.prototype.getSay = function(obj,cb){
   const sql = 'select sid,scontent,stime,simage,uname from Say,User where Say.uid = User.uid and sid = ?';
-  db.query(sql,(err,result)=>{
+  db.query(sql,[obj.sid],(err,result)=>{
     if(err){
       cb(true);
       return;
