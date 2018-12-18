@@ -120,7 +120,7 @@ export class ApiProvider {
 public getduanxin(){
   return new Promise((resolve, reject) => {
     this.http.get
-    ('http://v.juhe.cn/sms/send?mobile=15227129215&tpl_id=121373&tpl_value=%23code%23%3D654654&key=db8f4b0b792944f817725742bc63fa80')
+    ('http://v.juhe.cn/sms/send?mobile=15227126880&tpl_id=121373&tpl_value=%23code%23%3D654654&key=db8f4b0b792944f817725742bc63fa80')
       .subscribe((res:Response)=>{
         resolve(res.json())
       },err=>{
