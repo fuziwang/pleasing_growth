@@ -24,13 +24,11 @@ router.post('/sexhobby',(req,res,next)=>{
   user.updateSex(obj,(err,result)=>{
     if(err){
       res.statusCode = 500;
-      res.send('error');
     } else {
       req.body.topic.forEach((e)=>{
         user.insertHobby(req.body.uid,e,(err,result)=>{
           if(err){
             res.statusCode = 500;
-            res.send('error');
           } else{
             res.send('ok');
           }
