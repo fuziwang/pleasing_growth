@@ -41,21 +41,23 @@ export class XingquPage {
   num:number=0;
   sex;
   idx;
+  uid=this.storage.getItem('uid');
   
   // data1=['益智游戏','心理健康','体育运动','出国留学','升学入学','出行旅游'];
   // data2=['情感专家','校园班级','漫画动漫','医学健康','娱乐明星','美食餐饮'];
 
-  arr=[];
-  // getList(){
-  //   let data=JSON.stringify({
-  //     upass:this.sex,
-  //     utel:this.arr
-  //   });
-  //   this.api.postXingqu(data).then(data=>{
-  //     console.dir(data);
-  //   });
+  arr=['益智游戏','心理健康','娱乐明星','美食餐饮'];
+  getList(){
+    let data=JSON.stringify({
+      usex:this.sex,
+      topic:this.arr,
+      uid:this.uid
+    });
+    this.api.postXingqu(data).then(data=>{
+      console.dir(data);
+    });
     
-  // }
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad XingquPage');
@@ -79,7 +81,7 @@ export class XingquPage {
      this.app.getRootNav().push(TouxiangPage);
    }
  shouye(){
-  //  this.getList();
+  this.getList();
   this.app.getRootNavs()[0].setRoot(TabsPage);
  }
 }

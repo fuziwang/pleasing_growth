@@ -238,7 +238,7 @@ public getArticleComment_next(id){
     return new Promise((resolve, reject) => {
       this.http.post(this.url+'user/sexhobby',data,{headers:this.headers})
         .subscribe((res:Response)=>{
-          resolve(res.json())
+          console.log(res);
         },err=>{
           console.dir(err)
           reject()
