@@ -62,42 +62,43 @@ export class MyPage {
     
   }
   account(){
-    this.app.getRootNav().push(AccountPage);
+    this.navCtrl.push(AccountPage);
   }
   album(){
-    this.app.getRootNav().push(AlbumPage);
+    this.navCtrl.push(AlbumPage);
   }
   video(){
-    this.app.getRootNav().push(VideoPage);
+    this.navCtrl.push(VideoPage);
   }
   feedback(){
-    this.app.getRootNav().push(FeedbackPage);
+    this.navCtrl.push(FeedbackPage);
   }
   share(){
-    this.app.getRootNav().push(SharePage);
+    this.navCtrl.push(SharePage);
   }
   setup(){
-    this.app.getRootNav().push(SetupPage);
+    this.navCtrl.push(SetupPage);
   }
   creation(){
-    this.app.getRootNav().push(CreationPage);
+    this.navCtrl.push(CreationPage);
   }
   follow(){
-    this.app.getRootNav().push(FollowPage);
+    this.navCtrl.push(FollowPage);
   }
   fans(){
-    this.app.getRootNav().push(FansPage);
+    this.navCtrl.push(FansPage);
   }
   homepage(){
-    this.app.getRootNav().push(HomepagePage);
+    this.navCtrl.push(HomepagePage);
   }
   edit(){
-    this.app.getRootNav().push(EditPage);
+    this.navCtrl.push(EditPage);
   }
   message(){
-    this.app.getRootNav().push(MessagePage);
+    this.navCtrl.push(MessagePage);
   }
   ionViewDidLoad() {
+    this.getList();
     console.log('ionViewDidLoad MyPage');
   }
 

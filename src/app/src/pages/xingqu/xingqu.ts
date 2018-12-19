@@ -36,9 +36,13 @@ interface user{
 export class XingquPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private app:App,private api:ApiProvider,private storage:StorageProvider) {
+    this.storage.setItem('seenum',this.seenum);
+    this.storage.setItem('dianzannum',this.dianzannum);
   }
   is:number=0;
   num:number=0;
+  seenum=45;
+  dianzannum=67;
   sex;
   idx;
   uid=this.storage.getItem('uid');
