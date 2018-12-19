@@ -150,17 +150,29 @@ router.post('/forget',(req,res,next)=>{
   });
 });
 
-router.post('/image',upload.single('uimage'),(req,res,next)=>{
+router.post('/image',(req,res,next)=>{
   var obj = {
-    uimage:req.file.filename,
+    uimage:req.body.uimage,
     uid:req.body.uid
   };
-  user.updateImage(obj,(err,result)=>{
+  var ext = obj.uimage.slice(obj.uimage.length-4,obj.uimage.length);
+  // console.log(obj);
+  var base64Data = obj.uimage.replace(/^data:image\/\w+;base64,/, "");
+  var dataBuffer = new Buffer(base64Data, 'base64');
+  // console.log(dataBuffer);
+  obj.uimage = obj.uid + '-' + obj.uid + ext;
+  fs.writeFile( "public/static/user/" + obj.uid + "-" + obj.uid + ext, dataBuffer, function(err) {
+    console.log(error);
     if(err){
-      res.statusCode = 500;
       res.send('error');
     }else{
-      res.send('ok');
+      user.updateImage(obj,(err,result)=>{
+        if(err){
+          res.statusCode = 500;
+        }else{
+          res.send('OK');
+        }
+      });
     }
   });
 });
