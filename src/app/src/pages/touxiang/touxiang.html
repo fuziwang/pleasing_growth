@@ -1,13 +1,13 @@
 <ion-content>
-<div class="touxiang" >
-  <div class="yuan">
-    <input type="file"  id="file">
-    <img src="../../assets/imgs/jiahao1.png">
+  <div class="touxiang" >
+    <div class="yuan">
+      <input type="file"  id="file">
+      <img src="../../assets/imgs/jiahao1.png">
+    </div>
+    <p (click)="seetouxiang()" tappable [ngStyle]="{'background-image': 'url('+avatar+')'}" (click)="presentActionSheet()">上传头像</p> 
+  
   </div>
-  <p (click)="seetouxiang()">上传头像</p>
-
-</div>
-<div class="img">
-  <img src="../../assets/imgs/title.png">
-</div>
-</ion-content>
+  <div class="img">
+    <img src="../../assets/imgs/title.png">
+  </div>
+  </ion-content>

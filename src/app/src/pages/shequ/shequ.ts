@@ -5,7 +5,6 @@ import { ContentPage } from "../content/content";
 import { HomepagePage } from "../homepage/homepage";
 import { SharePage} from "../share/share";
 import { TransmitPage } from '../transmit/transmit';
-import $ from 'jquery'
 /**
  * Generated class for the ShequPage page.
  *

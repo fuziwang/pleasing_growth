@@ -22,6 +22,7 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController ,private api:ApiProvider,private storage:StorageProvider) {
     this.getList();
+    console.log(this.id);
   }
   
   changeId;
@@ -38,28 +39,33 @@ export class AboutPage {
   quxiao(){
     this.isCheck=0;
     this.isdel=0;
+    this.getList();
   }
   addArr(){
     this.postAddApple();
     this.isCheck=0;
+    this.getList();
     
   }
   change(id){
     this.changeId=id;
     this.isdel=1;
     console.log(this.changeId);
+    this.getList();
   }
 
   del(){
    
     this.getDeleteApple();
     this.isdel=0;
+    this.getList();
     
   }
 
   change_content(){
     this.postChangeApple();
     this.isdel=0;
+    this.getList();
   }
   goPicture(){
     this.navCtrl.push(PicturePage);
@@ -70,7 +76,8 @@ export class AboutPage {
 
   getDeleteApple(){
     let data=JSON.stringify({
-     fid:this.changeId
+     fid:this.changeId,
+     tid:this.id
     });
     this.api.postDeleteApple(data).then(data=>{
       console.dir(data);
@@ -99,6 +106,10 @@ export class AboutPage {
      
     });
     this.getList();
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MessagePage');
+    
   }
 
   getList(){

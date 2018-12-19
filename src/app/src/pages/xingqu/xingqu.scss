@@ -4,27 +4,39 @@ page-xingqu {
             color: #2ebd7a;
             .left{
                 float: left;
-                margin-top: 5px;
+                margin-top: 10px;
+                i{
+                    position: absolute;
+                    top: 17px;
+                    left: 10px;
+                }
                 span{
-                    margin-top: -5px;
                     display: inline-block;
+                    font-size: 15px;
+                    position: absolute;
+                    top: 15px;
+                    left: 30px;
                 }
              }
             .right{
-               float: left;
-               margin-left: 330px;
-               margin-top: -19px;
+                span{
+                    font-size: 15px;
+                }
+                position: absolute;
+                top: 16px;
+                left: 305px;
             }
         }
         
         button{
-            font-size: 24px;
+            font-size: 21px;
             width: 240px;
             height: 50px;
             margin-top: 40px;
             margin-left: 60px;
             border-radius: 50px;
             color: #fff;
+            letter-spacing: 2px;
         }
         .anniu{
             margin-left: 80px;
@@ -76,7 +88,7 @@ page-xingqu {
         .img{
             text-align: center;
             margin-left: 80px;
-            margin-top: 60px;
+            margin-top: 30px;
             margin-bottom: 50px!important;
             div{
                 float: left;
@@ -96,43 +108,16 @@ page-xingqu {
         }
         .text{
             text-align: center;
-            margin-top: 40px;
+            margin-top: 70px;
             .p1{
                 font-size: 18px!important;
                 font-weight: 500;
                 margin: 0;
+                letter-spacing: 1px;
             }
             .p2{
                 color: rgb(155, 161, 165);
                 margin-top: 2px!important;
-            }
-        }
-    }
-    ion-header{
-
-        ion-navbar{
-            .toolbar-background{
-                background-color: #fff!important;
-            }
-            min-height: 13px!important;
-            padding: 0!important;
-           div{
-              padding-left: 132px;
-              color: #2ebd7a!important;
-              margin-top: -3px;
-              
-           }
-            button{
-                width: 40px!important;
-                height: 30px!important;
-                margin:0!important ;
-                padding-left: 0!important;
-                border-radius: 0!important;
-                min-width: 65px!important;
-                color: #2ebd7a!important;
-                font-size: 16px!important;
-                line-height: 16px!important;
-               
             }
         }
     }

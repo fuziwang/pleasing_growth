@@ -258,6 +258,32 @@ public getArticleComment_next(id){
         });
     });
   }
+  //实例post 拍照请求
+  public postTakephoto(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'user/image', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+
+  //实例post 相册选择照片请求
+  public postChooseAlbum(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'user/image', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+
   //实例post Back请求
   public postBack(data){
     return new Promise((resolve, reject) => {
