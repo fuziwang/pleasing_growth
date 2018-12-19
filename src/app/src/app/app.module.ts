@@ -53,6 +53,7 @@ import { PhotoPage } from '../pages/photo/photo';
 import { TransmitPage } from '../pages/transmit/transmit';
 import { AboutusPage } from '../pages/aboutus/aboutus';
 import { PhotoPageModule } from '../pages/photo/photo.module';
+import { ContentPage } from '../pages/content/content';
 
 
 
@@ -67,6 +68,7 @@ import { PhotoPageModule } from '../pages/photo/photo.module';
     TransmitPage,
     TabsPage,
     MyPage,
+    ContentPage,
     ShequPage,
     LoginPage,
     AboutusPage,
@@ -138,6 +140,7 @@ import { PhotoPageModule } from '../pages/photo/photo.module';
     XingquPage,
     TieziPage,
     AccountPage,
+    ContentPage,
     AlbumPage,
     VideoPage,
     FeedbackPage,

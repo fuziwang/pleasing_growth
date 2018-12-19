@@ -7,15 +7,30 @@ page-setup {
         }
     }
     ion-content{
-        img{
+        position: absolute;
+        top: 6px;
+        button{
+            height: 50px;
+            img{
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 18px;
+                left: 0px;
+            }
+           #img{
             width: 20px;
             height: 20px;
             position: absolute;
-            top: 12px;
+            top: 17px;
             left: 0px;
-        }
-        .item2{
-            color: darkgray;
-        }
+            }
+            .item2{
+                color: darkgray;
+            }
+            span{
+                letter-spacing: 1px;
+            }
+        } 
     }
 }

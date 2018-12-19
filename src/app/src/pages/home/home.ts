@@ -4,6 +4,7 @@ import { TieziPage } from '../tiezi/tiezi';
 import { XingquPage } from '../xingqu/xingqu';
 import { App } from 'ionic-angular';
 import { ApiProvider } from "../../providers/api/api";//引入服务
+import { StorageProvider } from '../../providers/storage/storage';
 
 //定义首页格式接口
 interface Article {
@@ -23,15 +24,22 @@ export class HomePage {
   msg:string;//提示信息
   isLogin:boolean=true;//是否登录
   list:Array<Article>=[];
-
+  dianzannum=this.storage.getItem('dianzannum');
+  seenum=this.storage.getItem('seenum');
   isActive=true;
   isClick(i){
     this.isActive=i;
   }
 
   arr=[1,2,3,4];
-  constructor(public navCtrl: NavController,private app:App, public api:ApiProvider ) {
+  constructor(public navCtrl: NavController,private app:App, public api:ApiProvider,public storage:StorageProvider ) {
     this.getList();
+    this.storage.setItem('seenum',this.seenum);
+    this.storage.setItem('dianzannum',this.dianzannum);
+    this.dianzannum=this.storage.getItem('dianzannum');
+    console.log(this.dianzannum);
+    
+
   }
   
   getList(){
@@ -56,11 +64,13 @@ export class HomePage {
     this.app.getRootNav().push(XingquPage);
   }
   next(index){
+    this.seenum++;
+    this.storage.setItem('seenum',this.seenum);
     this.navCtrl.push(TieziPage,{
       id : index
     });
     console.log(index);
-
+   
   }
   doRefresh(refresher) {
     console.log('Begin async       operation', refresher);

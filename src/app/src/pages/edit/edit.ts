@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { StorageProvider } from '../../providers/storage/storage';
+import { MyPage } from '../my/my';
 // import { ModalPage } from './ModalPage';
 /**
  * Generated class for the MyPage page.
@@ -69,6 +70,7 @@ export class EditPage {
   }
   my(){
     this.getList();
+    this.navCtrl.setRoot(MyPage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditPage');

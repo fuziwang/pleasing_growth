@@ -69,13 +69,13 @@ page-tiezi {
             
             .icon-2fanhui{
                 position: absolute;
-                top: 8px;
+                top: 10px;
                 left: 10px;
             }
             .icon-fenxiang{
                 position: absolute;
-                top: 8px;
-                left: 340px;
+                top: 10px;
+                left: 335px;
             }
             img{
                 width: 100%;
@@ -103,6 +103,8 @@ page-tiezi {
                 }
                 .pinlun{
                     .icon{
+                        color: rgb(140, 145, 148);
+
                         span{
                             clear: both;
                         }
@@ -113,6 +115,7 @@ page-tiezi {
                     }
                     .time{
                         width: auto;
+                        color: rgb(140, 145, 148);
 
                     }
                     .name{

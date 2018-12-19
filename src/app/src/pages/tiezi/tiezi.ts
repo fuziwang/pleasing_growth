@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { StorageProvider } from '../../providers/storage/storage';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the TieziPage page.
@@ -37,10 +39,13 @@ interface  ArticleComment{
 
 export class TieziPage {
 
+  dianzannum=this.storage.getItem('dianzannum');
+  seenum=this.storage.getItem('seenum');
+
   isCheck=0;
   arr=[1];
   id;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,public storage:StorageProvider) {
     this.id=navParams.get('id');
     this.getList();
     this.getarticlecomment();
@@ -68,8 +73,13 @@ export class TieziPage {
     });
     
   }
+  dianzan(){
+    this.dianzannum++;
+    this.storage.setItem('dianzannum',this.dianzannum);
+  }
   last(){
-    this.navCtrl.pop();
+    this.storage.setItem('dianzannum',this.dianzannum);    
+    this.navCtrl.setRoot(HomePage);
   }
     fenxiang(){
       console.log(this.isCheck);

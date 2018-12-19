@@ -5,6 +5,7 @@ import { ContentPage } from "../content/content";
 import { HomepagePage } from "../homepage/homepage";
 import { SharePage} from "../share/share";
 import { TransmitPage } from '../transmit/transmit';
+import $ from 'jquery'
 /**
  * Generated class for the ShequPage page.
  *
@@ -63,7 +64,7 @@ export class ShequPage {
   goShare(){
     this.navCtrl.push(SharePage);
   }
-  goHomeage(){
+  goHomepage(){
     this.navCtrl.push(HomepagePage);
   }
   goContent(){
@@ -72,5 +73,5 @@ export class ShequPage {
   goTransmit(){
     this.navCtrl.push(TransmitPage);
   }
-
+  changeCol
 }

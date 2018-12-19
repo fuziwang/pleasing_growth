@@ -22,7 +22,7 @@ page-my {
                 width: 25px;
                 height: 25px;
                 position: absolute;
-                top: 47px;
+                top: 68px;
                 left: 280px;
             }
            .touxiang{
@@ -80,9 +80,9 @@ page-my {
             }
         }
         
-        ion-list{
-            // border: darkgrey 0.1px solid;
+        ion-list{     
             button{
+                height: 50px!important;
                 .item2{
                     color: darkgrey;
                 }
