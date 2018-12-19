@@ -54,6 +54,8 @@ import { TransmitPage } from '../pages/transmit/transmit';
 import { AboutusPage } from '../pages/aboutus/aboutus';
 import { PhotoPageModule } from '../pages/photo/photo.module';
 import { ContentPage } from '../pages/content/content';
+// import {Camera} from "@ionic-native/camera";
+// import {ImagePicker} from "@ionic-native/image-picker";
 
 
 
