@@ -47,7 +47,7 @@ export class MyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,private app:App,private storage:StorageProvider) {
    
-    this.getList();
+    //this.getList();
     
   }
   id=this.storage.getItem('uid');

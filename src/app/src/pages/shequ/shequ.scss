@@ -10,7 +10,7 @@ page-shequ{
             margin-top: 15px;
             width: 360px;
             height: auto;
-            min-height:250px;
+            min-height:235px;
             .inside1{
                 float: left;
                 margin-left:20px;
@@ -66,13 +66,10 @@ page-shequ{
                     height: 30px;
                     float: left;
                     color: #000;
-                    ion-ico{
-                        color:#000!important;
-                    }
                 }
-                ion-icon:hover{
-                    color:#2FBD7A;
-                }
+                // ion-icon:hover{
+                //     color:#2FBD7A;
+                // }
 
                 .com6{
                     margin-right:15px;
@@ -94,7 +91,10 @@ page-shequ{
                 }
             }
         }
-        .fenxiang{
+        
+    }
+    .fenxiang{
+            width: 100%;
             position: absolute;
             top:380px;
             left: 0px;
@@ -121,7 +121,7 @@ page-shequ{
                         height: 36px;
                         margin-left: -18px;
                         text-align: center;
-                        
+                       
                     }
                     span{
                         position: relative;;
@@ -133,19 +133,17 @@ page-shequ{
                 }
             }
         }
-    }
-    
+        
+        }
+     .list{
+            top:400px;
+            left:0px;
+            height:30px;
+            .pl{
+                float: left;
+                width: 260px;
+            } 
+            button{
+                float: left;
+                }   
 }
-    
-    // .list{
-    //         top:400px;
-    //         left:0px;
-    //         height:30px;
-    //         .pl{
-    //             float: left;
-    //             width: 260px;
-    //         } 
-    //         button{
-    //             float: left;
-    //             }   
-    // }
