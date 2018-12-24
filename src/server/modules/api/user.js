@@ -79,6 +79,16 @@ User.prototype.getUser = function(obj,cb){
   });
 }
 
+User.prototype.getTel = function(obj,cb){
+  const sql = 'select * from User where utel = ?';
+  db.query(sql,[obj.utel],(err,result)=>{
+    if(err){
+      cb(true);
+      return;
+    }
+    cb(false,result);
+  })
+}
 User.prototype.selectUid = function(cb){
   const sql = 'select min(uid+1) c from User c where not exists (select uid from User where uid = c.uid+1);';
   db.query(sql,(err,result)=>{
@@ -91,8 +101,8 @@ User.prototype.selectUid = function(cb){
 }
 
 User.prototype.insertItem = function(obj,cb){
-  const sql = 'insert into User(uid,utel,upass,ustatus) values(?,?,?,1)';
-  db.query(sql,[obj.uid,obj.utel,obj.upass],(err,result)=>{
+  const sql = 'insert into User(uid,uimage,utel,upass,ustatus) values(?,?,?,?,1)';
+  db.query(sql,[obj.uid,obj.uimage,obj.utel,obj.upass],(err,result)=>{
     if(err){
       cb(true);
       return;

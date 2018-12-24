@@ -4,6 +4,7 @@ var multer = require('multer');
 var Back = require('../../modules/api/back.js');
 
 var back = new Back();
+/*
 router.get('/',(req,res,next)=>{
   back.getAll((err,result)=>{
     if(err){res.statusCode=500;}
@@ -13,6 +14,7 @@ router.get('/',(req,res,next)=>{
     }
   });
 });
+*/
 router.get('/:rid',(req,res,next)=>{
   var obj=req.params;
   console.log(obj);

@@ -1,20 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var multer = require('multer');
 var User = require('../../modules/api/user.js');
+var crypto = require("crypto");
 
 var user = new User();
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/static/user');          
-  },
-  filename: function (req, file, cb) {
-      cb(null, req.body.utel + "-" + file.originalname);        
-  }
-});
-
-var upload = multer({ storage: storage   });
-
 
 router.post('/sexhobby',(req,res,next)=>{
   var obj = {
@@ -110,6 +99,8 @@ router.get('/:uid',(req,res,next)=>{
 router.post('/reg',(req,res,next)=>{
   var obj = req.body;
   console.log(obj);
+  var md5 = crypto.createHash("md5");
+  obj.upass = md5.update(obj.upass).digest("hex");
   user.selectUid((err,result)=>{
     if(err){
       res.statusCode = 500;
@@ -129,6 +120,10 @@ router.post('/reg',(req,res,next)=>{
 
 router.post('/login',(req,res,next)=>{
   var obj = req.body;
+  var md5 = crypto.createHash("md5");
+  console.log(obj.upass);
+  obj.upass = md5.update(obj.upass).digest("hex");
+  console.log(obj.upass);
   user.getUser(obj,(err,result)=>{
     if(err){
       res.statusCode = 500;
@@ -177,9 +172,24 @@ router.post('/image',(req,res,next)=>{
   });
 });
 
-router.post('/update',upload.single('uimage'),(req,res,next)=>{
+/*
+router.post('/tel',(req,res,next)=>{
   var obj = {
-    uimage:null,
+    utel = req.body.utel;
+  }
+  user.getTel(obj,(err,result)=>{
+    if(err){
+      res.statusCode = 500;
+      res.send('error');
+    } else {
+      res.send('ok!');
+    }
+  });
+});
+*/
+router.post('/update',(req,res,next)=>{
+  var obj = {
+    uimage:'11-11.jpg',
     uid:req.body.uid,
     uname:req.body.uname,
     usex:req.body.usex,
