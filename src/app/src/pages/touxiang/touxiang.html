@@ -1,10 +1,11 @@
 <ion-content>
-  <div class="touxiang" >
+  <div class="next" (click)="xingqu()">下一步</div>
+  <div class="touxiang">
     <div class="yuan">
       <input type="file"  id="file">
-      <img src="../../assets/imgs/jiahao1.png">
+      <img src="{{takephoto_image}}">
     </div>
-    <p (click)="seetouxiang()" tappable [ngStyle]="{'background-image': 'url('+avatar+')'}" (click)="presentActionSheet()">上传头像</p> 
+    <p  tappable  (click)="presentActionSheet()">上传头像</p> 
   
   </div>
   <div class="img">

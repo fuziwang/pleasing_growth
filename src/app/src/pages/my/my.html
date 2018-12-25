@@ -1,53 +1,53 @@
 <ion-content>
-  <div class="top">
-    <div class="message"></div>
+  <div class="head">
     <div class="touxiang" (click)="homepage()">
       <img src="{{'http://192.168.80.144:8080/user/'+list[0]?.uimage}}">
     </div>
-    <div class="xinxi">
-      <span>{{list[0]?.utel}}</span>
-      <span>{{list[0]?.uwhere}}</span>
-     </div>
-     <div (click)="edit()"><img class="img3" src="../../assets/imgs/bianji.png" alt=""></div>
-     
+    <div class="sociality">
+      <div class="name"><span>{{list[0]?.uname}}</span></div>
+      <div class="fans" (click)="fans()"><span>36</span>
+        <p>粉丝</p>
+      </div>
+      <div class="follow" (click)="follow()"><span>58</span>
+        <p>关注</p>
+      </div>
+      <div class="creation" (click)="creation()"><span>10</span>
+        <p>创作</p>
+      </div>
+    </div>
+    <div class="where"><img src="../../assets/imgs/where.png"><span>{{list[0]?.uwhere}}</span></div>
+    <div class="describe"><img src="../../assets/imgs/describe.png"><span>{{list[0]?.udescribe}}</span></div>
+    <div class="edit" (click)="edit()"><img src="../../assets/imgs/bianji.png" alt=""></div>
   </div>
-   <ion-grid>
-     <ion-row>
-       <ion-col (click)="creation()">
-         <img src="../../assets/imgs/creation.png">
-         <p>我的创作</p>
-       </ion-col>
-       <ion-col (click)="follow()">
-         <img src="../../assets/imgs/follow.png">
-         <p>我的关注</p>
-       </ion-col>
-       <ion-col (click)="fans()">
-         <img src="../../assets/imgs/fans.png">
-         <p>我的粉丝</p>
-       </ion-col>
-     </ion-row>
-   </ion-grid>
-   <ion-list>
-     <button ion-item (click)="account()">
-       &nbsp;&nbsp;<span class="item1">我的账户</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="item2">查看详情 ></span>
-     </button>
+  <ion-list>
+    <button ion-item (click)="account()">
+      <div class="img1"><img src="../../assets/imgs/user.png"></div>
+      <div class="item1"><span>我的账户</span></div>
+      <div class="img2"><img src="../../assets/imgs/arrow.png"></div>
+    </button>
   </ion-list>
   <ion-list>
-     <button ion-item (click)="album()">
-       &nbsp;&nbsp;<span class="item1">我的相册</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="item2">查看详情 ></span>
-     </button>
-     <button ion-item (click)="video()">
-       &nbsp;&nbsp;<span class="item1">我的视频</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="item2">查看详情 ></span>
-     </button>
+    <button ion-item (click)="album()">
+      <div class="img1"><img src="../../assets/imgs/album.png"></div>
+      <div class="item1"><span>我的相册</span></div>
+      <div class="img2"><img src="../../assets/imgs/arrow.png"></div>
+    </button>
+    <button ion-item (click)="video()">
+      <div class="img1"><img src="../../assets/imgs/video1.png"></div>
+      <div class="item1"><span>我的视频</span></div>
+      <div class="img2"><img src="../../assets/imgs/arrow.png"></div>
+    </button>
   </ion-list>
   <ion-list>
     <button ion-item (click)="feedback()">
-       &nbsp;&nbsp;<span class="item1">意见反馈</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="item2">查看详情 ></span>
-     </button>
-     <button ion-item (click)="setup()">
-       &nbsp;&nbsp;<span class="item1">设置</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="item2">查看详情 ></span>
-     </button>
+      <div class="img1"><img src="../../assets/imgs/feedback.png"></div>
+      <div class="item1"><span>意见反馈</span></div>
+      <div class="img2"><img src="../../assets/imgs/arrow.png"></div>
+    </button>
+    <button ion-item (click)="setup()">
+      <div class="img1"><img src="../../assets/imgs/setup.png"></div>
+      <div class="item1"><span>设置</span></div>
+      <div class="img2"><img src="../../assets/imgs/arrow.png"></div>
+    </button>
   </ion-list>
-   
- </ion-content>
- 
+</ion-content>

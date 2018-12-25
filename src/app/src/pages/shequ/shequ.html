@@ -19,9 +19,9 @@
          <div class="com4"><img id="img" src="{{'http://192.168.80.144:8080/say/'+item?.simage}}" ></div>
      </div>
      <div class="inside3">
-      <div class="com5"><a><ion-icon name="ios-heart-outline"></ion-icon></a><span>赞同</span></div>
-      <div class="com6" (click)="pL()"><a><ion-icon name="ios-chatboxes-outline"></ion-icon></a><span>评论</span></div>
-      <div class="com7" (click)="goTransmit()"><ion-icon name="ios-create-outline"></ion-icon><span>转发</span></div>
+      <div class="com"><a><ion-icon name="ios-heart-outline"></ion-icon></a><span>赞同</span></div>
+      <div class="com" (click)="pL()"><a><ion-icon name="ios-chatboxes-outline"></ion-icon></a><span>评论</span></div>
+      <div class="com" (click)="goTransmit()"><ion-icon name="ios-create-outline"></ion-icon><span>转发</span></div>
    </div>
    </div>
    <div>
@@ -31,15 +31,6 @@
       </label>
     </div> -->
    </div>
-   <div class="fenxiang" [ngStyle]="{'display': isCheck== 1  ? 'block' : 'none','background-color':isCheck==1?'#F3F3F3':'#fff'}">
-    <p>分享到...</p>
-    <ul>
-      <li ><i class="iconfont icon-pengyouquan1 first"></i><span>朋友圈</span></li>
-      <li><i class="iconfont icon-weixin-copy"></i><span>微 信</span></li>
-      <li><i class="iconfont icon-kongjian"></i><span>空 间</span></li>
-      <li><i class="iconfont icon-qq"></i><span> Q Q</span></li>
-    </ul>
-  </div>
   
  
  </ion-content>

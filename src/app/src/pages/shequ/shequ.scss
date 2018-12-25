@@ -10,7 +10,7 @@ page-shequ{
             margin-top: 15px;
             width: 360px;
             height: auto;
-            min-height:235px;
+            padding:5px;
             .inside1{
                 float: left;
                 margin-left:20px;
@@ -36,56 +36,29 @@ page-shequ{
                 float: left;
                 margin-left:20px;
                 margin-top:10px; 
-                #img{
-                    width: 200px;
-                    height: 150px;
-                }
                 .com3{
-                    width:260px;
-                    height:auto;
+                    width:100%;
+                    line-height: 20px;
+                    margin-top:5px;
                 }
                 .com4{
-                    max-width: 90%;
-                    margin-top:5px; 
-                    min-width:100px;
-                   
-                    max-height:400px;
-                    overflow:hidden;
-                   
+                    margin-top:10px;   
+                    img{
+                        display: block;
+                        width:325px;
+                        height: 280px;
+                    }
                 }
             }
             .inside3{
-                float: left;
-                padding-left:30px;
+                float: right;
+                padding-left:155px;
                 margin-top:23px;
                 border-bottom: 1px solid #DDDDDD;
-                width: 95%;
-                .com5{
-                    margin-right:15px;
-                    width: 60px;
-                    height: 30px;
-                    float: left;
-                    color: #000;
-                }
-                // ion-icon:hover{
-                //     color:#2FBD7A;
-                // }
-
-                .com6{
-                    margin-right:15px;
-                    width: 60px;
-                    height: 30px;
-                    float: left;
-                }
-                .com7{
-                    margin-right:15px;
-                    width: 60px;
-                    height: 30px;
-                    float: left;
-                }
-                .com8{
-                    margin-right:15px;
-                    width: 60px;
+                width: 100%;
+                color:#333;
+                .com{
+                    width: 65px;
                     height: 30px;
                     float: left;
                 }

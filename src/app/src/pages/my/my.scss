@@ -1,95 +1,252 @@
 page-my {
-    ion-content{
-       .top{
-           .xinxi{
-                float: left;
-                //border: 1px solid red;
-                margin-left: 120px;
-                margin-top: -68px;   
-                span{
-                    letter-spacing: 1px;
-                    display: block;
-                    color: aliceblue;
-                    height: 33px;
-                    width: 120px;
-                    line-height: 25px;
-                    text-align: center;
-                    font-size: 15px;
-                    
-                }
-            }
-            .img3{
-                width: 25px;
-                height: 25px;
-                position: absolute;
-                top: 68px;
-                left: 280px;
-            }
-           .touxiang{
-               width: 80px;
-               height: 80px;
-               //border: 1px solid red;
-               border-radius: 50%;
-               margin-left: 28px;
-               margin-top: 20px;
-               img{
-                border-radius: 50%;
-                width: 80px;
-                height: 80px;
-               }
-            }
-            width: 100%;
-            height: 160px;
-            background:#2ebd7a;
-            .message{
-            width: 21px;
-            height: 21px;
-            img{
-                margin-top: 10px;
-                margin-left: 330px;
-            }
-           }
-       }
-        ion-grid{
-            padding: 1px!important;
-            ion-row{
-                ion-col{
-                    border: darkgray 0.1px solid;
-                    height: 100px;
-                    position: relative;
-                    img{
-                        width: 25px;
-                        height: 25px;
-                        margin: auto;
-                        position: absolute;
-                        top: 30px;
-                        left: 0;
-                        right: 0;
-                    }
-                    p{
-                        font-size: 14px;
-                        letter-spacing: 2px;
-                        margin: auto;
-                        position: absolute;
-                        left: 0;
-                        bottom:20px;
-                        right: 0;
-                        text-align: center;
-                    }
-                }
-            }
-        }
-        
-        ion-list{     
-            button{
-                height: 50px!important;
-                .item2{
-                    color: darkgrey;
-                }
-                span{
-                    letter-spacing: 1px;
-                }
-            }
-        }  
+  ion-content {
+    background-image: url('../../assets/imgs/background1.jpg');
+
+    .name {
+      float: center;
+
+      span {
+        font-size: 15px;
+        color: white;
+      }
     }
+
+    .head {
+      .touxiang {
+        float: left;
+        width: 80px;
+        height: 80px;
+        //border: 1px solid red;
+        border-radius: 50%;
+        margin-left: 35px;
+        margin-top: 50px;
+
+        img {
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .sociality {
+        float: left;
+        margin-top: 55px;
+        margin-left: 50px;
+
+        .fans {
+          float: left;
+          margin-top: 15px;
+
+          span {
+            font-size: 14px;
+            margin-left: 3px;
+            color: white;
+          }
+
+          p {
+            font-size: 14px;
+            margin-top: 5px;
+            color: white;
+          }
+        }
+
+        .follow {
+          float: left;
+          margin-top: 15px;
+          margin-left: 33px;
+
+          span {
+            font-size: 14px;
+            margin-left: 3px;
+            color: white;
+          }
+
+          p {
+            font-size: 14px;
+            margin-top: 5px;
+            color: white;
+          }
+        }
+
+        .creation {
+          float: left;
+          margin-top: 15px;
+          margin-left: 33px;
+
+          span {
+            font-size: 14px;
+            margin-left: 4px;
+            color: white;
+          }
+
+          p {
+            font-size: 14px;
+            margin-top: 5px;
+            color: white;
+          }
+        }
+      }
+
+      .where {
+        float: left;
+        margin-left: 20px;
+        margin-top: 10px;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+
+        span {
+          margin-left: 8px;
+          font-size: 13px;
+          color: white;
+        }
+      }
+
+      .describe {
+        float: left;
+        margin-left: 20px;
+        margin-top: 4px;
+
+        img {
+          position: relative;
+          width: 18px;
+          height: 18px;
+        }
+
+        span {
+          margin-left: 8px;
+          font-size: 13px;
+          color: white;
+        }
+      }
+
+      .edit {
+        float: right;
+        margin-right: 20px;
+        margin-top: -15px;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    //    .top{
+    //        .xinxi{
+    //             float: left;
+    //             //border: 1px solid red;
+    //             margin-left: 120px;
+    //             margin-top: -68px;   
+    //             span{
+    //                 letter-spacing: 1px;
+    //                 display: block;
+    //                 color: aliceblue;
+    //                 height: 33px;
+    //                 width: 100px;
+    //                 line-height: 25px;
+    //                 text-align: center;
+    //                 font-size: 15px;
+
+    //             }
+    //         }
+    //         .img3{
+    //             width: 25px;
+    //             height: 25px;
+    //             position: absolute;
+    //             top: 68px;
+    //             left: 280px;
+    //         }
+    //        .touxiang{
+    //            width: 80px;
+    //            height: 80px;
+    //            //border: 1px solid red;
+    //            border-radius: 50%;
+    //            margin-left: 28px;
+    //            margin-top: 20px;
+    //            img{
+    //             border-radius: 50%;
+    //             width: 80px;
+    //             height: 80px;
+    //            }
+    //         }
+    //         width: 100%;
+    //         height: 160px;
+    //         background:#2ebd7a;
+    //         .message{
+    //         width: 21px;
+    //         height: 21px;
+    //         img{
+    //             margin-top: 10px;
+    //             margin-left: 330px;
+    //         }
+    //        }
+    //     }
+    //     ion-grid{
+    //         padding: 1px!important;
+    //         ion-row{
+    //             ion-col{
+    //                 border: darkgray 0.1px solid;
+    //                 height: 100px;
+    //                 position: relative;
+    //                 img{
+    //                     width: 25px;
+    //                     height: 25px;
+    //                     margin: auto;
+    //                     position: absolute;
+    //                     top: 30px;
+    //                     left: 0;
+    //                     right: 0;
+    //                 }
+    //                 p{
+    //                     font-size: 14px;
+    //                     letter-spacing: 2px;
+    //                     margin: auto;
+    //                     position: absolute;
+    //                     left: 0;
+    //                     bottom:20px;
+    //                     right: 0;
+    //                     text-align: center;
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    ion-list {
+      button {
+        background-color: #f9f9f9 !important;
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        width: 360px !important;
+        height: 50px !important;
+
+        .img1 {
+          float: left;
+          width: 22px;
+          height: 22px;
+        }
+
+        .item1 {
+          float: left;
+          margin-left: 6px;
+          margin-top: 2px;
+
+          span {
+            font-size: 14px;
+            letter-spacing: 1px;
+          }
+        }
+
+        .img2 {
+          margin-top: 4px;
+          float: right;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
 }

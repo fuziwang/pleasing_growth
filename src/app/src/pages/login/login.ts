@@ -40,6 +40,8 @@ export class LoginPage {
   }
   bo;
   uid;
+  text;
+  isCheck=0;
   tel=this.storage.getItem('tel');
   pwd=this.storage.getItem('pwd');
  
@@ -62,7 +64,8 @@ export class LoginPage {
      
       this.bo =Array.isArray(data)&& data.length==0;
       console.log(this.bo);
-      if(this.bo!==true){
+      console.log(this.isCheck);
+      if(this.bo!==true&&this.isCheck==0){
         this.navCtrl.push(TouxiangPage);
       }
      
@@ -80,10 +83,60 @@ export class LoginPage {
     if(this.tel!=''&&this.pwd!=''){
       this.getList();
     }
-  
-   
   }
+  checkPhone(){ 
+    if(!(/^1[34578]\d{9}$/.test(this.tel))){ 
+      //console.log('lalala')
+        return false; 
+    }else{
+      return true;
+    }
+}
 
+//校验密码：只能输入6-20个字母、数字、下划线  
+  isPasswd(s){  
+  var patrn=/^(\w){6,20}$/;  
+  if (!patrn.exec(s)) return false
+      return true
+ }  
+
+  onchange_tel(){
+    if(this.checkPhone()==true){
+      this.text=''; 
+      this.isCheck=0;
+    }
+  }
+  
+  onchange_pwd(){
+    if(!this.isPasswd(this.pwd)){
+      this.text='';
+      this.isCheck=0;
+    }
+   }
+
+  onBlur_pwd(){
+    if(this.pwd==''){
+      this.text='密码不能为空哦！';
+      this.isCheck=1;
+    }else{
+      if(!this.isPasswd(this.pwd)){
+        this.text='请输入6-20个字符'; 
+        this.isCheck=1;
+      }
+    }
+    
+  }
+    onBlur_tel(){
+      if(this.tel==''){
+        this.text='手机号码不能为空哦！';
+        this.isCheck=1;
+      }else{
+        if(this.checkPhone()==false){
+          this.text='手机号码格式不正确哦！'; 
+          this.isCheck=1;
+        }
+      }
+    }
   zhuce(){
     this.navCtrl.push(ZhucePage);
   }

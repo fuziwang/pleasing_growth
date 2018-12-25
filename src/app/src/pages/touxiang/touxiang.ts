@@ -22,7 +22,7 @@ import { ApiProvider } from '../../providers/api/api';
 })
 export class TouxiangPage {
   avatar: string = "";
-  takephoto_image;
+  takephoto_image = "../../assets/imgs/jiahao1.png";
   chooseFromAlbum_image;
   uid=this.storage.getItem('uid');
 
@@ -32,10 +32,6 @@ export class TouxiangPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TouxiangPage');
     
-  }
-  seetouxiang(){
-   var file=document.getElementById('file');
-   this.navCtrl.push(SeetouxiangPage);
   }
   xingqu(){
     this.navCtrl.push(XingquPage);
@@ -47,8 +43,7 @@ export class TouxiangPage {
       uimage:this.takephoto_image
     });
     this.api.postTakephoto(data).then(data => {
-      console.dir(data);
-      this.presentSucess();
+      console.log(data);
     });
 
   }
@@ -99,15 +94,19 @@ export class TouxiangPage {
       targetWidth: 200,
       targetHeight: 200,
       saveToPhotoAlbum: true,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: 2
     };
 
     this.camera.getPicture(options).then(image => {
       console.log('Image URI: ' + image);
-      this.takephoto_image = image;
+      let base64Image = 'data:image/jpeg;base64,' + image;
+      this.takephoto_image = base64Image;
       if(image){
-        this.avatar = image.slice(7);
-        //alert(this.avatar);
-        //this.get_takephoto();
+        //alert(image);
+        // alert(this.avatar);
+        this.get_takephoto();
       }
       // this.avatar = image.slice(7);
     }, error => {
@@ -116,26 +115,28 @@ export class TouxiangPage {
   }
 
   chooseFromAlbum() {
-    const options: ImagePickerOptions = {
-      maximumImagesCount: 1,
-      width: 200,
-      height: 200
+    const options: CameraOptions = {
+      quality: 100,
+      allowEdit: true,
+      targetWidth: 200,
+      targetHeight: 200,
+      saveToPhotoAlbum: false,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType: 0
     };
-    this.imagePicker.getPictures(options).then(images => {
-      if (images.length > 1) {
-        this.presentAlert();
-      } else if (images.length === 1) {
-        console.log('Image URI: ' + images[0]);
-        this.chooseFromAlbum_image = images[0];
-        if(images[0]){
-          this.avatar = images[0].slice(7);
-          //alert(this.avatar);
-          //this.get_chooseAlbum();
-        }
-        //this.avatar = images[0].slice(7);
+
+    this.camera.getPicture(options).then(image => {
+      let base64Image = 'data:image/jpeg;base64,' + image;
+      this.takephoto_image = base64Image;
+      if (image) {
+        //alert(image);
+        // alert(this.avatar);
+        this.get_takephoto();
       }
     }, error => {
-      console.log('Error: ' + error);
+      alert(error);
     });
   }
 

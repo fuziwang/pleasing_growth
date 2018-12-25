@@ -117,11 +117,28 @@ export class ApiProvider {
       });
     });
   }
+
+public createCode(len){
+  var seed = new Array(
+    'abcdefghijklmnopqrstuvwxyz',
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+      '0123456789'
+            ); //创建需要的数据数组
+    var idx,i;
+    var result = ''; //返回的结果变量
+    for (i=0; i<len; i++) //根据指定的长度
+    {
+        idx = Math.floor(Math.random()*3); //获得随机数据的整数部分-获取一个随机整数
+        result += seed[idx].substr(Math.floor(Math.random()*(seed[idx].length)), 1);//根据随机数获取数据中一个值
+    }
+          return result; //返回随机结果
+  }
+
 //实例get 短信验证
 public getduanxin(){
   return new Promise((resolve, reject) => {
     this.http.get
-    ('http://v.juhe.cn/sms/send?mobile=15227126880&tpl_id=121373&tpl_value=%23code%23%3D654654&key=db8f4b0b792944f817725742bc63fa80')
+    ('http://v.juhe.cn/sms/send?mobile=15226513121&tpl_id=123034&tpl_value=%23code%23%3D654654&key=c7534230547f1a15f64eb302c1312918')
       .subscribe((res:Response)=>{
         resolve(res.json())
       },err=>{

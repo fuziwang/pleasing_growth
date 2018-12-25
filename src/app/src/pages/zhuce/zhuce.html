@@ -1,33 +1,38 @@
 
 <ion-content>
-  <ion-item no-lines><img src="../../assets/imgs/title.png"></ion-item>
-    <div class="box box1">
-       <i class="icon1"></i>
-      <input type="text" class="username" placeholder="请输入手机号码" [(ngModel)]="tel"/>
-    </div>
-  
-  <div class="box">
-    <div class="icon3 box2"></div>
-    <ion-icon name="phone"></ion-icon>
-    <input type="text" class="username" placeholder="请输入验证码"/>
-  </div>
-  <div class="box ">
-    <div class="icon2"></div>
-    <ion-icon name="phone"></ion-icon>
-    <input type="password" class="username" placeholder="请输入密码" [(ngModel)]="pwd"/>
-  </div>
+  <img src="../../assets/imgs/title.png">
+  <!-- <div class="icon1">
+    <img src="../../assets/imgs/apple.png">
+  </div> -->
+  <ion-item no-lines class="first">
+    <ion-input   class="text-input tel"  type="text" [(ngModel)]="tel" type='text' placeholder="请输入手机号码" (ionBlur)="onBlur_tel()" (ionChange)="onchange_tel()"></ion-input>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-input   class="text-input yanzhengma" type="text" [(ngModel)]="yanzhengma"  placeholder="请输入验证码" (ionBlur)="onBlur_yanzhengma()" (ionChange)="onchange_yanzhengma()"></ion-input>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-input   class="text-input pwd" type="password" [(ngModel)]="pwd"  placeholder="请输入密码" clearInput (ionBlur)="onBlur_pwd()"  (ionChange)="onchange_pwd()" ></ion-input>
+  </ion-item>
+
   <button (click)="getCode()" id="yanzheng" >{{verifyCode.verifyCodeTips}}</button>
-  
+
+  <!-- <ion-item>
+    <ion-label style="float:right;padding-right:0px"> 
+      <ion-icon name="logo-playstation"></ion-icon> PSN</ion-label>
+        <ion-input clearInput type="text"></ion-input>
+  </ion-item> -->
+    
   <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
     <button id="button" ion-button block  color="zhuti"  round  (click)="logIn()">
       注册
     </button>
   </div>
-  <input type="radio" id="r">
+  <input type="checkbox" id="r" checked="checked" >
   <div class="buttom">
     <span>
       <p (click)='xieyi()'>用户协议</p>
     </span>
-    <span class="left"><p (click)="logIn()">已注册，返回登录</p></span>
+    <span class="left"><p (click)="logIn1()">已注册，返回登录</p></span>
   </div>
+  <div class="error" [ngStyle]="{'display': isCheck== 1  ? 'block' : 'none'}">{{text}}</div>
 </ion-content>

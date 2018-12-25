@@ -1,4 +1,10 @@
 page-touxiang {
+    .next{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #2ebd7a;
+    }
     text-align: center;
     .touxiang{
         div{
@@ -12,6 +18,9 @@ page-touxiang {
             margin-left: 31%;
             border: 1px solid #2ebd7a;
             position: relative;
+            img{
+                border-radius:50%;
+            }
             input{
                 opacity:0;
                 filter:alpha(opacity=0);
@@ -34,6 +43,5 @@ page-touxiang {
     .img{
        
          text-align: center;
-       
     }
 }

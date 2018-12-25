@@ -45,6 +45,8 @@ export class TieziPage {
   isCheck=0;
   arr=[1];
   id;
+  value="";
+  length = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,public storage:StorageProvider) {
     this.id=navParams.get('id');
     this.getList();
@@ -90,5 +92,7 @@ export class TieziPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TieziPage');
   }
-
+  len(value){
+    this.length = value.length;
+  }
 }

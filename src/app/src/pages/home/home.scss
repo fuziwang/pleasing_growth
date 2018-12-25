@@ -1,20 +1,28 @@
 page-home {
+    ion-content{
+        // background:linear-gradient(rgb(32, 161, 101), #86f8c3, #f4faf7,#fff) !important;
+    }
     ion-header{
+       
         font-size: 20px!important;
        .title{
        font-size: 14px!important;
        }
-        background: #ffdb2c!important;
     }
     .navList{
-        background-color: rgb(252, 252, 252);
-        padding-left: 0px!important;
-        margin:0px!important;
+        display: block;
+        // background-color: rgb(252, 252, 252);
+        padding: 0px!important;
+        margin-left:16px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
         height:44px;
+        width: 328px;
         .first{
             border-bottom:2px solid #ffdb2c;
         }
         li{
+            //border: 1px solid red;
             height:44px;
             text-align: center;
             float: left;
@@ -29,7 +37,7 @@ page-home {
              padding: 0px;
         
          li{
-             background-color: rgb(250, 248, 248);
+            //  background-color: rgb(250, 248, 248);
              border-bottom: solid 1px rgb(235, 213, 213);
              margin-bottom: 5px;
              .all{
@@ -37,37 +45,49 @@ page-home {
                  height: 130px;
              }
             div{
-                   //border: 1px solid red;
+                  
                    .text{
-                       float: left;
-                       width: 60%;
+                        //border: 1px solid red;
+                       float: right;
+                       width: 50%;
                        height: 130px;
+                       margin-right: 0px;
+                       margin-left: 20px;
                        #uname{
-                           margin-left: 10%;
-                           
-                           margin-top: -15px;
+                           float: right;
+                           margin-right:15px;
+                           margin-top: 3px;
+                           color: rgb(161, 153, 153);
                        }
                        #title{
-                           height: 50px;
-                           margin-top: 15px;
-                           margin-left: 5px;
-                           margin-bottom: 20px;
-                           font-size: 18px;
-                           font-weight: 500;
-                           text-align: left;
+                           float: left;
+                           //border: 1px solid red;
+                           height: 42px;
+                        //    margin-top: -2px!important;
+                        //    padding-top: 0px!important;
+                        //    margin-left: 5px;
+                           font-size: 15px;
+                           margin-right:10px;
+                           font-weight: 1000;
+                        //    text-align: left;
+                        //    line-height: 16px;
+                           letter-spacing: 1px;
+
                           
                        }
                        #pinglun{
+                           //border: 1px solid red;
                            height: 20px;
+                           display: block;
                            position: relative;
-                           top:10px;
+                           top: 75%;
                            ul{
                                padding: 0px;
                                li{
                                    border-bottom: none;
                                    float: left;
                                    margin-right: 10px;
-                                   margin-left: 5px;
+                                   margin-left: 13px;
                                    span{
                                        padding-left: 3px;
                                    }
@@ -80,10 +100,11 @@ page-home {
                        }
                    }
                    .img{
-                       float: left;
+                       float: right;
                        width: 40%;
                        height: 130px;
                        margin-top: 5px;
+                       
                        img{
                         height: 120px;
                         width: 100%;

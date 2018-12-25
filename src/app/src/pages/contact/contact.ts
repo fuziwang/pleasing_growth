@@ -27,4 +27,8 @@ export class ContactPage {
   goArticle(){
     this.navCtrl.push(ArticlePage);
   }
+
+  close() {
+    this.navCtrl.pop();
+  }
 } 

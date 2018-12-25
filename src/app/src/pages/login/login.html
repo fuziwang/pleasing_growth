@@ -1,28 +1,29 @@
 
 <ion-content>
-  <ion-item no-lines><img src="../../assets/imgs/title.png"></ion-item>
-    <div class="box box1">
-       <div class="icon1">
-       
-       </div>
-        <input type="text" class="username" placeholder="请输入手机号码" style="padding-left:40px;" [(ngModel)]="tel"/>
+    <img src="../../assets/imgs/title.png">
+    <!-- <div class="icon1">
+      <img src="../../assets/imgs/apple.png">
+    </div> -->
+    <ion-item no-lines class="first">
+      <ion-input   class="text-input tel"  type="text" [(ngModel)]="tel" type='text' placeholder="请输入手机号码" (ionBlur)="onBlur_tel()" (ionChange)="onchange_tel()"></ion-input>
+    </ion-item>
+  
+    <ion-item no-lines>
+      <ion-input   class="text-input pwd" type="password" [(ngModel)]="pwd"  placeholder="请输入密码" clearInput (ionBlur)="onBlur_pwd()"  (ionChange)="onchange_pwd()" ></ion-input>
+    </ion-item>
+  
+  
+    <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
+      <button id="button" ion-button block  color="zhuti"  round  (click)="logIn()">
+        登录
+      </button>
     </div>
-  
-  <div class="box">
-    <div class="icon2"></div>
-    <ion-icon name="phone"></ion-icon>
-    <input type="password" class="username" placeholder="请输入密码" style="padding-left:40px;" [(ngModel)]="pwd" />
-  </div>
-  
-
-  <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
-    <button id="button" ion-button block  color="zhuti"  round (click)="logIn()">
-      登录
-    </button>
-  </div>
-  <div class="buttom">
-    <span><p (click)="zhuce()">注册新用户</p></span>
-    <span class="left"><p (click)="set()">忘记密码</p></span>
-  </div>
-  <span class="error" [ngStyle]="{'display': bo== true  ? 'block' : 'none'}"><p >密码错误，请重新输入。</p></span>
-</ion-content>
+   
+    <div class="buttom">
+      <span>
+        <p (click)='zhuce()'>注册新用户</p>
+      </span>
+      <span class="left"><p (click)="set()">忘记密码</p></span>
+    </div>
+    <div class="error" [ngStyle]="{'display': isCheck== 1  ? 'block' : 'none'}">{{text}}</div>
+  </ion-content>
