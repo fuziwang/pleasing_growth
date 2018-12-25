@@ -17,9 +17,12 @@ export class AuthoritPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  status = true;
   ionViewDidLoad() {
     console.log('ionViewDidLoad AuthoritPage');
   }
 
+  change(){
+    this.status = !this.status;
+  }
 }

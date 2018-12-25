@@ -24,11 +24,17 @@ export class HomePage {
   msg:string;//提示信息
   isLogin:boolean=true;//是否登录
   list:Array<Article>=[];
+  list1: Array<Article> = [];
   dianzannum=this.storage.getItem('dianzannum');
   seenum=this.storage.getItem('seenum');
   isActive=true;
   isClick(i){
     this.isActive=i;
+    if(i==0){
+      this.getNewList();
+    } else{
+      this.getList();
+    }
   }
 
   arr=[1,2,3,4];
@@ -42,6 +48,11 @@ export class HomePage {
 
   }
   
+  getBanner(i){
+    this.navCtrl.push(TieziPage,{
+      id:i
+    });
+  }
   getList(){
     //获取list用于显示
     this.api.getList().then(data=>{
@@ -58,7 +69,12 @@ export class HomePage {
     //   console.dir(data);
     // });
   }
-  
+  getNewList(){
+    this.api.getNewList().then(data=>{
+      console.dir(data);
+      this.list1=<any>data;
+    })
+  }
   
   last(){
     this.app.getRootNav().push(XingquPage);

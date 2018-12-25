@@ -71,7 +71,7 @@ page-tiezi {
             #img{
                 margin-top: 10px;
                 //border: 1px solid red;
-                height: 200px;
+                height: 210px;
                 width: 100%;
             }
         }
@@ -223,8 +223,21 @@ page-tiezi {
             }
         }
         .content{
-            margin-top: 80px;
+            margin-top: 100px;
                 font-size: 1.2rem;
+                ion-icon {
+                  margin-top: 0px;
+                  margin-left: 70%;
+
+                  span {
+                    color: #999;
+                    padding-top: 3px !important;
+                    ;
+                    font-size: 1.2rem;
+                  }
+
+                }
+
                 pre{
                     white-space:pre-wrap;
                     word-wrap:break-word;
@@ -256,11 +269,11 @@ page-tiezi {
         }
 
         .comment button {
-          width: 40px;
+          width:38px;
           height: 25px;
           border: 0;
           outline: 0;
-          margin-left: 78%;
+          margin-left: 76%;
           margin-top: 2px;
         }
     }

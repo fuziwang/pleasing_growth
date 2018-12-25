@@ -20,6 +20,10 @@ page-feel {
                 width:100%;
                 height:300px;
             }
+            textarea::-webkit-input-placeholder{
+                padding-top:10px;
+                padding-left:10px;
+            }
         }
         .list2{
             img{

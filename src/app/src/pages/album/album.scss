@@ -24,6 +24,44 @@ page-album {
                 height: 100px;
             }
         }
+        footer {
+          height: 160px;
+          width: 280px;
+          border: 1px solid #181818;
+          border-radius: 10px;
+          position: absolute;
+          top: 160px;
+          right: 12%;
+          background-color:white;
+          opacity: 0.8;
+
+          p {
+            padding-top: 10px;
+            padding-left: 110px;
+            font-size: 15px;
+          }
+
+          input {
+            display: block;
+            margin-top: 20px;
+            height: 25px;
+            margin-left: 67px;
+            border-color: rgb(208, 245, 203);
+          }
+
+          span {
+            border: #fff solid 1px;
+            display: inline-block;
+            margin-left: 65px;
+            margin-top: 25px;
+            text-align: center;
+            line-height: 20px;
+            width: 40px;
+            border-radius: 150px;
+            background-color: white;
+            font-size: 14px;
+          }
+        }
     }
 }
 

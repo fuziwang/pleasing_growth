@@ -23,6 +23,17 @@ export class ApiProvider {
       });
     });
   }
+  public getNewList() {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + 'article/new')
+        .subscribe((res: Response) => {
+          resolve(res.json())
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
 
   //实例get Tiezi请求
   public getList_next(id){
@@ -199,6 +210,31 @@ public getArticleComment_next(id){
         });
     });
   }
+  //实例post 新建相册请求
+  public postNewAlbum(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'photos', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+  //实例post 评论请求
+  public postPinglun(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'articlecomment', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+
   //实例post tree请求
   public postTree(data) {
     return new Promise((resolve, reject) => {

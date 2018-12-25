@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar color="gre">
     <button ion-button icon-only menuToggle>
       <ion-icon name="ios-arrow-round-back"></ion-icon>
@@ -22,9 +22,9 @@
 <ion-content padding>
   <p>谁能看我的文章</p>
 
-  <ion-item detail-push>
+  <ion-item detail-push (click)="change()">
     <div class="tu">
-      <ion-icon name="md-checkmark" ></ion-icon>
+      <ion-icon name="md-checkmark" *ngIf="status"></ion-icon>
     </div>
     <div class="tu1">
         <p>公开</p>
@@ -32,9 +32,9 @@
     </div>
     
   </ion-item>
-      <ion-item detail-push>
+      <ion-item detail-push (click)="change()">
     <div class="tu">
-        
+      <ion-icon name="md-checkmark" *ngIf="!status"></ion-icon>
     </div>
     <div class="tu1">
       <p>私密</p>

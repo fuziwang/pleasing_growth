@@ -8,7 +8,7 @@
 <ion-grid>
   <ion-row>
     <ion-col col-6>
-      <button ion-button block outline><span>新建相册</span></button>
+      <button ion-button block outline (click)="newAlbum()"><span>新建相册</span></button>
     </ion-col>
     <ion-col col-6 *ngFor="let item of list;" >
       <img src="../../assets/imgs/hot02.png" (click)="photo(item?.xid)"  >
@@ -16,4 +16,11 @@
     </ion-col>
   </ion-row>
 </ion-grid>
+<div>
+  <footer [ngStyle]="{'display': isCheck== 1  ? 'block' : 'none'}">
+    <p>新建相册</p>
+    <input type="text" placeholder="输入相册名称" [(ngModel)]="text">
+    <span (click)="addArr()">确定</span><span (click)="quxiao()">取消</span>
+  </footer>
+</div>
 </ion-content>

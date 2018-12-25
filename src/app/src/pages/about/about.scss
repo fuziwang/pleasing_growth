@@ -22,6 +22,10 @@ page-about {
                 height: 25px;
                 margin-left: 40px;
                 border-color: rgb(208, 245, 203);
+                border:0.5px solid rgb(208, 245, 203);
+            }
+            input::-webkit-input-placeholder {
+              padding-left:5px;
             }
             span{
                 border: #fff solid 1px;
@@ -36,13 +40,13 @@ page-about {
             }
         }
         .footer{
-            height: 130px;
-            width: 290px;
+            height: 160px;
+            width: 320px;
             border: 1px solid #000;
             border-radius: 150px;
             position: absolute;
-            top:190px;
-            right: 10%;
+            top:170px;
+            right: 5%;
             background-color: rgb(226, 250, 250);
             opacity: 0.8;
             p{
@@ -53,21 +57,24 @@ page-about {
             input{
                 display: block;
                 margin-top: -20px;
-                height: 25px;
-                width: auto;
+                height: 30px;
+                width: 190px;
                 margin-left: 60px;
                 border-color: rgb(208, 245, 203);
             }
             span{
                 border: #fff solid 1px;
                 display: inline-block;
-                margin-left: 10%;
-                margin-top: 13px;
+                margin-left: 15px;
+                margin-top: 22px;
+                padding-top:-3px;
                 text-align: center;
                 height: 25px;
                 line-height: 25px;
-                width: 60px;                border-radius: 150px;
-                background-color: rgb(145, 211, 255);
+                width: 60px;
+                border-radius: 150px;
+                color:#fff;
+                background-color: #179c5e;
             }
         }
         .top{
@@ -78,13 +85,16 @@ page-about {
             height: 40px;
             border-radius: 100px;
             img{
-                width: 40px;
-                height: 40px;
+                width: 35px;
+                height: 35px;
                 display: block;
                 float: left;
+                border-radius: 50%;
+                margin-top:2px;
+                margin-left:4px;
             }
             span{
-                float: leftt;
+                float: left;
                 display: block;
                 margin-top: 10px;
                 margin-left: 10px;
@@ -93,7 +103,7 @@ page-about {
             }
         }
         .buttom{
-            margin-top: 90px;
+            margin-top: 70px;
             margin-left: 130px;
             ul{
                 li {
@@ -129,7 +139,7 @@ page-about {
         .apple{
              //border:  1px solid rgb(31, 31, 28);
             width: 80%;
-            margin-top: 150px;
+            margin-top: 170px;
             border-radius: 50%;
             height: 200px;
             margin-left: 10%;
@@ -137,10 +147,44 @@ page-about {
                 //border: 1px solid rgb(199, 168, 168);
                 height: 250px;
                .class0{
-                border: 1px solid rgb(169, 209, 60);
+               position: relative;
+               top: 60px;
+               left: 13px;
                }
                .class1{
-                border: 1px solid rgb(41, 31, 182);
+                position: relative;
+               top: 47px;
+               left: 35px;
+               }
+               .class2{
+                position: relative;
+                top: 84px;
+                left: 47px;
+               }
+               .class3{
+                position: relative;
+                top: 124px;
+                left: -65px;
+               }
+               .class4{
+                position: relative;
+                top: 55px;
+                left: 50px;
+               }
+               .class5{
+                position: relative;
+                top: 70px;
+                left: -70px;
+               }
+               .class6{
+                position: relative;
+                top: -40px;
+                left: -75px;
+               }
+               .class7{
+                position: relative;
+                top: 90px;
+                left: 0px;
                }
                 li{
 
@@ -148,20 +192,18 @@ page-about {
                     //border: 1px solid black;
                     p{
                         //border:1px solid black;
-                        margin-top: 15px;
+                        margin-top: 17px;
                         text-align: center;
                         font-size: 13px;
-                        font-weight: 500;
-                        color: #000;
+                        color: #fff;
                         width: 35px;
-                        margin-left: 10px;
+                        margin-left: 6px;
                     }
-                    width: 53px;
-                    height: 53px;
-                    background: url(../../assets/imgs/pingguo.png) no-repeat;
-                    opacity: 0.8;
-                    background-size: 53px 53px;
-                   
+                    width: 47px;
+                    height: 47px;
+                    background: url(../../assets/imgs/apple.png) no-repeat;
+                    opacity: 1;
+                    background-size: 47px 47px;
                     float: left;
                     //border:solid 1px red;
                     margin-right: 15px;

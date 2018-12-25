@@ -4,6 +4,7 @@ import { VideoPage } from '../video/video';
 import { PicturePage } from '../picture/picture';
 import { ApiProvider } from '../../providers/api/api';
 import { StorageProvider } from '../../providers/storage/storage';
+import { AlbumPage } from '../album/album';
 
 interface Fruit{
   fid:number;
@@ -48,6 +49,7 @@ export class AboutPage {
     
   }
   change(id){
+    console.log(id);
     this.changeId=id;
     this.isdel=1;
     console.log(this.changeId);
@@ -55,11 +57,9 @@ export class AboutPage {
   }
 
   del(){
-   
     this.getDeleteApple();
     this.isdel=0;
     this.getList();
-    
   }
 
   change_content(){
@@ -68,7 +68,7 @@ export class AboutPage {
     this.getList();
   }
   goPicture(){
-    this.navCtrl.push(PicturePage);
+    this.navCtrl.push(AlbumPage);
   }
   goVidio(){
     this.navCtrl.push(VideoPage);
@@ -109,7 +109,6 @@ export class AboutPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MessagePage');
-    
   }
 
   getList(){

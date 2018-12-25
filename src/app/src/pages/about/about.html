@@ -13,12 +13,12 @@
   </ion-header>
   <ion-content>
     <div class="top">
-      <img src="../../assets/imgs/boy_02.png">
+      <img src="http://192.168.80.144:8080/user/{{id}}-{{id}}.jpg">
       <span>{{num}}颗果子</span>
     </div>
     <div class="apple">
       <ul>
-        <li *ngFor='let item of arr;let idx=index' [ngClass]="{'class0': index==0,'class1': index==1}" (click)="change(item?.fid)"><p>{{item.fname}}</p></li>
+        <li *ngFor='let item of arr;let idx=index' [ngClass]="{'class0': idx==0,'class1': idx==1,'class2': idx==2,'class3': idx==3,'class4': idx==4,'class5': idx==5,'class6': idx==6,'class7': idx==7}" (click)="change(item?.fid)"><p>{{item.fname}}</p></li>
       </ul>
     </div>
     <div class="buttom">
@@ -49,7 +49,8 @@
     <footer [ngStyle]="{'display': isdel== 1  ? 'block' : 'none'}" class="footer">
       <p>你想修改的果实名称是：</p>
       <input type="text" placeholder="修改果实名称（最多4个字）" [(ngModel)]="change_text">
-      <span (click)="change_content()">确定</span><span (click)="quxiao()">取消</span><span (click)="del()">删除果实</span>
+<span (click)="change_content()">确定</span><span (click)="quxiao()">取消</span><span (click)="del()">删除果实</span><span
+  (click)="goPicture()">进入相册</span>
    </footer>
   
   </ion-content>
