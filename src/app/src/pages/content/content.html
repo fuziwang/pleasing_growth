@@ -1,32 +1,59 @@
-<ion-header>
-  <ion-navbar color="zhuti">
-    <ion-title style="text-align:center">正文</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-
-  <div class="out" >
-      <div class="inside1" >
-          <div class="com1" ><img class="img1" src="../../assets/imgs/girl_02.png" alt="" style="width:60px;
-              height: 50px;"></div> <!-- img-->
-          <div class="com2">
-            <span style="font-size:18px">用户名</span><br>
-            <span style="font-size:12px;color:#BFBFBF">今天12:00</span>
-          </div>
+<ion-header no-border>
+    <ion-navbar color='zhuti'>
+      <ion-title>
+        说说详情
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding-left  padding-right>
+    <div class="al">
+      <div class="top">
+        <div class="shang">
+            <div class="touxiang">
+                <img src="{{'http://120.79.153.10:80/user/'+list[0]?.uimage}}"/>
+              </div>
+              <div class="title">
+                <span>{{list[0]?.uname}}</span>
+                <span class="time">{{list[0]?.stime}}</span>
+              </div> 
+              <div class="guanzhu"><button ion-button color="zhuti" (click)="concern()" class="concern">关注</button></div>
+        </div>
+        <div class="content">
+            {{list[0]?.scontent}}
+        </div>
+        <div class="img">
+            <img src="{{'http://120.79.153.10:80/say/'+list[0]?.simage}}"/>
+        </div>
       </div>
-      <div class="inside2" >
-          <div class="com3">今天宝宝一周岁啦</div>
-          <div class="com4"><img class="img1" src="../../assets/imgs/baby.jpg" alt="" style="overflow:hidden"></div>
+        <div class="comment">
+          <h6 class="p1">添加评论</h6>
+          <textarea (keyup)="len(value)" maxlength="20" placeholder="说点什么吧" [(ngModel)]="value"> </textarea>
+          <span class="len"> {{length}}<span>/20</span></span>
+          <button (click)="comment()">发送</button>
+        </div>
+        <div class="bottom">
+          <div class="pl">所有评论</div>
+            <ul class="tiezi">
+                <li *ngFor='let item1 of commont;let idx=index' class="one">
+                  <div>
+                      <ul class="pinlun">
+                        <li class="img"><img  src="{{'http://120.79.153.10:80/user/'+item1?.uimage}}"></li>
+                        <li class="name">{{item1?.uname}}</li>
+                        <li class="time">{{item1?.sctime}}</li>
+                      </ul>
+                  </div>
+                  <div class="content">
+                    {{item1?.sccontent}}
+                  </div>
+                </li>
+            </ul>
+        </div>
       </div>
-    </div>
-     
-</ion-content>
-<ion-footer class="foo" >
-  <div class="inside3">
-      <div class="com5"><a><ion-icon name="ios-heart-outline"></ion-icon></a><span>赞同</span></div>
-      <div class="com6"><ion-icon name="ios-chatboxes-outline"></ion-icon><span>评论</span></div>
-      <div class="com7"><ion-icon name="ios-create-outline"></ion-icon><span>转发</span></div>
-      <div class="com8" (click)="goShare()"> <ion-icon ios="ios-share" md="md-share"></ion-icon><span>分享</span></div>
-  </div>
-</ion-footer>
+    </ion-content>
+    <!-- <ion-footer >
+        <ul>
+            <li class="icon" ><ion-icon name="md-open"><span>&nbsp;{{seenum}}</span></ion-icon></li>
+            <li class="icon"><ion-icon name="md-text"><span>&nbsp;{{seenum}}</span></ion-icon></li>
+            <li class="icon" (click)="dianzan()"><ion-icon name="md-heart-outline"><span>&nbsp;{{dianzannum}}</span></ion-icon></li>
+          </ul>
+    </ion-footer> -->

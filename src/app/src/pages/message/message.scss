@@ -1,0 +1,43 @@
+page-message {
+    ion-header{
+        ion-title{
+            position: absolute;
+            top: 16px;
+            left: 145px;
+        }
+    }
+    .tz1{
+        width: 360px;
+        height: 110px;
+        border: darkgray 1px solid;
+        .img1{
+            width: 85px;
+            height: 85px;
+            position: absolute;
+            top: 13px;
+            left: 10px;
+        }
+        .name1{
+            position: absolute;
+            top: 32px;
+            left: 100px;
+        }
+        .time1{
+            color: darkgray;
+            position: absolute;
+            top: 32px;
+            left: 270px;
+        }
+        .text1{
+            width: 200px;
+            color: darkgray;
+            position: absolute;
+            top: 60px;
+            left: 100px;
+            right: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

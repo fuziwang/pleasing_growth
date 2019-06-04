@@ -1,14 +1,14 @@
 <ion-content>
   <div class="head">
     <div class="touxiang" (click)="homepage()">
-      <img src="{{'http://192.168.80.144:8080/user/'+list[0]?.uimage}}">
+      <img src="{{'http://120.79.153.10:80/user/'+list[0]?.uimage}}">
     </div>
     <div class="sociality">
       <div class="name"><span>{{list[0]?.uname}}</span></div>
-      <div class="fans" (click)="fans()"><span>36</span>
+      <div class="fans" (click)="fans()"><span>{{list[0]?.ufans}}</span>
         <p>粉丝</p>
       </div>
-      <div class="follow" (click)="follow()"><span>58</span>
+      <div class="follow" (click)="follow()"><span>{{list[0]?.uconcern}}</span>
         <p>关注</p>
       </div>
       <div class="creation" (click)="creation()"><span>10</span>

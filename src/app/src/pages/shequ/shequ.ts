@@ -37,6 +37,7 @@ export class ShequPage {
   list:Array<Say>=[];
   arr=[1,2,3];
   ionViewDidLoad() {
+    this.getList();
     console.log('ionViewDidLoad ShequPage');
   }
   fenXiang(){
@@ -63,9 +64,13 @@ export class ShequPage {
   goShare(){
     this.navCtrl.push(SharePage);
   }
-  goHomeage(){
-    this.navCtrl.push(HomepagePage);
+  goTiezi_next(index){
+    this.navCtrl.push(ContentPage,{
+      id : index,
+      upid:this.list[index-1].uid
+    });
   }
+  
   goContent(){
     this.navCtrl.push(ContentPage);
   }

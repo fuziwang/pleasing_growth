@@ -1,6 +1,6 @@
 page-shequ{
     ion-content{
-        margin-top: -20px;
+        margin-top: -10px;
         span{
             margin-left: 5px;
         }
@@ -66,57 +66,17 @@ page-shequ{
         }
         
     }
-    .fenxiang{
-            width: 100%;
-            position: absolute;
-            top:380px;
-            left: 0px;
-            background-color: rgb(251, 253, 255);
-            
-            p{
-                font-size: 20px;
-                margin-top: 0px;
-            }
-            border: 1px solid rgb(255, 255, 255);
-            height: 200px;
-            width: 100%;
-            ul{
-                margin-top: 0px;
-                margin-left:10px;
-                padding: 0px;
-                li{
-                    .first{
-                        margin-left: 20px!important;
-                    }
-                    float: left;
-                    i{
-                        font-size: 52px;
-                        height: 36px;
-                        margin-left: -18px;
-                        text-align: center;
-                       
-                    }
-                    span{
-                        position: relative;;
-                        top: 40px;
-                        left: -43px;
-                        font-size: 15px;
-                        text-align: center;
-                    }
-                }
-            }
-        }
         
-        }
-     .list{
-            top:400px;
-            left:0px;
-            height:30px;
-            .pl{
-                float: left;
-                width: 260px;
-            } 
-            button{
-                float: left;
-                }   
 }
+    //  .list{
+    //         // top:400px;
+    //         // left:0px;
+    //         height:30px;
+    //         .pl{
+    //             float: left;
+    //             width: 260px;
+    //         } 
+    //         button{
+    //             float: left;
+    //             }   
+// }

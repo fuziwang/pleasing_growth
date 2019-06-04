@@ -4,7 +4,7 @@ import { XingquPage } from '../xingqu/xingqu';
 import { StorageProvider } from '../../providers/storage/storage';
 import { SeetouxiangPage } from '../seetouxiang/seetouxiang';
 
-import {ImagePicker, ImagePickerOptions} from "@ionic-native/image-picker";
+//import {ImagePicker, ImagePickerOptions} from "@ionic-native/image-picker";
 import {Camera, CameraOptions} from "@ionic-native/camera";
 import { ApiProvider } from '../../providers/api/api';
 
@@ -26,7 +26,7 @@ export class TouxiangPage {
   chooseFromAlbum_image;
   uid=this.storage.getItem('uid');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:StorageProvider,public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController,public imagePicker: ImagePicker, private camera: Camera,private api:ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:StorageProvider,public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController, private camera: Camera,private api:ApiProvider) {
   }
 
   ionViewDidLoad() {

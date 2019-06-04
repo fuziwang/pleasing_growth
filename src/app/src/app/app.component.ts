@@ -9,12 +9,13 @@ import { FirstPage } from '../pages/first/first';
 import { AboutPage } from '../pages/about/about';
 import { MyPage } from '../pages/my/my';
 import { TouxiangPage } from '../pages/touxiang/touxiang';
+import {HomePage} from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any =TouxiangPage;
+  rootPage:any =FirstPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -1,5 +1,6 @@
 import { Http,Headers,Response } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
 
 @Injectable()
 export class ApiProvider {
@@ -11,10 +12,12 @@ export class ApiProvider {
 
   url:string = "/api/";
 
+
   //实例get Article请求
-  public getList(){
+  public getList(uid){
+    console.log(uid);
     return new Promise((resolve, reject) => {
-      this.http.get(this.url+'article')
+      this.http.get(this.url+'article/sus/'+uid)
         .subscribe((res:Response)=>{
           resolve(res.json())
         },err=>{
@@ -48,7 +51,56 @@ export class ApiProvider {
       });
     });
   }
+  //实例get BannerArticle(id){
+  public getBanArticle(id){
+    return new Promise((resolve,reject)=>{
+      console.log(id);
+      this.http.get(this.url+'bannerarticle/'+id)
+        .subscribe((res:Response)=>{
+          resolve(res.json())
+        },err=>{
+          console.dir(err);
+          reject()
+      });
+    });
+  }
+   //实例post 说说评论请求
+   public postSayComment(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'saycomment', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+  //实例get 说说——next 请求
+  public getSay_next(id) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + 'say/' + id)
+        .subscribe((res: Response) => {
+          resolve(res.json())
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
 
+  //实例get 说说评论 请求
+  public getSaycomment(id) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + 'saycomment/' + id)
+        .subscribe((res: Response) => {
+          resolve(res.json())
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
    //实例get 照片 请求
    public getPhoto(id){
     return new Promise((resolve, reject) => {
@@ -186,9 +238,9 @@ public getArticleComment_next(id){
   });
 }
   //实例get 相册 请求
-  public getPhotos(){
+  public getPhotos(id){
     return new Promise((resolve, reject) => {
-      this.http.get(this.url+'photos')
+      this.http.get(this.url+'photos/' + id)
         .subscribe((res:Response)=>{
           resolve(res.json())
         },err=>{
@@ -197,7 +249,45 @@ public getArticleComment_next(id){
       });
     });
   }
+  //实例get 关注 请求
+  public getFollow(id) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + 'userconcern/' + id)
+        .subscribe((res: Response) => {
+          resolve(res.json())
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+  
+    //实例get 粉丝 请求
+    public getFans(id) {
+      return new Promise((resolve, reject) => {
+        this.http.get(this.url + 'userconcern/fans/' + id)
+          .subscribe((res: Response) => {
+            resolve(res.json())
+          }, err => {
+            console.dir(err)
+            reject()
+          });
+      });
+    }
 
+  //实例post utel请求
+  public postCheck(utel){
+    return new Promise((resolve,reject)=>{
+      console.log(utel);
+      this.http.post(this.url+'user/check',utel,{headers:this.headers})
+        .subscribe((res:Response)=>{
+          resolve(res.json());
+        },err=>{
+          console.dir(err);
+          reject();
+      });
+    });
+  }
   //实例post请求
   public postLogin(data){
     return new Promise((resolve, reject) => {
@@ -205,11 +295,12 @@ public getArticleComment_next(id){
         .subscribe((res:Response)=>{
           resolve(res.json())
         },err=>{
-          console.dir(err)
+          console.dir(err);
           reject()
         });
     });
   }
+
   //实例post 新建相册请求
   public postNewAlbum(data) {
     return new Promise((resolve, reject) => {
@@ -226,6 +317,18 @@ public getArticleComment_next(id){
   public postPinglun(data) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + 'articlecomment', data, { headers: this.headers })
+        .subscribe((res: Response) => {
+          console.log(res);
+        }, err => {
+          console.dir(err)
+          reject()
+        });
+    });
+  }
+
+  public postConcern(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'userconcern', data, { headers: this.headers })
         .subscribe((res: Response) => {
           console.log(res);
         }, err => {

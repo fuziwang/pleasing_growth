@@ -21,17 +21,18 @@
 <div class="list1">
   <label class="item item-input">
     <textarea placeholder="分享孩子的美好瞬间"  [(ngModel)]="text" ></textarea>
+    <img src="{{takephoto_image }}"/>
   </label>
 </div>
 <div class="list2">
-    <button ion-botton block (click)="goCamera()" style="background-color:transparent">
+<button ion-botton block (click)="presentActionSheet()" style="background-color:transparent">
         <img src="../../assets/imgs/camera.jpg">
     </button>
 </div>
 <div class="list3">
  <div class="inside" (click)="goAuthority()"> <!-- 权限 -->
    <ion-icon name="md-ionitron" color="gre"></ion-icon> <!-- ios-ionitron-outline -->
-   <span>私密</span>
+   <span>公开</span>
   </div>
 </div>
 </ion-content>

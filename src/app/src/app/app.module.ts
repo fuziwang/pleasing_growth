@@ -54,8 +54,10 @@ import { TransmitPage } from '../pages/transmit/transmit';
 import { AboutusPage } from '../pages/aboutus/aboutus';
 import { PhotoPageModule } from '../pages/photo/photo.module';
 import { ContentPage } from '../pages/content/content';
-import {Camera} from "@ionic-native/camera";
-import {ImagePicker} from "@ionic-native/image-picker";
+import { BannerarticlePage} from '../pages/bannerarticle/bannerarticle';
+import {Camera} from '@ionic-native/camera';
+//import {ImagePicker} from '@ionic-native/image-picker';
+
 
 
 
@@ -63,7 +65,8 @@ import {ImagePicker} from "@ionic-native/image-picker";
   declarations: [
     MyApp,
     ContactPage,
-   
+
+
     AboutPage,
     ContactPage,
     HomePage,
@@ -104,6 +107,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
     CommunityPage,
     SeetouxiangPage,
     MessagePage,
+    BannerarticlePage,
     //PhotoPageModule,
   ],
   imports: [
@@ -164,6 +168,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
     SeetouxiangPage,
     MessagePage,
     PhotoPage,
+    BannerarticlePage
   ],
   providers: [
     StatusBar,
@@ -172,7 +177,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
     ApiProvider,
     StorageProvider,
     Camera,
-    ImagePicker
+    // ImagePicker
   ]
 })
 export class AppModule {}

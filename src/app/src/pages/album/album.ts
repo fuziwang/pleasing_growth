@@ -28,7 +28,7 @@ interface Photos{
 export class AlbumPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider,public storage:StorageProvider) {
-    this.getList();
+    // this.getList();
   }
   list:Array<Photos>=[];
 
@@ -36,6 +36,8 @@ export class AlbumPage {
   isCheck=0;
   addArr() {
     this.postNewAlbum();
+    this.isCheck = 0;
+    this.getList();
   }
   quxiao() {
     this.isCheck=0;
@@ -53,12 +55,11 @@ export class AlbumPage {
     this.api.postNewAlbum(data).then(data => {
       console.dir(data);
     });
-    this.getList();
   }
   
   getList(){
     //获取list用于显示
-    this.api.getPhotos().then(data=>{
+    this.api.getPhotos(this.uid).then(data=>{
       console.dir(data);
       this.list=<any>data;
       console.dir(this.list);
@@ -72,6 +73,7 @@ export class AlbumPage {
       });
   }
   ionViewDidLoad() {
+    this.getList();
     console.log('ionViewDidLoad AlbumPage');
   }
 

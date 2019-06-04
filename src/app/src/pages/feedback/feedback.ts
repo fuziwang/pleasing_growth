@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
-
+import { App } from 'ionic-angular';
+import {MyPage} from '../my/my';
 /**
  * Generated class for the FeedbackPage page.
  *
@@ -26,7 +27,7 @@ interface Back{
 export class FeedbackPage {
   tel;
   value;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private api:ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiProvider, private app: App) {
   }
   getList(){
     //往后台传的数据
@@ -43,6 +44,6 @@ export class FeedbackPage {
     console.log(this.value);
     console.log(this.tel);
     this.getList();
-
+    this.navCtrl.setRoot(MyPage);
   }
 }

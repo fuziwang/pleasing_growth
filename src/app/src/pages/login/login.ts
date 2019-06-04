@@ -53,14 +53,15 @@ export class LoginPage {
     });
 
     this.api.postLogin(data).then(data=>{
-      if(data[0].uid){
-          // console.log(data[0].uid)
-          // console.dir(data);
-          this.storage.setItem('uid',data[0].uid);
-          this.storage.setItem('pwd',data[0].upwd);
-          this.storage.setItem('tel',data[0].utel);
+      console.log(data);
+      // if(data[0].uid){
+      //     // console.log(data[0].uid)
+      //     // console.dir(data);
+      //     this.storage.setItem('uid',data[0].uid);
+      //     this.storage.setItem('pwd',data[0].upwd);
+      //     this.storage.setItem('tel',data[0].utel);
 
-      }
+      // }
      
       this.bo =Array.isArray(data)&& data.length==0;
       console.log(this.bo);
@@ -127,6 +128,10 @@ export class LoginPage {
     
   }
     onBlur_tel(){
+      console.log(this.tel);
+      // this.api.postCheck(this.tel).then(data=>{
+      //   console.log(data);
+      // });
       if(this.tel==''){
         this.text='手机号码不能为空哦！';
         this.isCheck=1;

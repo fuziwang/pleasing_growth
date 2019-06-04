@@ -6,11 +6,11 @@
 
 <ion-content>
   <div class="gz1"  *ngFor='let item of arr;let idx=index'>
-    <div><img class="img1" src="../../assets/imgs/girl_02.png"></div>
-    <div>
-      <p><span class="name1">悦女士</span></p>
-      <p><span class="work1">青春期儿童研究者</span></p>
-      <p><span class="text1">关于处于青春期的儿童的教育方法</span></p>
+    <div><img class="img1" src="{{'http://120.79.153.10:80/user/' + item?.uimage}}"></div>
+    <div class="kuang">
+      <div><p>{{item.uname}}</p></div>
+      <div class="age"><p>{{item.uage}}岁</p></div>
+      <div><p>{{item.udescribe}}</p></div>
       <div class="button1"><button ion-button color="light"><span>已关注</span></button></div>
     </div>
   </div>

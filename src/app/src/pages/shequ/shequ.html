@@ -4,9 +4,9 @@
   </ion-navbar>
 </ion-header>
 <ion-content >
-   <div class="out"  *ngFor='let item of list;let idx=index'>
-     <div class="inside1" (click)='goHomeage()'>
-          <div class="com1" ><img class="img1" src="{{'http://192.168.80.144:8080/user/'+item?.uimage}}" alt="" style="width:60px;
+   <div class="out"  *ngFor='let item of list;let idx=index' (click)='goTiezi_next(item?.sid)'>
+     <div class="inside1">
+          <div class="com1" ><img class="img1" src="{{'http://120.79.153.10:80/user/'+item?.uimage}}" alt="" style="width:60px;
             height: 50px; border-radius: 50%;">
             </div> <!-- img-->
          <div class="com2">
@@ -14,22 +14,15 @@
            <span style="font-size:12px;color:#BFBFBF">{{item?.stime}}</span>
          </div>
      </div>
-     <div class="inside2" (click)='goContent()'>
+     <div class="inside2">
          <div class="com3">{{item?.scontent}}</div>
-         <div class="com4"><img id="img" src="{{'http://192.168.80.144:8080/say/'+item?.simage}}" ></div>
+         <div class="com4"><img id="img" src="{{'http://120.79.153.10:80/say/'+item?.simage}}" ></div>
      </div>
      <div class="inside3">
       <div class="com"><a><ion-icon name="ios-heart-outline"></ion-icon></a><span>赞同</span></div>
       <div class="com" (click)="pL()"><a><ion-icon name="ios-chatboxes-outline"></ion-icon></a><span>评论</span></div>
       <div class="com" (click)="goTransmit()"><ion-icon name="ios-create-outline"></ion-icon><span>转发</span></div>
    </div>
-   </div>
-   <div>
-    <!-- <div class="list" [ngStyle]="{'display': isPl== 1  ? 'block' : 'none'}">
-      <label class="item item-input" >
-        <input type="text" placeholder="First Name" class="pl"><button>发送</button>
-      </label>
-    </div> -->
    </div>
   
  

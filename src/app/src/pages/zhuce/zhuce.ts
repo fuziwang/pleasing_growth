@@ -134,7 +134,7 @@ export class ZhucePage {
           upass:this.pwd,
           utel:this.tel,
         });
-    
+        console.log(data);
         this.api.postLogin(data).then(data=>{
           console.log(data);
           // if(data[0].uid){

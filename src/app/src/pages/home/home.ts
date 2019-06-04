@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TieziPage } from '../tiezi/tiezi';
 import { XingquPage } from '../xingqu/xingqu';
+import { BannerarticlePage } from '../bannerarticle/bannerarticle';
 import { App } from 'ionic-angular';
 import { ApiProvider } from "../../providers/api/api";//引入服务
 import { StorageProvider } from '../../providers/storage/storage';
@@ -28,18 +29,19 @@ export class HomePage {
   dianzannum=this.storage.getItem('dianzannum');
   seenum=this.storage.getItem('seenum');
   isActive=true;
+  uid=this.storage.getItem('uid');
   isClick(i){
     this.isActive=i;
     if(i==0){
       this.getNewList();
     } else{
-      this.getList();
+      this.getList(this.uid);
     }
   }
 
   arr=[1,2,3,4];
   constructor(public navCtrl: NavController,private app:App, public api:ApiProvider,public storage:StorageProvider ) {
-    this.getList();
+    this.getList(this.uid);
     this.storage.setItem('seenum',this.seenum);
     this.storage.setItem('dianzannum',this.dianzannum);
     this.dianzannum=this.storage.getItem('dianzannum');
@@ -49,15 +51,17 @@ export class HomePage {
   }
   
   getBanner(i){
-    this.navCtrl.push(TieziPage,{
+    this.navCtrl.push(BannerarticlePage,{
       id:i
     });
   }
-  getList(){
+  getList(uid){
     //获取list用于显示
-    this.api.getList().then(data=>{
+    console.log(uid);
+    this.api.getList(uid).then(data=>{
       console.dir(data);
       this.list=<any>data;
+      console.log(this.list);
     });
     //测试post请求
     // let data=JSON.stringify({

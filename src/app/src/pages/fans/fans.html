@@ -6,12 +6,12 @@
 
 <ion-content>
   <div class="gz1"  *ngFor='let item of arr;let idx=index'>
-    <div></div>
+    <div><img class="img1" src="{{'http://120.79.153.10:80/user/' + item?.uimage}}"></div>
     <div>
-      <p><span class="name1"></span></p>
-      <p><span class="work1"></span></p>
-      <p><span class="text1"></span></p>
-      <div class="button1"></div>
+      <p><span class="name1">{{item?.uname}}</span></p>
+      <p><span class="work1">{{item?.uage}}</span></p>
+      <p><span class="text1">{{item?.udescribe}}</span></p>
+      <div class="button1"><button ion-button color="light"><span>关注</span></button></div>
     </div>
   </div>
 </ion-content>

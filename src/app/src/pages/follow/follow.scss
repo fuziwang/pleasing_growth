@@ -9,40 +9,32 @@ page-follow {
     .gz1{
         width: 360px;
         height: 110px;
+        p{
+            margin-top:15px;
+            margin-left:-12px;
+        }
         //border: darkgray 1px solid;
+        .kuang{
+            float: left;
+            margin-left: 25px;
+            margin-top: 10px;
+            .age{
+                margin-top: -15px;
+                padding-top: 10px;
+                margin-bottom: -10px;
+            }
+        }
         .img1{
             width: 85px;
             height: 85px;
-            position: absolute;
-            top: 13px;
-            left: 10px;
-        }
-        .name1{
-            position: absolute;
-            top: 32px;
-            left: 100px;
-        }
-        .work1{
-            color: darkgray;
-            position: absolute;
-            top: 52px;
-            left: 100px;
-        }
-        .text1{
-            width: 120px;
-            color: darkgray;
-            position: absolute;
-            top: 72px;
-            left: 100px;
-            right: 20px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            float: left;
+            margin-left: 15px;
+            margin-top: 20px;
         }
         .button1{
-            position: absolute;
-            top: 35px;
-            left: 260px;
+            float: right;
+            margin-top: -75px;
+            margin-left: 140px;
             span{
                 color: #2FBD7B;
             }
